@@ -73,11 +73,6 @@ override_dh_install:
 	# change permission on scripts
 	chmod a-x $(CURDIR)/debian/ipython/usr/share/doc/ipython/examples/*
 	
-	# removing bogus usr/IPython directory
-	rm -rf $(CURDIR)/debian/ipython/usr/IPython
-
-	rm -rf $(CURDIR)/debian/ipython/usr/share/doc/ipython/extensions
-
 override_dh_installdocs:
 	dh_installdocs -pipython
 	dh_installdocs -pipython-parallel --link-doc=ipython

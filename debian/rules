@@ -8,6 +8,10 @@ override_dh_compress:
 %:
 	dh $@ --with python2
 
+override_dh_auto_clean:
+	rm -f test_hist.sqlite
+	dh_auto_clean
+
 override_dh_auto_build:
 	dh_auto_build -- --executable '/usr/bin/env python'
 

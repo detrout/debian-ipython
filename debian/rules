@@ -87,3 +87,7 @@ override_dh_installdocs:
 	dh_installdocs -pipython
 	dh_installdocs -pipython-parallel --link-doc=ipython
 	dh_installdocs -pipython-doc --link-doc=ipython
+
+override_dh_installexamples:
+	dh_installexamples -pipython --exclude="examples/newparallel/"
+	dh_installexamples -pipython-parallel

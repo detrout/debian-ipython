@@ -24,7 +24,7 @@ Build-Depends-Indep: graphviz,
                      xauth,
                      xvfb
 X-Python-Version: >= 2.6
-Homepage: http://ipython.scipy.org/
+Homepage: http://ipython.org/
 Vcs-Svn: svn://svn.debian.org/python-modules/packages/ipython/trunk/
 Vcs-Browser: http://svn.debian.org/viewsvn/python-modules/packages/ipython/trunk/
 Standards-Version: 3.9.2

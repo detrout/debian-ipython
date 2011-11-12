@@ -6,6 +6,7 @@ ipython (0.11-1) experimental; urgency=low
   * install .desktop files for ipython and ipython-qtconsole
     - override desktop-command-not-in-package lintian warning for -qtconsole
       the command is in ipython package on which -qtconsole depends
+  * debian/control: update homepage
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Sun, 31 Jul 2011 21:14:03 +0200
 

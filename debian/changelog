@@ -1,6 +1,29 @@
 ipython (0.11~rc1-1) experimental; urgency=low
 
-  * New upstream release
+  * New upstream release candidate
+  * change to source format 3.0 (quilt)
+  * run testsuite during build
+  * add clean target
+  * b-d on matplotlib, pymongo, xauth, xvfb and qt4 for tests
+  * add dependencies and don't install embedded copy:
+    - python-argparse(Closes: #555348)
+    - python-configobj (Closes: #555339)
+    - python-simplegeneric
+    - python-decorator
+    - python-pyparsing
+    - pexpect
+  * update patches
+    - disabled obsolete patches 03, 04 and 06
+    - refresh default background color patch 07
+    - add patch to fix testsuite
+    - add patch to improve error message on missing ipython-qtconsole
+  * change to compat 7
+  * split out -parallel package
+  * split out -qtconsole package
+  * split out -doc package
+  * improve dependencies for each package
+  * add doc-base control file
+  * fix the ipythonX.Y startup scripts
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Tue, 10 May 2011 16:18:45 +0200
 

@@ -4,16 +4,16 @@ Priority: optional
 Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
 Uploaders: Stephan Peijnik <debian@sp.or.at>,
            Julian Taylor <jtaylor.debian@googlemail.com>
-Build-Depends: debhelper (>= 7.3.13), python
-Build-Depends-Indep: python (>= 2.5) | python-ctypes,
-                     python-foolscap,
+Build-Depends: debhelper (>= 7.3.13)
+Build-Depends-Indep: python-all (>= 2.6.6-3~),
                      python-nose,
-                     python-openssl (>= 0.6),
                      python-pexpect,
                      python-pygments,
                      python-sphinx,
-                     python-twisted-core,
-                     python-zope.interface
+                     python-zmq (>= 2.1.4),
+                     xauth,
+                     xvfb
+X-Python-Version: >= 2.6
 Homepage: http://ipython.scipy.org/
 Vcs-Svn: svn://svn.debian.org/python-modules/packages/ipython/trunk/
 Vcs-Browser: http://svn.debian.org/viewsvn/python-modules/packages/ipython/trunk/
@@ -32,13 +32,6 @@ Suggests: libjs-jquery,
           python-numpy,
           python-profiler,
           python-qt3 | python-qt4
-Recommends: global,
-            python (>= 2.5) | python-ctypes,
-            python-foolscap,
-            python-openssl (>= 0.6),
-            python-twisted-core,
-            python-wxgtk2.8,
-            python-zope.interface
 Description: enhanced interactive Python shell
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific

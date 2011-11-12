@@ -1,4 +1,3 @@
 improve-error-message-on-missing-ipython-qtconsole.patch
 05_fix_seteditor_example.patch
 07_use_lightbg.patch
-fix-parallel-testsuite.patch

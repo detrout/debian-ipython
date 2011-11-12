@@ -11,6 +11,12 @@ override_dh_compress:
 override_dh_auto_build:
 	dh_auto_build -- --executable '/usr/bin/env python'
 
+override_dh_auto_test:
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+	# IPython.frontend requires X
+	PATH=$(CURDIR)/IPython/scripts/:$(PATH) PYTHONPATH=$(CURDIR) xvfb-run -s "-screen 0 1280x1024x24 -noreset" $(CURDIR)/IPython/scripts/iptest -v
+endif
+
 override_dh_auto_install:
 	dh_auto_install
 

@@ -18,6 +18,7 @@ Build-Depends-Indep: python-all (>= 2.6.6-3~),
                      python-qt4,
                      python-simplegeneric,
                      python-sphinx,
+                     python-wxgtk2.8,
                      python-zmq (>= 2.1.4)
 X-Python-Version: >= 2.6
 Homepage: http://ipython.scipy.org/
@@ -38,9 +39,9 @@ Depends: python-argparse,
          ${python:Depends}
 Conflicts: ipython-common, python2.3-ipython, python2.4-ipython
 Replaces: ipython-common, python2.3-ipython, python2.4-ipython
-Suggests: ipython-parallel,
+Suggests: ipython-doc,
+          ipython-parallel,
           ipython-qtconsole,
-          ipython-doc,
           python-gobject,
           python-gtk2,
           python-matplotlib,
@@ -59,8 +60,8 @@ Description: enhanced interactive Python shell
 Package: ipython-qtconsole
 Architecture: all
 Depends: ipython (= ${binary:Version}),
-         python-qt4,
          python-pygments,
+         python-qt4,
          ${misc:Depends},
          ${python:Depends}
 Description: enhanced interactive Python shell
@@ -98,7 +99,7 @@ Description: enhanced interactive Python shell
 Package: ipython-doc
 Section: doc
 Architecture: all
-Depends: ${misc:Depends}, libjs-jquery
+Depends: libjs-jquery, ${misc:Depends}
 Description: enhanced interactive Python shell
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific

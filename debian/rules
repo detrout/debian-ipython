@@ -26,8 +26,12 @@ ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 endif
 
 override_dh_install:
-	dh_install -pipython --exclude="IPython/parallel/" --exclude="IPython/deathrow/" --exclude="IPython/quarantine/"
+	dh_install -pipython --exclude="IPython/parallel/" \
+		--exclude="IPython/frontend/qt/" \
+		--exclude="IPython/deathrow/" \
+		--exclude="IPython/quarantine/"
 	dh_install -pipython-parallel IPython/parallel/ usr/share/pyshared/
+	dh_install -pipython-qtconsole IPython/frontend/qt/ usr/share/pyshared/
 
 	# remove embedded arparse
 	find $(CURDIR)/debian/ipython/usr/ -name _argparse.py -delete

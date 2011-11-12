@@ -5,7 +5,8 @@ Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.
 Uploaders: Stephan Peijnik <debian@sp.or.at>,
            Julian Taylor <jtaylor.debian@googlemail.com>
 Build-Depends: debhelper (>= 7.3.13)
-Build-Depends-Indep: python-all (>= 2.6.6-3~),
+Build-Depends-Indep: graphviz,
+                     python-all (>= 2.6.6-3~),
                      python-argparse,
                      python-configobj,
                      python-decorator,

@@ -4,7 +4,9 @@ ipython (0.11~rc1-1) experimental; urgency=low
   * change to source format 3.0 (quilt)
   * run testsuite during build
   * add clean target
-  * b-d on matplotlib, pymongo, xauth, xvfb and qt4 for tests
+  * build-depends:
+    - matplotlib, pymongo, xauth, xvfb and qt4 for tests
+    - graphviz, sphinx for docs
   * add dependencies and don't install embedded copy:
     - python-argparse(Closes: #555348)
     - python-configobj (Closes: #555339)

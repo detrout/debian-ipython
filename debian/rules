@@ -43,6 +43,9 @@ override_dh_auto_install:
 	# remove embedded pexpect
 	find $(CURDIR)/debian/ipython/usr/ -name _pexpect.py -delete
 
+	# remove embedded pyparsing
+	find $(CURDIR)/debian/ipython/usr/ -name _pyparsing.py -delete
+
 	# remove test suite script
 	rm $(CURDIR)/debian/ipython/usr/bin/iptest
 	# remove documentation

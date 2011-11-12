@@ -29,6 +29,7 @@ Depends: python-argparse,
          python-configobj,
          python-decorator,
          python-pexpect,
+         python-pyparsing,
          python-simplegeneric,
          ${misc:Depends},
          ${python:Depends}

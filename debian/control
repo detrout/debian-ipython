@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
 Uploaders: Stephan Peijnik <debian@sp.or.at>,
            Julian Taylor <jtaylor.debian@googlemail.com>
-Build-Depends: debhelper (>= 7.3.13), python, quilt (>= 0.46-7~)
+Build-Depends: debhelper (>= 7.3.13), python
 Build-Depends-Indep: python (>= 2.5) | python-ctypes,
                      python-foolscap,
                      python-nose,

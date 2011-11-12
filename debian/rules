@@ -16,7 +16,7 @@ override_dh_auto_clean:
 
 override_dh_auto_build:
 	dh_auto_build -- --executable '/usr/bin/env python'
-	$(MAKE) -C $(CURDIR)/docs
+	$(MAKE) -C $(CURDIR)/docs html
 	rm -f $(CURDIR)/docs/build/html/_static/jquery.js
 
 override_dh_auto_test:
@@ -83,5 +83,7 @@ override_dh_install:
 
 	rm -rf $(CURDIR)/debian/ipython/usr/share/doc/ipython/extensions
 
-override_dh_compress:
-	dh_compress -Xpdf
+override_dh_installdocs:
+	dh_installdocs -pipython
+	dh_installdocs -pipython-parallel --link-doc=ipython
+	dh_installdocs -pipython-doc --link-doc=ipython

@@ -1,4 +1,5 @@
 #!/usr/bin/make -f
+export DH_VERBOSE=1
 PYVERS = $(shell pyversions -sv)
 
 override_dh_compress:
@@ -18,7 +19,10 @@ override_dh_auto_build:
 override_dh_auto_test:
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 	# IPython.frontend requires X
-	LC_ALL=C.UTF-8 PATH=$(CURDIR)/IPython/scripts/:$(PATH) PYTHONPATH=$(CURDIR) xvfb-run -s "-screen 0 1280x1024x24 -noreset" $(CURDIR)/IPython/scripts/iptest -v
+	set -e && for pyvers in $(PYVERS); do \
+	  LC_ALL=C.UTF-8 PATH=$(CURDIR)/IPython/scripts/:$(PATH) PYTHONPATH=$(CURDIR) xvfb-run -s "-screen 0 1280x1024x24 -noreset" \
+	  python$$pyvers $(CURDIR)/IPython/scripts/iptest -v; \
+	done
 endif
 
 override_dh_auto_install:

@@ -1,6 +1,7 @@
 ipython (0.11~rc4-1) experimental; urgency=low
 
   * New upstream release candidate
+  * update patch for debian specific error messages
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Tue, 19 Jul 2011 12:15:23 +0200
 

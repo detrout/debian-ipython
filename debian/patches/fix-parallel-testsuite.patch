@@ -1,0 +1,107 @@
+From 8e34c8a8765cbccbf6060f685d82fd7f6d95e93b Mon Sep 17 00:00:00 2001
+From: MinRK <benjaminrk@gmail.com>
+Date: Mon, 4 Jul 2011 10:38:02 -0700
+Subject: [PATCH] fix parallel testsuite
+
+cherry pick 84ec2980, 40f1d6963 and 4a5038ad from upstream to fix errors in
+the parallel testsuite.
+---
+ IPython/parallel/client/client.py     |    8 ++++----
+ IPython/parallel/client/view.py       |    6 +++---
+ IPython/parallel/tests/test_client.py |    9 +++++++++
+ 3 files changed, 16 insertions(+), 7 deletions(-)
+
+diff --git a/IPython/parallel/client/client.py b/IPython/parallel/client/client.py
+index c4ac985..f5223fa 100644
+--- a/IPython/parallel/client/client.py
++++ b/IPython/parallel/client/client.py
+@@ -440,7 +440,7 @@ class Client(HasTraits):
+         
+         if targets is None:
+             targets = self._ids
+-        elif isinstance(targets, str):
++        elif isinstance(targets, basestring):
+             if targets.lower() == 'all':
+                 targets = self._ids
+             else:
+@@ -825,7 +825,7 @@ class Client(HasTraits):
+         if jobs is None:
+             theids = self.outstanding
+         else:
+-            if isinstance(jobs, (int, str, AsyncResult)):
++            if isinstance(jobs, (int, basestring, AsyncResult)):
+                 jobs = [jobs]
+             theids = set()
+             for job in jobs:
+@@ -1096,7 +1096,7 @@ class Client(HasTraits):
+         for id in indices_or_msg_ids:
+             if isinstance(id, int):
+                 id = self.history[id]
+-            if not isinstance(id, str):
++            if not isinstance(id, basestring):
+                 raise TypeError("indices must be str or int, not %r"%id)
+             theids.append(id)
+         
+@@ -1146,7 +1146,7 @@ class Client(HasTraits):
+         for id in indices_or_msg_ids:
+             if isinstance(id, int):
+                 id = self.history[id]
+-            if not isinstance(id, str):
++            if not isinstance(id, basestring):
+                 raise TypeError("indices must be str or int, not %r"%id)
+             theids.append(id)
+ 
+diff --git a/IPython/parallel/client/view.py b/IPython/parallel/client/view.py
+index c604bbb..12ed96d 100644
+--- a/IPython/parallel/client/view.py
++++ b/IPython/parallel/client/view.py
+@@ -809,11 +809,11 @@ class LoadBalancedView(View):
+         
+         For use in `set_flags`.
+         """
+-        if dep is None or isinstance(dep, (str, AsyncResult, Dependency)):
++        if dep is None or isinstance(dep, (basestring, AsyncResult, Dependency)):
+             return True
+         elif isinstance(dep, (list,set, tuple)):
+             for d in dep:
+-                if not isinstance(d, (str, AsyncResult)):
++                if not isinstance(d, (basestring, AsyncResult)):
+                     return False
+         elif isinstance(dep, dict):
+             if set(dep.keys()) != set(Dependency().as_dict().keys()):
+@@ -821,7 +821,7 @@ class LoadBalancedView(View):
+             if not isinstance(dep['msg_ids'], list):
+                 return False
+             for d in dep['msg_ids']:
+-                if not isinstance(d, str):
++                if not isinstance(d, basestring):
+                     return False
+         else:
+             return False
+diff --git a/IPython/parallel/tests/test_client.py b/IPython/parallel/tests/test_client.py
+index 42c3b60..440706b 100644
+--- a/IPython/parallel/tests/test_client.py
++++ b/IPython/parallel/tests/test_client.py
+@@ -249,10 +249,19 @@ class TestClient(ClusterTestCase):
+         # ensure there are some tasks
+         for i in range(5):
+             self.client[:].apply_sync(lambda : 1)
++        # Wait for the Hub to realise the result is done:
++        # This prevents a race condition, where we
++        # might purge a result the Hub still thinks is pending.
++        time.sleep(0.1)
++        rc2 = clientmod.Client(profile='iptest')
+         hist = self.client.hub_history()
++        ahr = rc2.get_result([hist[-1]])
++        ahr.wait(10)
+         self.client.purge_results(hist[-1])
+         newhist = self.client.hub_history()
+         self.assertEquals(len(newhist)+1,len(hist))
++        rc2.spin()
++        rc2.close()
+         
+     def test_purge_all_results(self):
+         self.client.purge_results('all')
+-- 
+1.7.4.1
+

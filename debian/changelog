@@ -1,6 +1,7 @@
 ipython (0.11~rc3-1) experimental; urgency=low
 
   * New upstream release candidate
+  * fix some DEP5 syntax errors
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Thu, 14 Jul 2011 09:44:31 +0200
 

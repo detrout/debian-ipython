@@ -16,7 +16,9 @@ override_dh_auto_clean:
 
 override_dh_auto_build:
 	dh_auto_build -- --executable '/usr/bin/env python'
+ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	PYTHONPATH=$(CURDIR) $(MAKE) -C $(CURDIR)/docs html
+endif
 
 override_dh_auto_test:
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
@@ -74,12 +76,14 @@ override_dh_install:
 	chmod a-x $(CURDIR)/debian/ipython/usr/share/doc/ipython/examples/*
 	
 override_dh_installdocs:
+ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	dh_installdocs -pipython
 	dh_installdocs -pipython-parallel --link-doc=ipython
 	dh_installdocs -pipython-qtconsole --link-doc=ipython
 	dh_installdocs -pipython-doc --link-doc=ipython
 	# remove jquery, will be linked
 	rm $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_static/jquery.js
+endif
 
 override_dh_installexamples:
 	dh_installexamples -pipython --exclude="examples/newparallel/"

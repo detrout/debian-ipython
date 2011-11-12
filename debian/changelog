@@ -1,3 +1,9 @@
+ipython (0.11~rc3-1) experimental; urgency=low
+
+  * New upstream release candidate
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Thu, 14 Jul 2011 09:44:31 +0200
+
 ipython (0.11~rc1-1) experimental; urgency=low
 
   * New upstream release candidate

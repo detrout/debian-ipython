@@ -209,7 +209,7 @@ License: LGPL-2.1+
  .
  On Debian systems, the full text of the GNU General Public
  License version 2 can be found in the file
- `/usr/share/common-licenses/LGPL'.
+ `/usr/share/common-licenses/LGPL-2.1'.
 
 License: Apache-2.0
  Licensed under the Apache License, Version 2.0 (the "License"); you may not

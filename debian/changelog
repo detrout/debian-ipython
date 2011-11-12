@@ -2,6 +2,7 @@ ipython (0.11-1) experimental; urgency=low
 
   * New upstream release
   * install all upstream manpages
+  * debian/copyright: refer to LGPL-2.1 instead of LGPL symlink
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Sun, 31 Jul 2011 19:10:10 +0200
 

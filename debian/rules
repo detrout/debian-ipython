@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 export DH_VERBOSE=1
-PYVERS = $(shell pyversions -sv)
+PYVERS = $(shell pyversions -rv)
 
 override_dh_compress:
 	# make sure the documentation stays usable.

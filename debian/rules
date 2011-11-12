@@ -4,7 +4,7 @@ PYVERS = $(shell pyversions -sv)
 
 override_dh_compress:
 	# make sure the documentation stays usable.
-	dh_compress -Xmanual/html/
+	dh_compress -Xhtml/
 
 %:
 	dh $@ --with python2

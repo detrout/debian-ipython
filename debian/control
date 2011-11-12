@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
 Uploaders: Stephan Peijnik <debian@sp.or.at>,
            Julian Taylor <jtaylor.debian@googlemail.com>
-Build-Depends: debhelper (>= 7.3.13), xauth, xvfb
+Build-Depends: debhelper (>= 7.3.13)
 Build-Depends-Indep: python-all (>= 2.6.6-3~),
                      python-argparse,
                      python-configobj,
@@ -19,7 +19,9 @@ Build-Depends-Indep: python-all (>= 2.6.6-3~),
                      python-simplegeneric,
                      python-sphinx,
                      python-wxgtk2.8,
-                     python-zmq (>= 2.1.4)
+                     python-zmq (>= 2.1.4),
+                     xauth,
+                     xvfb
 X-Python-Version: >= 2.6
 Homepage: http://ipython.scipy.org/
 Vcs-Svn: svn://svn.debian.org/python-modules/packages/ipython/trunk/

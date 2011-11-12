@@ -25,7 +25,11 @@ DM-Upload-Allowed: yes
 
 Package: ipython
 Architecture: all
-Depends: python-argparse, python-pexpect, ${misc:Depends}, ${python:Depends}
+Depends: python-argparse,
+         python-configobj,
+         python-pexpect,
+         ${misc:Depends},
+         ${python:Depends}
 Conflicts: ipython-common, python2.3-ipython, python2.4-ipython
 Replaces: ipython-common, python2.3-ipython, python2.4-ipython
 Suggests: libjs-jquery,

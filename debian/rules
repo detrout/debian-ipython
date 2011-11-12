@@ -57,9 +57,6 @@ override_dh_install:
 	# remove embedded pyparsing
 	find $(CURDIR)/debian/ipython/usr/ -name _pyparsing.py -delete
 
-	# remove test suite script
-	rm $(CURDIR)/debian/ipython/usr/bin/iptest
-
 	# add wrapper scripts for all python versions
 	set -e ;\
 	firstpyver="" ;\

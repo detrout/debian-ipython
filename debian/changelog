@@ -4,8 +4,9 @@ ipython (0.11~rc3-1) experimental; urgency=low
   * fix some DEP5 syntax errors
   * remove upstreamed testsuite-fix patch
   * delete disabled obsolete patches 03, 04, 06
+  * move parallel binaries from ipython to ipython-parallel
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Thu, 14 Jul 2011 09:54:15 +0200
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Sun, 17 Jul 2011 16:09:01 +0200
 
 ipython (0.11~rc1-1) experimental; urgency=low
 

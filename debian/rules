@@ -85,11 +85,10 @@ override_dh_install:
 
 override_dh_installdocs:
 	dh_installdocs -pipython
-	# install examples here so doc linking works
-	dh_installexamples -pipython-parallel
 	dh_installdocs -pipython-parallel --link-doc=ipython
 	dh_installdocs -pipython-qtconsole --link-doc=ipython
 	dh_installdocs -pipython-doc --link-doc=ipython
 
 override_dh_installexamples:
 	dh_installexamples -pipython --exclude="examples/newparallel/"
+	dh_installexamples -pipython-parallel

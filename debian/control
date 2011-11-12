@@ -6,9 +6,12 @@ Uploaders: Stephan Peijnik <debian@sp.or.at>,
            Julian Taylor <jtaylor.debian@googlemail.com>
 Build-Depends: debhelper (>= 7.3.13)
 Build-Depends-Indep: python-all (>= 2.6.6-3~),
+                     python-matplotlib,
                      python-nose,
                      python-pexpect,
                      python-pygments,
+                     python-pymongo,
+                     python-qt4,
                      python-sphinx,
                      python-zmq (>= 2.1.4),
                      xauth,

@@ -28,6 +28,7 @@ Architecture: all
 Depends: python-argparse,
          python-configobj,
          python-pexpect,
+         python-simplegeneric,
          ${misc:Depends},
          ${python:Depends}
 Conflicts: ipython-common, python2.3-ipython, python2.4-ipython

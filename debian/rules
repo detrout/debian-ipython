@@ -11,10 +11,13 @@ override_dh_compress:
 
 override_dh_auto_clean:
 	rm -f test_hist.sqlite
+	$(MAKE) -C $(CURDIR)/docs clean
 	dh_auto_clean
 
 override_dh_auto_build:
 	dh_auto_build -- --executable '/usr/bin/env python'
+	$(MAKE) -C $(CURDIR)/docs
+	rm -f $(CURDIR)/docs/build/html/_static/jquery.js
 
 override_dh_auto_test:
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
@@ -80,4 +83,5 @@ override_dh_install:
 
 	rm -rf $(CURDIR)/debian/ipython/usr/share/doc/ipython/extensions
 
-
+override_dh_compress:
+	dh_compress -Xpdf

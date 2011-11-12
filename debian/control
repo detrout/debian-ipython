@@ -27,8 +27,8 @@ Package: ipython
 Architecture: all
 Depends: python-argparse,
          python-configobj,
-         python-pexpect,
          python-decorator,
+         python-pexpect,
          python-simplegeneric,
          ${misc:Depends},
          ${python:Depends}

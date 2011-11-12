@@ -11,7 +11,7 @@ override_dh_compress:
 
 override_dh_auto_clean:
 	rm -f test_hist.sqlite
-	$(MAKE) -C $(CURDIR)/docs clean
+	if cd $(CURDIR)/docs; then $(MAKE) clean; fi
 	dh_auto_clean
 
 override_dh_auto_build:

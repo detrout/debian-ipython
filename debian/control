@@ -34,7 +34,6 @@ Depends: python-argparse,
          python-decorator,
          python-pexpect,
          python-simplegeneric,
-         python-zmq (>= 2.0.10.1),
          ${misc:Depends},
          ${python:Depends}
 Conflicts: ipython-common, python2.3-ipython, python2.4-ipython
@@ -62,6 +61,7 @@ Architecture: all
 Depends: ipython (= ${binary:Version}),
          python-pygments,
          python-qt4,
+         python-zmq (>= 2.0.10.1),
          ${misc:Depends},
          ${python:Depends}
 Description: enhanced interactive Python shell

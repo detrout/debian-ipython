@@ -59,7 +59,7 @@ Description: enhanced interactive Python shell
 Package: ipython-qtconsole
 Architecture: all
 Depends: ipython (= ${binary:Version}),
-         python-qt3 | python-qt4,
+         python-qt4,
          ${misc:Depends},
          ${python:Depends}
 Description: enhanced interactive Python shell

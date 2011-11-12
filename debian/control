@@ -28,6 +28,7 @@ Architecture: all
 Depends: python-argparse,
          python-configobj,
          python-pexpect,
+         python-decorator,
          python-simplegeneric,
          ${misc:Depends},
          ${python:Depends}

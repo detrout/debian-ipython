@@ -37,6 +37,9 @@ override_dh_auto_install:
 	# remove embedded simplegeneric
 	find $(CURDIR)/debian/ipython/usr/ -name _simplegeneric.py -delete
 
+	# remove embedded decorator
+	find $(CURDIR)/debian/ipython/usr/ -name _decorator.py -delete
+
 	# remove test suite script
 	rm $(CURDIR)/debian/ipython/usr/bin/iptest
 	# remove documentation

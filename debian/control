@@ -60,6 +60,7 @@ Package: ipython-qtconsole
 Architecture: all
 Depends: ipython (= ${binary:Version}),
          python-qt4,
+         python-pygments,
          ${misc:Depends},
          ${python:Depends}
 Description: enhanced interactive Python shell

@@ -6,14 +6,19 @@ Uploaders: Stephan Peijnik <debian@sp.or.at>,
            Julian Taylor <jtaylor.debian@googlemail.com>
 Build-Depends: debhelper (>= 7.3.13), xauth, xvfb
 Build-Depends-Indep: python-all (>= 2.6.6-3~),
+                     python-argparse,
+                     python-configobj,
+                     python-decorator,
                      python-matplotlib,
                      python-nose,
                      python-pexpect,
                      python-pygments,
                      python-pymongo,
+                     python-pyparsing,
                      python-qt4,
+                     python-simplegeneric,
                      python-sphinx,
-                     python-zmq (>= 2.1.4),
+                     python-zmq (>= 2.1.4)
 X-Python-Version: >= 2.6
 Homepage: http://ipython.scipy.org/
 Vcs-Svn: svn://svn.debian.org/python-modules/packages/ipython/trunk/

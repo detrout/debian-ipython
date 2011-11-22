@@ -2,6 +2,7 @@ ipython (0.11-2) experimental; urgency=low
 
   * add patch fix-version-checks-for-pyzmq-2.1.10.patch
   * fix debianize-error-messages.patch to reraise unknown exceptions
+  * suggest python-zmq for ipython package
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Tue, 22 Nov 2011 20:43:28 +0100
 

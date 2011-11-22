@@ -48,7 +48,8 @@ Suggests: ipython-doc,
           python-gtk2,
           python-matplotlib,
           python-numpy,
-          python-profiler
+          python-profiler,
+          python-zmq (>= 2.0.10.1)
 Description: enhanced interactive Python shell
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific

@@ -1,3 +1,4 @@
 debianize-error-messages.patch
 05_fix_seteditor_example.patch
 07_use_lightbg.patch
+fix-version-checks-for-pyzmq-2.1.10.patch

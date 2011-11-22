@@ -1,0 +1,121 @@
+From 795089a8ee040f10f35a8f5bedaec1cdbac9f7e0 Mon Sep 17 00:00:00 2001
+From: MinRK <benjaminrk@gmail.com>
+Date: Sun, 4 Sep 2011 00:22:59 -0700
+Subject: [PATCH] fix version checks for pyzmq 2.10
+
+---
+ IPython/parallel/__init__.py |   16 +++++-----------
+ IPython/zmq/__init__.py      |   34 ++++++++++++++++++----------------
+ setupext/setupext.py         |   14 +++++++++++++-
+ 3 files changed, 36 insertions(+), 28 deletions(-)
+
+diff --git a/IPython/parallel/__init__.py b/IPython/parallel/__init__.py
+index 13ef12f..4cb507d 100644
+--- a/IPython/parallel/__init__.py
++++ b/IPython/parallel/__init__.py
+@@ -20,20 +20,14 @@ import warnings
+ 
+ import zmq
+ 
++from IPython.zmq import check_for_zmq
+ 
+ if os.name == 'nt':
+-    if zmq.__version__ < '2.1.7':
+-        raise ImportError("IPython.parallel requires pyzmq/0MQ >= 2.1.7 on Windows, "
+-        "and you appear to have %s"%zmq.__version__)
+-elif zmq.__version__ < '2.1.4':
+-    raise ImportError("IPython.parallel requires pyzmq/0MQ >= 2.1.4, you appear to have %s"%zmq.__version__)
+-
+-if zmq.zmq_version() >= '3.0.0':
+-    warnings.warn("""libzmq 3 detected.
+-    It is unlikely that IPython's zmq code will work properly.
+-    Please install libzmq stable, which is 2.1.x or 2.2.x""",
+-    RuntimeWarning)
++    min_pyzmq = '2.1.7'
++else:
++    min_pyzmq = '2.1.4'
+ 
++check_for_zmq(min_pyzmq, 'IPython.parallel')
+ 
+ from IPython.utils.pickleutil import Reference
+ 
+diff --git a/IPython/zmq/__init__.py b/IPython/zmq/__init__.py
+index e9ad6bf..0b0355a 100644
+--- a/IPython/zmq/__init__.py
++++ b/IPython/zmq/__init__.py
+@@ -9,26 +9,28 @@
+ # Verify zmq version dependency >= 2.1.4
+ #-----------------------------------------------------------------------------
+ 
++import re
+ import warnings
+ 
+-minimum_pyzmq_version = "2.1.4"
++def check_for_zmq(minimum_version, module='IPython.zmq'):
++    min_vlist = [int(n) for n in minimum_version.split('.')]
+ 
+-try:
+-    import zmq
+-except ImportError:
+-    raise ImportError("IPython.zmq requires pyzmq >= %s"%minimum_pyzmq_version)
++    try:
++        import zmq
++    except ImportError:
++        raise ImportError("%s requires pyzmq >= %s"%(module, minimum_version))
+ 
+-pyzmq_version = zmq.__version__
++    pyzmq_version = zmq.__version__
++    vlist = [int(n) for n in re.findall(r'\d+', pyzmq_version)]
+ 
+-if pyzmq_version < minimum_pyzmq_version:
+-    raise ImportError("IPython.zmq requires pyzmq >= %s, but you have %s"%(
+-                    minimum_pyzmq_version, pyzmq_version))
++    if 'dev' not in pyzmq_version and vlist < min_vlist:
++        raise ImportError("%s requires pyzmq >= %s, but you have %s"%(
++                        module, minimum_version, pyzmq_version))
+ 
+-del pyzmq_version
+-
+-if zmq.zmq_version() >= '3.0.0':
+-    warnings.warn("""libzmq 3 detected.
+-    It is unlikely that IPython's zmq code will work properly.
+-    Please install libzmq stable, which is 2.1.x or 2.2.x""",
+-    RuntimeWarning)
++    if zmq.zmq_version() >= '3.0.0':
++        warnings.warn("""libzmq 3 detected.
++        It is unlikely that IPython's zmq code will work properly.
++        Please install libzmq stable, which is 2.1.x or 2.2.x""",
++        RuntimeWarning)
+ 
++check_for_zmq('2.1.4')
+diff --git a/setupext/setupext.py b/setupext/setupext.py
+index 93a0adf..a5bb7de 100644
+--- a/setupext/setupext.py
++++ b/setupext/setupext.py
+@@ -139,10 +139,22 @@ def check_for_pyzmq():
+         print_status('pyzmq', "no (required for qtconsole and parallel computing capabilities)")
+         return False
+     else:
++        # pyzmq 2.1.10 adds pyzmq_version_info funtion for returning
++        # version as a tuple
++        if hasattr(zmq, 'pyzmq_version_info'):
++            if zmq.pyzmq_version_info() >= (2,1,4):
++                print_status("pyzmq", zmq.__version__)
++                return True
++            else:
++                # this branch can never occur, at least until we update our
++                # pyzmq dependency beyond 2.1.10
++                return False
++        # this is necessarily earlier than 2.1.10, so string comparison is
++        # okay
+         if zmq.__version__ < '2.1.4':
+             print_status('pyzmq', "no (have %s, but require >= 2.1.4 for"
+             " qtconsole and parallel computing capabilities)"%zmq.__version__)
+-            
++            return False
+         else:
+             print_status("pyzmq", zmq.__version__)
+             return True
+-- 
+1.7.5.4
+

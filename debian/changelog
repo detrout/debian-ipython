@@ -1,3 +1,9 @@
+ipython (0.11-2) experimental; urgency=low
+
+  * add patch fix-version-checks-for-pyzmq-2.1.10.patch
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Tue, 22 Nov 2011 20:32:21 +0100
+
 ipython (0.11-1) experimental; urgency=low
 
   * New upstream release

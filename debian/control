@@ -39,8 +39,6 @@ Depends: python-argparse,
          python-simplegeneric,
          ${misc:Depends},
          ${python:Depends}
-Conflicts: ipython-common, python2.3-ipython, python2.4-ipython
-Replaces: ipython-common, python2.3-ipython, python2.4-ipython
 Suggests: ipython-doc,
           ipython-parallel,
           ipython-qtconsole,
@@ -86,8 +84,6 @@ Depends: ipython (= ${binary:Version}),
          python-zmq (>= 2.1.4),
          ${misc:Depends},
          ${python:Depends}
-Conflicts: ipython-common, python2.3-ipython, python2.4-ipython
-Replaces: ipython-common, python2.3-ipython, python2.4-ipython
 Description: enhanced interactive Python shell
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific

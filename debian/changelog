@@ -1,4 +1,4 @@
-ipython (0.11-2) experimental; urgency=low
+ipython (0.11-2) unstable; urgency=low
 
   * add patch fix-version-checks-for-pyzmq-2.1.10.patch
   * fix debianize-error-messages.patch to reraise unknown exceptions

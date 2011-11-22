@@ -6,8 +6,9 @@ ipython (0.11-2) unstable; urgency=low
   * use dh_sphinxdoc
     - bump sphinx dependency to >= 1.0.7+dfsg-1~, replace libjs-jquery
       dependency with ${sphinxdoc:Depends} and drop ipython-doc.links
+  * remove empty directory from ipython
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Tue, 22 Nov 2011 22:47:53 +0100
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Tue, 22 Nov 2011 22:56:16 +0100
 
 ipython (0.11-1) experimental; urgency=low
 

@@ -62,7 +62,9 @@ Package: ipython-qtconsole
 Architecture: all
 Depends: ipython (= ${binary:Version}),
          python-pygments,
-         python-qt4,
+         python-qt4 | python-pyside.qtcore,
+         python-qt4 | python-pyside.qtgui,
+         python-qt4 | python-pyside.qtsvg,
          python-zmq (>= 2.0.10.1),
          ${misc:Depends},
          ${python:Depends}

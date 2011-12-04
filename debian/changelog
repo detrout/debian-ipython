@@ -1,3 +1,10 @@
+ipython (0.11-3) UNRELEASED; urgency=low
+
+  * ipython-qtconsole: add python-pyside.qt{core,gui,svn} as an alternative
+    dependency to python-qt4
+
+ -- Piotr Ożarowski <piotr@debian.org>  Sun, 04 Dec 2011 22:06:36 +0100
+
 ipython (0.11-2) unstable; urgency=low
 
   * upload to unstable

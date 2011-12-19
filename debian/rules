@@ -1,5 +1,5 @@
 #!/usr/bin/make -f
-export DH_VERBOSE=1
+#export DH_VERBOSE=1
 PYVERS = $(shell pyversions -rv)
 
 override_dh_compress:
@@ -33,9 +33,11 @@ endif
 override_dh_install:
 	dh_install -pipython --exclude="IPython/parallel/" \
 		--exclude="IPython/frontend/qt/" \
+		--exclude="IPython/frontend/html/" \
 		--exclude="IPython/deathrow/" \
 		--exclude="IPython/quarantine/"
 	dh_install -pipython-parallel IPython/parallel/ usr/share/pyshared/IPython
+	dh_install -pipython-notebook IPython/frontend/html/ usr/share/pyshared/IPython/frontend
 	dh_install -pipython-qtconsole IPython/frontend/qt/ usr/share/pyshared/IPython/frontend
 
 	mkdir -p $(CURDIR)/debian/ipython/usr/share/icons/hicolor/scalable/apps/

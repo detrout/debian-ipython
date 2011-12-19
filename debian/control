@@ -21,6 +21,7 @@ Build-Depends-Indep: graphviz,
                      python-sphinx (>= 1.0.7+dfsg-1~),
                      python-wxgtk2.8,
                      python-zmq (>= 2.1.4),
+                     python3-all,
                      xauth,
                      xvfb
 X-Python-Version: >= 2.6
@@ -61,8 +62,7 @@ Description: enhanced interactive Python shell
 
 Package: ipython3
 Architecture: all
-Depends: ${misc:Depends},
-         ${python3:Depends}
+Depends: ${misc:Depends}, ${python3:Depends}
 Description: enhanced interactive Python shell
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific
@@ -118,8 +118,8 @@ Description: enhanced interactive Python shell
 Package: ipython-notebook
 Architecture: all
 Depends: ipython (= ${binary:Version}),
-         python-zmq (>= 2.1.4),
          python-tornado (>= 2.1.0),
+         python-zmq (>= 2.1.4),
          ${misc:Depends},
          ${python:Depends}
 Description: enhanced interactive Python shell

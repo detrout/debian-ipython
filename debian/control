@@ -49,6 +49,8 @@ Suggests: ipython-doc,
           python-numpy,
           python-profiler,
           python-zmq (>= 2.0.10.1)
+Replaces: ipython-parallel (<< 0.12~20111208~ee40ebe0-2)
+Breaks: ipython-parallel(<< 0.12~20111208~ee40ebe0-2)
 Description: enhanced interactive Python shell
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific
@@ -119,6 +121,8 @@ Package: ipython-doc
 Section: doc
 Architecture: all
 Depends: ipython (= ${binary:Version}), ${misc:Depends}, ${sphinxdoc:Depends}
+Replaces: ipython-parallel (<< 0.12~20111208~ee40ebe0-2)
+Breaks: ipython-parallel(<< 0.12~20111208~ee40ebe0-2)
 Description: enhanced interactive Python shell
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific

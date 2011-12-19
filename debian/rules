@@ -44,16 +44,15 @@ override_dh_auto_install:
 	sed -i '1c#!/usr/bin/env python3' $(CURDIR)/debian/tmp/usr/bin/irunner3
 
 override_dh_install:
-	dh_install -pipython --exclude="IPython/parallel/" \
+	dh_install -pipython \
 		--exclude="IPython/frontend/qt/" \
 		--exclude="IPython/frontend/html/" \
 		--exclude="IPython/deathrow/" \
 		--exclude="IPython/quarantine/" \
 		--exclude=tests
-	dh_install -pipython-parallel
 	dh_install -pipython-notebook -XCOPYING -XLICENSE -XLICENSE.txt
 	dh_install -pipython-qtconsole
-	dh_install -pipython3 --exclude="IPython/parallel/" \
+	dh_install -pipython3 \
 		--exclude="IPython/frontend/qt/" \
 		--exclude="IPython/frontend/html/" \
 		--exclude="IPython/deathrow/" \
@@ -105,7 +104,6 @@ override_dh_installdocs:
 ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	dh_installdocs -pipython
 	dh_installdocs -pipython3
-	dh_installdocs -pipython-parallel --link-doc=ipython
 	dh_installdocs -pipython-qtconsole --link-doc=ipython
 	dh_installdocs -pipython-notebook --link-doc=ipython
 	dh_installdocs -pipython-doc --link-doc=ipython

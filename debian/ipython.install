@@ -1,6 +1,10 @@
 /usr/bin/ipython
 /usr/bin/irunner
 /usr/bin/pycolor
+/usr/bin/ipcluster
+/usr/bin/ipcontroller
+/usr/bin/ipengine
+/usr/bin/iplogger
 /usr/lib/python2.*
 /usr/share/doc/ipython/examples/vim
 /usr/share/doc/ipython/extensions

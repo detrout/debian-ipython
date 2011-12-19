@@ -1,5 +1,0 @@
-/usr/bin/ipcluster
-/usr/bin/ipcontroller
-/usr/bin/ipengine
-/usr/bin/iplogger
-/usr/lib/python2*/dist-packages/IPython/parallel/

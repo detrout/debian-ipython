@@ -1,2 +1,3 @@
 debian/tmp/usr/share/doc/ipython/examples/core
 debian/tmp/usr/share/doc/ipython/examples/lib
+debian/tmp/usr/share/doc/ipython/examples/parallel

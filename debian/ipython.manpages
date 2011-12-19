@@ -1,3 +1,7 @@
 docs/man/ipython.1
 docs/man/irunner.1
 docs/man/pycolor.1
+docs/man/ipcluster.1
+docs/man/ipcontroller.1
+docs/man/ipengine.1
+docs/man/iplogger.1

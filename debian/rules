@@ -46,7 +46,8 @@ override_dh_install:
 		--exclude="IPython/frontend/qt/" \
 		--exclude="IPython/frontend/html/" \
 		--exclude="IPython/deathrow/" \
-		--exclude="IPython/quarantine/"
+		--exclude="IPython/quarantine/" \
+		--exclude=tests
 	dh_install -pipython-parallel
 	dh_install -pipython-notebook IPython/frontend/html/ usr/share/pyshared/IPython/frontend  -XCOPYING -XLICENSE -XLICENSE.txt
 	dh_install -pipython-qtconsole
@@ -54,7 +55,8 @@ override_dh_install:
 		--exclude="IPython/frontend/qt/" \
 		--exclude="IPython/frontend/html/" \
 		--exclude="IPython/deathrow/" \
-		--exclude="IPython/quarantine/"
+		--exclude="IPython/quarantine/" \
+		--exclude=tests
 
 	mkdir -p $(CURDIR)/debian/ipython/usr/share/icons/hicolor/scalable/apps/
 	cp IPython/frontend/qt/console/resources/icon/IPythonConsole.svg \

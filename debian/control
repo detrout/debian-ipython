@@ -101,6 +101,7 @@ Description: enhanced interactive Python shell
 Package: ipython-notebook
 Architecture: all
 Depends: ipython (= ${binary:Version}),
+         libjs-jquery,
          python-tornado (>= 2.1.0),
          python-zmq (>= 2.1.4),
          ${misc:Depends},

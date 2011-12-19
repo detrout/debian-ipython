@@ -74,7 +74,7 @@ Description: enhanced interactive Python shell
  verbose and colored traceback reports, auto-parentheses, auto-quoting,
  and is embeddable in other Python programs.
  .
- Python3 version
+ This package contains the Python3 variant of ipython.
 
 Package: ipython-qtconsole
 Architecture: all
@@ -117,7 +117,8 @@ Description: enhanced interactive Python shell
  verbose and colored traceback reports, auto-parentheses, auto-quoting,
  and is embeddable in other Python programs.
  .
- This package contains the html notebook.
+ This package contains the html notebook providing a Mathematica-like
+ webinterface to Python.
 
 Package: ipython-doc
 Section: doc

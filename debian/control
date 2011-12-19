@@ -137,7 +137,7 @@ Description: enhanced interactive Python shell
 Package: ipython-doc
 Section: doc
 Architecture: all
-Depends: ${misc:Depends}, ${sphinxdoc:Depends}
+Depends: ipython (= ${binary:Version}), ${misc:Depends}, ${sphinxdoc:Depends}
 Description: enhanced interactive Python shell
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific

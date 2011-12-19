@@ -1,7 +1,7 @@
 Format: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?rev=174
 Upstream-Name: IPython
 Upstream-Contact: ipython-dev@scipy.org
-Source: http://ipython.scipy.org/
+Source: http://ipython.org/
 
 Files: *
 Copyright: 2005,2008,2009,2010,2011 The IPython Development Team
@@ -24,8 +24,7 @@ Copyright: 2003-2007, Robey Pointer <robeypointer@gmail.com>
  2010, The IPython Development Team
 License: LGPL-2.1+
 
-Files: ./IPython/deathrow/Itpl.py
- ./IPython/external/Itpl/_Itpl.py
+Files: ./IPython/external/Itpl/_Itpl.py
 Copyright: 2001, Ka-Ping Yee <ping@lfw.org>
 License: MIT-X11-BSD-like
 
@@ -45,7 +44,27 @@ Files: ./IPython/deathrow/oldfrontend/process/winprocess.py
  ./IPython/deathrow/oldfrontend/process/killableprocess.py
 Copyright: 2006, the Mozilla Foundation <http://www.mozilla.org>
  2003-2004, Peter Astrand <astrand@lysator.liu.se>
-License: MIT-X11-BSD-like
+License:
+ By obtaining, using, and/or copying this software and/or its
+ associated documentation, you agree that you have read, understood,
+ and will comply with the following terms and conditions:
+ .
+ Permission to use, copy, modify, and distribute this software and
+ its associated documentation for any purpose and without fee is
+ hereby granted, provided that the above copyright notice appears in
+ all copies, and that both that copyright notice and this permission
+ notice appear in supporting documentation, and that the name of the
+ author not be used in advertising or publicity pertaining to
+ distribution of the software without specific, written prior
+ permission.
+ .
+ THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+ INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS.
+ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, INDIRECT OR
+ CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
+ OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+ NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
+ WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 Files: ./IPython/utils/daemonize.py
 Copyright: Twisted Matrix Laboratories
@@ -68,27 +87,78 @@ Files: ./IPython/external/decorator/_decorator.py
 Copyright: 2005, Michele Simionato
 License: BSD-2-clause
 
+Files: IPython/frontend/html/notebook/static/prettify/*
+Copyright: 2006, Google Inc.
+License: Apache-2.0
+
+Files: IPython/frontend/html/notebook/static/codemirror/*
+Copyright: 2011, Marijn Haverbeke <marijnh@gmail.com>
 License: MIT-X11-BSD-like
- By obtaining, using, and/or copying this software and/or its
- associated documentation, you agree that you have read, understood,
- and will comply with the following terms and conditions:
+
+Files: IPython/frontend/html/notebook/static/pagedown/*
+Copyright: 2007, John Fraser
+ 2009, Dana Robinson
+ 2009-2011, Stack Exchange Inc.
+License: MIT-X11-BSD-like
+
+Files: IPython/frontend/html/notebook/static/jquery/js/jquery.autogrow.js
+Copyright:  2010, Jevin O. Sewaruth
+ 2011, Brian Granger
+License: MIT-X11-BSD-like
+
+Files: IPython/frontend/html/notebook/static/jquery/js/jquery-1.6.2.min.js
+Copyright: 2005-2008, John Resig
+ 2005-2008, Brandon Aaron
+ 2005-2008, Jörn Zaefferer
+ 2011, The Dojo Foundation
+License: GPL-2 or MIT-X11-BSD-like
+
+Files: IPython/frontend/html/notebook/static/jquery/js/jquery-ui-1.8.14.custom.min.js
+ IPython/frontend/html/notebook/static/jquery/css/*
+Copyright: Paul Bakaus (ui.jquery.com)
+ Brandon Aaron
+ David Bolter
+ Rich Caloggero
+ Chi Cheng (cloudream@gmail.com)
+ Colin Clark (http://colin.atrc.utoronto.ca/)
+ Michelle D'Souza
+ Aaron Eisenberger (aaronchi@gmail.com)
+ Ariel Flesler
+ Bohdan Ganicky
+ Scott González
+ Marc Grabanski (m@marcgrabanski.com)
+ Klaus Hartl (stilbuero.de)
+ Scott Jehl
+ Cody Lindley
+ Eduardo Lundgren (eduardolundgren@gmail.com)
+ Todd Parker
+ John Resig
+ Patty Toland
+ Ca-Phun Ung (yelotofu.com)
+ Keith Wood (kbwood@virginbroadband.com.au)
+ Maggie Costello Wachs
+ Richard D. Worth (rdworth.org)
+ Jörn Zaefferer (bassistance.de)
+License: GPL-2 or MIT-X11-BSD-like
+
+License: MIT-X11-BSD-like
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
  .
- Permission to use, copy, modify, and distribute this software and
- its associated documentation for any purpose and without fee is
- hereby granted, provided that the above copyright notice appears in
- all copies, and that both that copyright notice and this permission
- notice appear in supporting documentation, and that the name of the
- author not be used in advertising or publicity pertaining to
- distribution of the software without specific, written prior
- permission.
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
  .
- THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
- INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS.
- IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, INDIRECT OR
- CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
- OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
- NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
- WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
 
 License: BSD-2-clause
  Copyright © 2006-2009 Steven J. Bethard <steven.bethard@gmail.com>.
@@ -227,3 +297,19 @@ License: Apache-2.0
  On Debian systems, the full text of the Apache License, Version 2.0
  can be found in the file
  `/usr/share/common-licenses/Apache-2.0'.
+
+License: GPL-2
+ This program is free software; you can redistribute it
+ and/or modify it under the terms of the GNU General Public
+ License as published by the Free Software Foundation; either
+ version 2 of the License.
+ .
+ This program is distributed in the hope that it will be
+ useful, but WITHOUT ANY WARRANTY; without even the implied
+ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ PURPOSE.  See the GNU General Public License for more
+ details.
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 2 can be found in the file
+ `/usr/share/common-licenses/GPL-2'.

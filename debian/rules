@@ -42,6 +42,7 @@ override_dh_auto_install:
 	done
 	# py3 uses entrypoints where --excutable in build has no effect
 	sed -i '1c#!/usr/bin/env python3' $(CURDIR)/debian/tmp/usr/bin/ipython3
+	sed -i '1c#!/usr/bin/env python3' $(CURDIR)/debian/tmp/usr/bin/irunner3
 
 override_dh_install:
 	dh_install -pipython --exclude="IPython/parallel/" \

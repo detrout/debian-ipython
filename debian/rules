@@ -48,7 +48,7 @@ override_dh_install:
 		--exclude="IPython/deathrow/" \
 		--exclude="IPython/quarantine/"
 	dh_install -pipython-parallel IPython/parallel/ usr/share/pyshared/IPython
-	dh_install -pipython-notebook IPython/frontend/html/ usr/share/pyshared/IPython/frontend
+	dh_install -pipython-notebook IPython/frontend/html/ usr/share/pyshared/IPython/frontend  -XCOPYING -XLICENSE -XLICENSE.txt
 	dh_install -pipython-qtconsole IPython/frontend/qt/ usr/share/pyshared/IPython/frontend
 	dh_install -pipython3 --exclude="IPython/parallel/" \
 		--exclude="IPython/frontend/qt/" \

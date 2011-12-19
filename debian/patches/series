@@ -1,3 +1,4 @@
 05_fix_seteditor_example.patch
 use-LightBG-colorscheme.patch
 debianize-error-messages.patch
+use-ipython-icon-in-desktop-files.patch

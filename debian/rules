@@ -38,6 +38,10 @@ override_dh_install:
 	dh_install -pipython-parallel IPython/parallel/ usr/share/pyshared/IPython
 	dh_install -pipython-qtconsole IPython/frontend/qt/ usr/share/pyshared/IPython/frontend
 
+	mkdir -p $(CURDIR)/debian/ipython/usr/share/icons/hicolor/scalable/apps/
+	cp IPython/frontend/qt/console/resources/icon/IPythonConsole.svg \
+	  $(CURDIR)/debian/ipython/usr/share/icons/hicolor/scalable/apps/ipython.svg
+
 	# remove embedded arparse
 	find $(CURDIR)/debian/ipython/usr/ -name _argparse.py -delete
 	

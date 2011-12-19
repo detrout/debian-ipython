@@ -90,7 +90,7 @@ ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 endif
 
 override_dh_installexamples:
-	dh_installexamples -pipython --exclude="examples/newparallel/"
+	dh_installexamples -pipython --exclude="examples/parallel/"
 	dh_installexamples -pipython-parallel
 
 override_dh_sphinxdoc:

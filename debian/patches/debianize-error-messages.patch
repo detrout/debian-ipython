@@ -1,7 +1,11 @@
 From: Julian Taylor <jtaylor.debian@googlemail.com>
 Date: Thu, 7 Jul 2011 18:19:04 +0200
 Subject: debianize error messages
-Forwarded: not-needed
+
+---
+ IPython/scripts/ipython |    6 +++++-
+ IPython/zmq/__init__.py |    4 ++--
+ 2 files changed, 7 insertions(+), 3 deletions(-)
 
 --- a/IPython/scripts/ipython
 +++ b/IPython/scripts/ipython
@@ -20,7 +24,7 @@ Forwarded: not-needed
 +    raise
 --- a/IPython/zmq/__init__.py
 +++ b/IPython/zmq/__init__.py
-@@ -18,13 +18,13 @@
+@@ -16,12 +16,12 @@
      try:
          import zmq
      except ImportError:
@@ -28,11 +32,10 @@ Forwarded: not-needed
 +        raise ImportError("%s requires python-zmq >= %s"%(module, minimum_version))
  
      pyzmq_version = zmq.__version__
-     vlist = [int(n) for n in re.findall(r'\d+', pyzmq_version)]
- 
-     if 'dev' not in pyzmq_version and vlist < min_vlist:
+     
+     if 'dev' not in pyzmq_version and V(pyzmq_version) < V(minimum_version):
 -        raise ImportError("%s requires pyzmq >= %s, but you have %s"%(
 +        raise ImportError("%s requires python-zmq >= %s, but you have %s"%(
                          module, minimum_version, pyzmq_version))
  
-     if zmq.zmq_version() >= '3.0.0':
+     # fix missing DEALER/ROUTER aliases in pyzmq < 2.1.9

@@ -78,6 +78,7 @@ override_dh_install:
 
 	# remove embedded decorator
 	find $(CURDIR)/debian/ipython/usr/ -name _decorator.py -delete
+	find $(CURDIR)/debian/ipython3/usr/ -name _decorator.py -delete
 
 	# remove embedded pexpect
 	find $(CURDIR)/debian/ipython/usr/ -name _pexpect.py -delete

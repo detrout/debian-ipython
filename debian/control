@@ -63,7 +63,7 @@ Description: enhanced interactive Python shell
 
 Package: ipython3
 Architecture: all
-Depends: ${misc:Depends}, ${python3:Depends}
+Depends: python3-decorator, ${misc:Depends}, ${python3:Depends}
 Description: enhanced interactive Python shell
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific

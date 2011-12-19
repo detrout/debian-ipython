@@ -9,7 +9,7 @@ Subject: debianize error messages
 
 --- a/IPython/scripts/ipython
 +++ b/IPython/scripts/ipython
-@@ -4,4 +4,11 @@
+@@ -4,4 +4,13 @@
  
  from IPython.frontend.terminal.ipapp import launch_new_instance
  
@@ -19,6 +19,8 @@ Subject: debianize error messages
 +except ImportError as e:
 +  if "qt.console.qtconsoleapp" in e.message:
 +    print "Could not start qtconsole. Please install ipython-qtconsole"
++  elif "html.notebook.notebookapp" in e.message:
++    print "Could not start notebook. Please install ipython-notebook"
 +  else:
 +    # if there is no clue on the cause -- just re-raise
 +    raise

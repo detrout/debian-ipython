@@ -1,9 +1,28 @@
-ipython (0.11-3) UNRELEASED; urgency=low
+ipython (0.12-1) UNRELEASED; urgency=low
 
+  [ Julian Taylor ]
+  * New upstream release
+  * new package: ipython-notebook
+  * new python3 package: for ipython3
+  * refreshed patches
+  * parallel example folder renamed newparallel -> parallel
+  * drop upstream applied fix-version-checks-for-pyzmq-2.1.10.patch
+  * add patch for notebook to use libjs-mathjax and recommend it
+  * merge -parallel package back into ipython
+  * added python-tk build dependency for a test
+  * debian/copyright: update for the new notebook sources
+  * debian/rules:
+    - do not install test sources
+    - fail on testsuite error
+    - install ipython svg to icons folder and patch desktop to use it
+  * debian/control: remove gtk suggests
+  * remove obsolete README.source for quilt
+
+  [ Piotr Ożarowski ]
   * ipython-qtconsole: add python-pyside.qt{core,gui,svn} as an alternative
     dependency to python-qt4
 
- -- Piotr Ożarowski <piotr@debian.org>  Sun, 04 Dec 2011 22:06:36 +0100
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Mon, 19 Dec 2011 19:06:00 +0100
 
 ipython (0.11-2) unstable; urgency=low
 

@@ -129,6 +129,14 @@ override_dh_installman:
 	  debian/ipython3/usr/share/man/man1/ipython3.1
 	mv debian/ipython3/usr/share/man/man1/irunner.1 \
 	  debian/ipython3/usr/share/man/man1/irunner3.1
+	mv debian/ipython3/usr/share/man/man1/ipcluster.1 \
+	  debian/ipython3/usr/share/man/man1/ipcluster3.1
+	mv debian/ipython3/usr/share/man/man1/ipcontroller.1 \
+	  debian/ipython3/usr/share/man/man1/ipcontroller3.1
+	mv debian/ipython3/usr/share/man/man1/ipengine.1 \
+	  debian/ipython3/usr/share/man/man1/ipengine3.1
+	mv debian/ipython3/usr/share/man/man1/iplogger.1 \
+	  debian/ipython3/usr/share/man/man1/iplogger3.1
 
 override_dh_sphinxdoc:
 ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))

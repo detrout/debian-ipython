@@ -1,3 +1,7 @@
+/usr/bin/ipcluster3
+/usr/bin/ipcontroller3
+/usr/bin/ipengine3
+/usr/bin/iplogger3
 /usr/bin/ipython3
 /usr/bin/irunner3
 /usr/lib/python3

@@ -115,6 +115,12 @@ ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_images/qtconsole.png
 	dh_link -pipython-doc usr/share/doc/ipython/html/_static/qtconsole.png \
 	  usr/share/doc/ipython/html/_images/qtconsole.png
+	rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_images/qtconsole_tabbed.png
+	dh_link -pipython-doc usr/share/doc/ipython/html/_static/qtconsole_tabbed.png \
+	  usr/share/doc/ipython/html/_images/qtconsole_tabbed.png
+	rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_images/notebook_specgram.png
+	dh_link -pipython-doc usr/share/doc/ipython/html/_static/notebook_specgram.png \
+	  usr/share/doc/ipython/html/_images/notebook_specgram.png
 endif
 
 override_dh_installman:

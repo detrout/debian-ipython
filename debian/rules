@@ -90,9 +90,9 @@ override_dh_install:
 	        install -m 755 debian/ipython.sh $(CURDIR)/debian/ipython/usr/bin/ipython$$pyvers ;\
 	        firstpyver="$$pyvers" ;\
 	    else \
-	        dh_link /usr/bin/ipython$${firstpyver} /usr/bin/ipython$$pyvers ;\
+	        dh_link -pipython /usr/bin/ipython$${firstpyver} /usr/bin/ipython$$pyvers ;\
 	    fi ;\
-	    dh_link /usr/share/man/man1/ipython.1.gz /usr/share/man/man1/ipython$$pyvers.1.gz ;\
+	    dh_link -pipython /usr/share/man/man1/ipython.1.gz /usr/share/man/man1/ipython$$pyvers.1.gz ;\
 	done
 
 	# change permission on scripts

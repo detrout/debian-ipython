@@ -42,6 +42,10 @@ override_dh_auto_install:
 	# py3 uses entrypoints where --excutable in build has no effect
 	sed -i '1c#!/usr/bin/env python3' $(CURDIR)/debian/tmp/usr/bin/ipython3
 	sed -i '1c#!/usr/bin/env python3' $(CURDIR)/debian/tmp/usr/bin/irunner3
+	sed -i '1c#!/usr/bin/env python3' $(CURDIR)/debian/tmp/usr/bin/ipcluster3
+	sed -i '1c#!/usr/bin/env python3' $(CURDIR)/debian/tmp/usr/bin/ipcontroller3
+	sed -i '1c#!/usr/bin/env python3' $(CURDIR)/debian/tmp/usr/bin/ipengine3
+	sed -i '1c#!/usr/bin/env python3' $(CURDIR)/debian/tmp/usr/bin/iplogger3
 
 override_dh_install:
 	dh_install -pipython \

@@ -64,7 +64,10 @@ Description: enhanced interactive Python shell
 
 Package: ipython3
 Architecture: all
-Depends: python3-decorator, ${misc:Depends}, ${python3:Depends}
+Depends: python3-decorator,
+         python3-pkg-resources,
+         ${misc:Depends},
+         ${python3:Depends}
 Suggests: python3-zmq (>= 2.0.10.1)
 Description: enhanced interactive Python3 shell
  IPython can be used as a replacement for the standard Python shell,
@@ -103,6 +106,7 @@ Description: enhanced interactive Python shell
 Package: ipython3-qtconsole
 Architecture: all
 Depends: ipython3 (= ${binary:Version}),
+         python3-pkg-resources,
          python3-pygments,
          python3-pyqt4 | python3-pyside.qtcore,
          python3-pyqt4 | python3-pyside.qtgui,

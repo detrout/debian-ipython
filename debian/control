@@ -100,6 +100,28 @@ Description: enhanced interactive Python shell
  .
  This package contains the qt console.
 
+Package: ipython3-qtconsole
+Architecture: all
+Depends: ipython3 (= ${binary:Version}),
+         python3-pygments,
+         python3-pyqt4 | python3-pyside.qtcore,
+         python3-pyqt4 | python3-pyside.qtgui,
+         python3-pyqt4 | python3-pyside.qtsvg,
+         python3-zmq (>= 2.0.10.1),
+         ${misc:Depends},
+         ${python3:Depends}
+Description: enhanced interactive Python3 shell
+ IPython can be used as a replacement for the standard Python shell,
+ or it can be used as a complete working environment for scientific
+ computing (like Matlab or Mathematica) when paired with the standard
+ Python scientific and numerical tools. It supports dynamic object
+ introspections, numbered input/output prompts, a macro system,
+ session logging, session restoring, complete system shell access,
+ verbose and colored traceback reports, auto-parentheses, auto-quoting,
+ and is embeddable in other Python programs.
+ .
+ This package contains the Python3 variant of the qt console.
+
 Package: ipython-notebook
 Architecture: all
 Depends: ipython (= ${binary:Version}),

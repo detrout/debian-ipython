@@ -62,6 +62,7 @@ override_dh_install:
 		--exclude="IPython/deathrow/" \
 		--exclude="IPython/quarantine/" \
 		--exclude=tests
+	dh_install -pipython3-qtconsole
 
 	mkdir -p $(CURDIR)/debian/ipython/usr/share/icons/hicolor/scalable/apps/
 	cp IPython/frontend/qt/console/resources/icon/IPythonConsole.svg \
@@ -109,6 +110,7 @@ ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	dh_installdocs -pipython
 	dh_installdocs -pipython3
 	dh_installdocs -pipython-qtconsole --link-doc=ipython
+	dh_installdocs -pipython3-qtconsole --link-doc=ipython3
 	dh_installdocs -pipython-notebook --link-doc=ipython
 	dh_installdocs -pipython-doc --link-doc=ipython
 	find $(CURDIR)/debian/ipython -type d -empty -delete

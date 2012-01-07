@@ -1,9 +1,10 @@
 ipython (0.12-1) UNRELEASED; urgency=low
 
   [ Julian Taylor ]
-  * New upstream release (Closes: #642326, #650725)
+  * New upstream release
+    - fix qtconsole crash with nonsensical -c input (Closes: #642326)
   * new package: ipython-notebook
-  * new python3 packages: ipython3, ipython3-qtconsole
+  * new python3 packages: ipython3, ipython3-qtconsole (Closes: #650725)
   * refreshed patches
   * parallel example folder renamed newparallel -> parallel
   * drop upstream applied fix-version-checks-for-pyzmq-2.1.10.patch

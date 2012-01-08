@@ -9,7 +9,7 @@ ipython (0.12-1) unstable; urgency=low
   * parallel example folder renamed newparallel -> parallel
   * drop upstream applied fix-version-checks-for-pyzmq-2.1.10.patch
   * add patch for notebook to use libjs-mathjax and recommend it
-  * merge -parallel package back into ipython
+  * merge -parallel package back into ipython, add transitional package
   * added python-tk build dependency for a test
   * debian/copyright: update for the new notebook sources
   * debian/rules:

@@ -81,6 +81,12 @@ Description: enhanced interactive Python3 shell
  .
  This package contains the Python3 variant of ipython.
 
+Package: ipython-parallel
+Depends: ipython, ${misc:Depends}
+Architecture: all
+Section: oldlibs
+Description: transitional dummy package
+
 Package: ipython-qtconsole
 Architecture: all
 Depends: ipython (= ${binary:Version}),

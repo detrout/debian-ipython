@@ -84,8 +84,11 @@ Description: enhanced interactive Python3 shell
 Package: ipython-parallel
 Depends: ipython, ${misc:Depends}
 Architecture: all
+Priority: extra
 Section: oldlibs
 Description: transitional dummy package
+ This is a transitional package and can be safely removed
+ after the installation is complete.
 
 Package: ipython-qtconsole
 Architecture: all

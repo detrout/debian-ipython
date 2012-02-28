@@ -140,11 +140,11 @@ Architecture: all
 Depends: ipython (= ${binary:Version}),
          libjs-jquery,
          libjs-jquery-ui,
+         libjs-mathjax,
          python-tornado (>= 2.1.0),
          python-zmq (>= 2.1.4),
          ${misc:Depends},
          ${python:Depends}
-Recommends: libjs-mathjax
 Description: enhanced interactive Python shell
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific

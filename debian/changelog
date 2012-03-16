@@ -2,8 +2,9 @@ ipython (0.12-2) UNRELEASED; urgency=low
 
   * ipython-notebook: depend on libjs-mathjax instead of recommending.
     mathjax can't be securely served from cloudfront.
+  * debian/rules: run python3 setup.py clean
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Tue, 28 Feb 2012 20:55:19 +0100
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Fri, 16 Mar 2012 22:13:19 +0100
 
 ipython (0.12-1) unstable; urgency=low
 

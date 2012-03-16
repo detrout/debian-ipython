@@ -14,6 +14,9 @@ override_dh_auto_clean:
 	rm -f test_hist.sqlite
 	if cd $(CURDIR)/docs; then $(MAKE) clean; fi
 	dh_auto_clean
+	set -e && for pyvers in $(PY3VERS); do \
+	  $$pyvers setup.py clean -a; \
+	done
 
 override_dh_auto_build:
 	dh_auto_build -- --executable '/usr/bin/env python'

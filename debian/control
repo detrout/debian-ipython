@@ -50,8 +50,6 @@ Suggests: ipython-doc,
           python-numpy,
           python-profiler,
           python-zmq (>= 2.0.10.1)
-Replaces: ipython-parallel (<< 0.12~20111208~ee40ebe0-2)
-Breaks: ipython-parallel(<< 0.12~20111208~ee40ebe0-2)
 Description: enhanced interactive Python shell
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific
@@ -80,15 +78,6 @@ Description: enhanced interactive Python3 shell
  and is embeddable in other Python programs.
  .
  This package contains the Python3 variant of ipython.
-
-Package: ipython-parallel
-Depends: ipython (>= 0.12~), ${misc:Depends}
-Architecture: all
-Priority: extra
-Section: oldlibs
-Description: transitional dummy package
- This is a transitional package and can be safely removed
- after the installation is complete.
 
 Package: ipython-qtconsole
 Architecture: all
@@ -162,8 +151,6 @@ Package: ipython-doc
 Section: doc
 Architecture: all
 Depends: ipython (= ${binary:Version}), ${misc:Depends}, ${sphinxdoc:Depends}
-Replaces: ipython-parallel (<< 0.12~20111208~ee40ebe0-2)
-Breaks: ipython-parallel(<< 0.12~20111208~ee40ebe0-2)
 Description: enhanced interactive Python shell
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific

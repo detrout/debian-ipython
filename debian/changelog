@@ -4,8 +4,9 @@ ipython (0.12-2) UNRELEASED; urgency=low
     mathjax can't be securely served from cloudfront.
   * debian/rules: run python3 setup.py clean
   * remove transitional ipython-parallel package
+  * set HOME to debian/tmp for doc build and tests (Closes: #665224) 
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Fri, 16 Mar 2012 22:27:48 +0100
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Thu, 22 Mar 2012 19:05:14 +0100
 
 ipython (0.12-1) unstable; urgency=low
 

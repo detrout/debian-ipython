@@ -19,19 +19,22 @@ override_dh_auto_clean:
 	done
 
 override_dh_auto_build:
+	mkdir -p $(CURDIR)/debian/tmp
 	dh_auto_build -- --executable '/usr/bin/env python'
 	set -e && for pyvers in $(PY3VERS); do \
 	  $$pyvers setup.py build --executable '/usr/bin/env python3'; \
 	done
 ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
-	PYTHONPATH=$(CURDIR) $(MAKE) -C $(CURDIR)/docs html
+	HOME=$(CURDIR)/debian/tmp PYTHONPATH=$(CURDIR) $(MAKE) -C $(CURDIR)/docs html
 endif
 
 override_dh_auto_test:
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 	# IPython.frontend requires X
 	set -e && for pyvers in $(PYVERS); do \
-	  LC_ALL=C.UTF-8 PATH=$(CURDIR)/IPython/scripts/:$(PATH) PYTHONPATH=$(CURDIR) xvfb-run -s "-screen 0 1280x1024x24 -noreset" \
+	  LC_ALL=C.UTF-8 HOME=$(CURDIR)/debian/tmp \
+	  PATH=$(CURDIR)/IPython/scripts/:$(PATH) PYTHONPATH=$(CURDIR) \
+	  xvfb-run -s "-screen 0 1280x1024x24 -noreset" \
 	  python$$pyvers $(CURDIR)/IPython/scripts/iptest -v -e test_not_writable_ipdir; \
 	done
 endif

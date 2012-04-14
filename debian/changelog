@@ -1,6 +1,6 @@
 ipython (0.12.1~git20120411+dfsg1-1) UNRELEASED; urgency=low
 
-  * New upstream snapshort from 0.12.1 branch.
+  * New upstream snapshort from 0.12.1 branch. (Closes: #655413)
     Commit cb7ff561f33acff72035da212c70def49fd65437
     Repackaged to remove minified javascript files from source.
   * add get-orig-source target to rules

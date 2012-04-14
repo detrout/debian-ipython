@@ -59,6 +59,10 @@ Description: enhanced interactive Python shell
  session logging, session restoring, complete system shell access,
  verbose and colored traceback reports, auto-parentheses, auto-quoting,
  and is embeddable in other Python programs.
+ .
+ This package contains the basic terminal shell. For the qt console
+ install ipython-qtconsole and for the html notebook install
+ ipython-notebook.
 
 Package: ipython3
 Architecture: all
@@ -66,8 +70,8 @@ Depends: python3-decorator,
          python3-pkg-resources,
          ${misc:Depends},
          ${python3:Depends}
-Suggests: python3-zmq (>= 2.0.10.1)
-Description: enhanced interactive Python3 shell
+Suggests: ipython3-qtconsole, python3-zmq (>= 2.0.10.1)
+Description: enhanced interactive Python 3 shell
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific
  computing (like Matlab or Mathematica) when paired with the standard
@@ -77,7 +81,8 @@ Description: enhanced interactive Python3 shell
  verbose and colored traceback reports, auto-parentheses, auto-quoting,
  and is embeddable in other Python programs.
  .
- This package contains the Python3 variant of ipython.
+ This package contains the Python 3 variant of ipython terminal shell.
+ For the qt console install ipython3-qtconsole.
 
 Package: ipython-qtconsole
 Architecture: all
@@ -89,7 +94,7 @@ Depends: ipython (= ${binary:Version}),
          python-zmq (>= 2.0.10.1),
          ${misc:Depends},
          ${python:Depends}
-Description: enhanced interactive Python shell
+Description: enhanced interactive Python shell - Qt console
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific
  computing (like Matlab or Mathematica) when paired with the standard
@@ -112,7 +117,7 @@ Depends: ipython3 (= ${binary:Version}),
          python3-zmq (>= 2.0.10.1),
          ${misc:Depends},
          ${python3:Depends}
-Description: enhanced interactive Python3 shell
+Description: enhanced interactive Python 3 shell - Qt console
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific
  computing (like Matlab or Mathematica) when paired with the standard
@@ -134,7 +139,7 @@ Depends: ipython (= ${binary:Version}),
          python-zmq (>= 2.1.4),
          ${misc:Depends},
          ${python:Depends}
-Description: enhanced interactive Python shell
+Description: interactive Python html notebook
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific
  computing (like Matlab or Mathematica) when paired with the standard
@@ -151,7 +156,7 @@ Package: ipython-doc
 Section: doc
 Architecture: all
 Depends: ${misc:Depends}, ${sphinxdoc:Depends}
-Description: enhanced interactive Python shell
+Description: enhanced interactive Python shell - Documentation
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific
  computing (like Matlab or Mathematica) when paired with the standard

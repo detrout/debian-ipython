@@ -118,9 +118,6 @@ ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	dh_installdocs -pipython-doc --link-doc=ipython
 	find $(CURDIR)/debian/ipython -type d -empty -delete
 
-	# remove before wheezy release
-	dh_installdocs -pipython-parallel
-
 	rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_images/ms_visual_studio.png
 	dh_link -pipython-doc usr/share/doc/ipython/html/_static/ms_visual_studio.png \
 	  usr/share/doc/ipython/html/_images/ms_visual_studio.png

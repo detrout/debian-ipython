@@ -6,9 +6,10 @@ ipython (0.12+git20120218-1) UNRELEASED; urgency=low
     mathjax can't be securely served from cloudfront.
   * debian/rules: delete build directory in clean
   * remove transitional ipython-parallel package
-  * set HOME to build folder for doc build and tests (Closes: #665224) 
+  * set HOME to build folder  for doc build and tests (Closes: #665224)
+  * move all examples to ipython-doc
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Thu, 05 Apr 2012 18:51:45 +0200
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Fri, 06 Apr 2012 12:21:27 +0200
 
 ipython (0.12-1) unstable; urgency=low
 

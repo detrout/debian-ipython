@@ -36,8 +36,7 @@ DM-Upload-Allowed: yes
 
 Package: ipython
 Architecture: all
-Depends: python-argparse,
-         python-configobj,
+Depends: python-configobj,
          python-decorator,
          python-pexpect,
          python-simplegeneric,
@@ -46,6 +45,7 @@ Depends: python-argparse,
 Suggests: ipython-doc,
           ipython-notebook,
           ipython-qtconsole,
+          python-argparse,
           python-matplotlib,
           python-numpy,
           python-profiler,

@@ -4,9 +4,9 @@ ipython (0.12+git20120218-1) UNRELEASED; urgency=low
     Commit bbec0404b8e51a55a16e516d61465896b368151
   * ipython-notebook: depend on libjs-mathjax instead of recommending.
     mathjax can't be securely served from cloudfront.
-  * debian/rules: run python3 setup.py clean
+  * debian/rules: delete build directory in clean
   * remove transitional ipython-parallel package
-  * set HOME to debian/tmp for doc build and tests (Closes: #665224) 
+  * set HOME to build folder for doc build and tests (Closes: #665224) 
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Thu, 05 Apr 2012 18:51:45 +0200
 

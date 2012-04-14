@@ -1,0 +1,3 @@
+# I prefer single doc dir over the ability to install -doc without the package
+# arch argument does not apply
+ipython-doc binary: doc-package-depends-on-main-package

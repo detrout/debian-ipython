@@ -124,6 +124,9 @@ ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_images/qtconsole.png
 	dh_link -pipython-doc usr/share/doc/ipython/html/_static/qtconsole.png \
 	  usr/share/doc/ipython/html/_images/qtconsole.png
+	rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_images/qtconsole1.png
+	dh_link -pipython-doc usr/share/doc/ipython/html/_static/qtconsole.png \
+	  usr/share/doc/ipython/html/_images/qtconsole1.png
 	rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_images/qtconsole_tabbed.png
 	dh_link -pipython-doc usr/share/doc/ipython/html/_static/qtconsole_tabbed.png \
 	  usr/share/doc/ipython/html/_images/qtconsole_tabbed.png

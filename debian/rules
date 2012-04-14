@@ -21,6 +21,9 @@ override_dh_auto_build:
 	set -e && for pyvers in $(PY3VERS); do \
 	  $$pyvers setup.py build --executable '/usr/bin/env python3'; \
 	done
+	# so dh_python2 symlinks the missing stuff
+	touch IPython/frontend/html/notebook/static/jquery/js/jquery-1.6.2.min.js
+	touch IPython/frontend/html/notebook/static/jquery/js/jquery-ui-1.8.14.custom.min.js
 ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	HOME=$(CURDIR)/build PYTHONPATH=$(CURDIR) $(MAKE) -C $(CURDIR)/docs html
 endif
@@ -154,3 +157,15 @@ override_dh_sphinxdoc:
 ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	dh_sphinxdoc
 endif
+
+VERSION = $(shell dpkg-parsechangelog | grep "^Version:" | sed -r "s/Version: (.*)-.*/\1/")
+COMMIT = $(shell dpkg-parsechangelog | grep Commit | sed -e "s/^\s*Commit //")
+get-orig-source:
+	git clone --depth 1 git://github.com/ipython/ipython ipython.git
+	cd ipython.git && git archive --format=tar --prefix=ipython.git/ $(COMMIT) | gzip -9 -c > ../ipython_$(VERSION).orig.tar.gz
+	rm -rf ipython.git
+	tar xfz ipython_$(VERSION).orig.tar.gz
+	rm -f ipython.git/IPython/frontend/html/notebook/static/jquery/js/jquery-1.6.2.min.js
+	rm -f ipython.git/IPython/frontend/html/notebook/static/jquery/js/jquery-ui-1.8.14.custom.min.js
+	tar cfz ipython_$(VERSION).orig.tar.gz ipython.git
+	rm -rf ipython.git

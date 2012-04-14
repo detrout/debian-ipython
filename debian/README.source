@@ -1,0 +1,5 @@
+Files removed from upstream source:
+
+Minified javascript without source:
+IPython/frontend/html/notebook/static/jquery/js/jquery-1.6.2.min.js
+IPython/frontend/html/notebook/static/jquery/js/jquery-ui-1.8.14.custom.min.js

@@ -1,7 +1,8 @@
-ipython (0.12.1~git20120411+dfsg1-1) UNRELEASED; urgency=low
+ipython (0.12.1~git20120417+dfsg1-1) UNRELEASED; urgency=low
 
-  * New upstream snapshot from 0.12.1 branch. (Closes: #655413)
-    Commit cb7ff561f33acff72035da212c70def49fd65437
+  * New upstream release candidate
+    Closes: #655413, #663256
+    Commit db499aa470c3730d6c68d9d502ba5c8aa05dacdc
     Repackaged to remove minified javascript files from source.
   * add get-orig-source target to rules
   * ipython-notebook: depend on libjs-mathjax instead of recommending.

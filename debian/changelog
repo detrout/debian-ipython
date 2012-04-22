@@ -12,6 +12,7 @@ ipython (0.12.1+dfsg-1) UNRELEASED; urgency=low
   * move python-argparse to suggests (Closes: #653650)
   * update standard version to 3.9.3, no changes needed
   * override lintian desktop-command-not-in-package
+  * remove python-pymongo build dep, tests skipped without running mongod
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Mon, 09 Apr 2012 15:42:33 +0200
 

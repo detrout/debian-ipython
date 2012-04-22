@@ -1,3 +1,4 @@
 version=3
+opts=dversionmangle=s/\+dfsg// \
 http://githubredir.debian.net/github/ipython/ipython /rel-(.*).tar.gz
 

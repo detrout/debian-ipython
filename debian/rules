@@ -158,16 +158,19 @@ ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	dh_sphinxdoc
 endif
 
-VERSION = $(shell dpkg-parsechangelog | grep "^Version:" | sed -r "s/Version: (.*)-.*/\1/")
+VERSION=$(shell dpkg-parsechangelog | sed -rne 's,^Version: ([^-\+]+)+(\+dfsg)*.*,\1,p')
 COMMIT = $(shell dpkg-parsechangelog | grep Commit | sed -e "s/^\s*Commit //")
 get-orig-source:
-	git clone --depth 1 git://github.com/ipython/ipython ipython.git
-	cd ipython.git && git archive --format=tar --prefix=ipython.git/ $(COMMIT) | gzip -9 -c > ../ipython_$(VERSION).orig.tar.gz
-	rm -rf ipython.git
-	tar xfz ipython_$(VERSION).orig.tar.gz
-	rm -f ipython.git/IPython/frontend/html/notebook/static/jquery/js/jquery-1.6.2.min.js
-	rm -f ipython.git/IPython/frontend/html/notebook/static/jquery/js/jquery-ui-1.8.14.custom.min.js
-	mv ipython.git/IPython/frontend/html/notebook/static/unminified/prettify.js \
-	   ipython.git/IPython/frontend/html/notebook/static/prettify/prettify.js
-	tar cfz ipython_$(VERSION).orig.tar.gz ipython.git
-	rm -rf ipython.git
+	#git clone --depth 1 git://github.com/ipython/ipython ipython.git
+	#cd ipython.git && git archive --format=tar --prefix=ipython/ $(COMMIT) | gzip -9 -c > ../ipython_$(VERSION).orig.tar.gz
+	#rm -rf ipython.git
+	#tar xfz ipython_$(VERSION).orig.tar.gz
+	mkdir ipython
+	uscan --force-download --destdir=. --download-version=$(VERSION)
+	tar -C ipython -xz -f rel-$(VERSION).tar.gz --strip 1
+	rm -f ipython/IPython/frontend/html/notebook/static/jquery/js/jquery-1.6.2.min.js
+	rm -f ipython/IPython/frontend/html/notebook/static/jquery/js/jquery-ui-1.8.14.custom.min.js
+	mv ipython/IPython/frontend/html/notebook/static/unminified/prettify.js \
+	   ipython/IPython/frontend/html/notebook/static/prettify/prettify.js
+	tar cfz ipython_$(VERSION)+dfsg.orig.tar.gz ipython
+	rm -rf ipython

@@ -5,7 +5,7 @@ ipython (0.12.1+dfsg-1) UNRELEASED; urgency=low
   * add get-orig-source target to rules
   * ipython-notebook: depend on libjs-mathjax instead of recommending.
     mathjax can't be securely served from cloudfront.
-  * debian/rules: delete build directory in clean
+  * debian/rules: delete build directory in clean (Closes: #671315)
   * remove transitional ipython-parallel package
   * set HOME to build folder for doc build and tests (Closes: #665224)
   * move all examples to ipython-doc

@@ -14,7 +14,7 @@ ipython (0.12.1+dfsg-1) unstable; urgency=low
   * override lintian desktop-command-not-in-package
   * remove python-pymongo build dep, tests skipped without running mongod
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Mon, 09 Apr 2012 15:42:33 +0200
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 05 May 2012 22:30:58 +0200
 
 ipython (0.12-1) unstable; urgency=low
 

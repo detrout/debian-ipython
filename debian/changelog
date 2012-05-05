@@ -1,4 +1,4 @@
-ipython (0.12.1+dfsg-1) UNRELEASED; urgency=low
+ipython (0.12.1+dfsg-1) unstable; urgency=low
 
   * New upstream release (Closes: #655413, #663256)
     Repackaged to remove minified javascript files from source.

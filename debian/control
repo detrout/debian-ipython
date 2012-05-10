@@ -65,7 +65,8 @@ Description: enhanced interactive Python shell
 
 Package: ipython3
 Architecture: all
-Depends: python3-decorator,
+Depends: python3-simplegeneric,
+         python3-decorator,
          python3-pkg-resources,
          ${misc:Depends},
          ${python3:Depends}

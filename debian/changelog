@@ -1,3 +1,9 @@
+ipython (0.12.1+dfsg-2) UNRELEASED; urgency=low
+
+  * add ipython3 depend on python3-simplegeneric and remove the embedded copy
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Fri, 11 May 2012 00:27:28 +0200
+
 ipython (0.12.1+dfsg-1) unstable; urgency=low
 
   * New upstream release (Closes: #655413, #663256)

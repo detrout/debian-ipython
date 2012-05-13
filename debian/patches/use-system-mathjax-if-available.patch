@@ -6,11 +6,9 @@ Subject: use system mathjax if available
  IPython/frontend/html/notebook/notebookapp.py |   10 +++++++++-
  1 files changed, 9 insertions(+), 1 deletions(-)
 
-diff --git a/IPython/frontend/html/notebook/notebookapp.py b/IPython/frontend/html/notebook/notebookapp.py
-index 49132ec..287d06d 100644
 --- a/IPython/frontend/html/notebook/notebookapp.py
 +++ b/IPython/frontend/html/notebook/notebookapp.py
-@@ -105,6 +105,11 @@ class NotebookWebApplication(web.Application):
+@@ -105,6 +105,11 @@
              (r"/notebooks/%s" % _notebook_id_regex, NotebookHandler),
              (r"/rstservice/render", RSTHandler)
          ]
@@ -22,16 +20,13 @@ index 49132ec..287d06d 100644
          settings = dict(
              template_path=os.path.join(os.path.dirname(__file__), "templates"),
              static_path=os.path.join(os.path.dirname(__file__), "static"),
-@@ -278,7 +283,10 @@ class NotebookApp(BaseIPythonApplication):
-         if not self.enable_mathjax:
-             return u''
-         static_path = self.webapp_settings.get("static_path", os.path.join(os.path.dirname(__file__), "static"))
--        if os.path.exists(os.path.join(static_path, 'mathjax', "MathJax.js")):
-+        if os.path.exists("/usr/share/javascript/mathjax/MathJax.js"):
-+            self.log.info("Using system MathJax")
-+            return u"mathjax/MathJax.js"
-+        elif os.path.exists(os.path.join(static_path, 'mathjax', "MathJax.js")):
+@@ -284,6 +289,9 @@
+         if os.path.exists(os.path.join(static_path, 'mathjax', "MathJax.js")):
              self.log.info("Using local MathJax")
              return u"static/mathjax/MathJax.js"
++        elif os.path.exists("/usr/share/javascript/mathjax/MathJax.js"):
++            self.log.info("Using system MathJax")
++            return u"mathjax/MathJax.js"
          else:
--- 
+             self.log.info("Using MathJax from CDN")
+             return u"http://cdn.mathjax.org/mathjax/latest/MathJax.js"

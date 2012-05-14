@@ -1,0 +1,24 @@
+Description: allow running 2to3 in parallel
+Author: Jakub Wilk
+Forwarded: takowl@gmail.com
+
+--- a/setup3.py
++++ b/setup3.py
+@@ -20,6 +20,17 @@
+ setup_args.update(bdist_wininst_options())
+ 
+ def main():
++    num_processes = 1
++    for option in os.environ.get('DEB_BUILD_OPTIONS', '').split():
++        if option.startswith('parallel='):
++            num_processes = int(option.split('=', 1)[1])
++    if num_processes > 1:
++        import lib2to3.refactor
++        class RefactoringTool(lib2to3.refactor.MultiprocessRefactoringTool):
++            def refactor(self, items, write=False, doctests_only=False):
++                return lib2to3.refactor.MultiprocessRefactoringTool.refactor(self, items, write=write, num_processes=num_processes,
++                                                                             doctests_only=doctests_only)
++        lib2to3.refactor.RefactoringTool = RefactoringTool
+     setup(use_2to3 = True, **setup_args)
+     
+ if __name__ == "__main__":

@@ -1,0 +1,22 @@
+Description: try importing needed qt modules before choosing a framework
+ avoids choosing an incomplete qt version if a full one is available
+Applied-Upstream: 0.13
+Forwarded: https://github.com/ipython/ipython/pull/1704
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=671363
+--- a/IPython/external/qt.py
++++ b/IPython/external/qt.py
+@@ -28,12 +28,13 @@
+         if PySide.__version__ < '1.0.3':
+             # old PySide, fallback on PyQt
+             raise ImportError
++        from PySide import QtCore, QtGui, QtSvg
+         QT_API = QT_API_PYSIDE
+     except ImportError:
+         try:
+             prepare_pyqt4()
+             import PyQt4
+-            from PyQt4 import QtCore
++            from PyQt4 import QtCore, QtGui, QtSvg
+             if QtCore.PYQT_VERSION_STR < '4.7':
+                 # PyQt 4.6 has issues with null strings returning as None
+                 raise ImportError

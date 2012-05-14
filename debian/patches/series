@@ -5,3 +5,4 @@ use-ipython-icon-in-desktop-files.patch
 use-system-mathjax-if-available.patch
 parallel-2to3.patch
 shared-static-path.patch
+full-qt-imports.patch

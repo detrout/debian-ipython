@@ -70,7 +70,7 @@ Depends: python3-decorator,
          python3-simplegeneric,
          ${misc:Depends},
          ${python3:Depends}
-Suggests: ipython3-qtconsole, python3-zmq (>= 2.0.10.1)
+Suggests: ipython3-notebook, ipython3-qtconsole, python3-zmq (>= 2.0.10.1)
 Description: enhanced interactive Python 3 shell
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific
@@ -135,10 +135,10 @@ Depends: ipython (= ${binary:Version}),
          libjs-jquery,
          libjs-jquery-ui,
          libjs-mathjax,
-         ${misc:Depends},
+         ${misc:Depends}
 Replaces: ipython-notebook (<< 0.12.1-2)
 Breaks: ipython-notebook (<< 0.12.1-2)
-Description: interactive Python html notebook
+Description: interactive Python html notebook data package
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific
  computing (like Matlab or Mathematica) when paired with the standard
@@ -148,8 +148,7 @@ Description: interactive Python html notebook
  verbose and colored traceback reports, auto-parentheses, auto-quoting,
  and is embeddable in other Python programs.
  .
- This package contains the html notebook providing a Mathematica-like
- webinterface to Python.
+ This package contains the data for html notebook.
 
 Package: ipython-notebook
 Architecture: all
@@ -171,6 +170,27 @@ Description: interactive Python html notebook
  .
  This package contains the html notebook providing a Mathematica-like
  webinterface to Python.
+
+Package: ipython3-notebook
+Architecture: all
+Depends: ipython-notebook-common (= ${binary:Version}),
+         ipython3 (= ${binary:Version}),
+         python3-tornado (>= 2.1.0),
+         python3-zmq (>= 2.1.4),
+         ${misc:Depends},
+         ${python:Depends}
+Description: interactive Python 3 html notebook
+ IPython can be used as a replacement for the standard Python shell,
+ or it can be used as a complete working environment for scientific
+ computing (like Matlab or Mathematica) when paired with the standard
+ Python scientific and numerical tools. It supports dynamic object
+ introspections, numbered input/output prompts, a macro system,
+ session logging, session restoring, complete system shell access,
+ verbose and colored traceback reports, auto-parentheses, auto-quoting,
+ and is embeddable in other Python programs.
+ .
+ This package contains the html notebook providing a Mathematica-like
+ webinterface to Python 3.
 
 Package: ipython-doc
 Section: doc

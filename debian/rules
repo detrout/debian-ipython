@@ -61,6 +61,7 @@ override_dh_install:
 		--exclude="IPython/quarantine/" \
 		--exclude=tests
 	dh_install -pipython-notebook --exclude="html/notebook/static/"
+	dh_install -pipython3-notebook --exclude="html/notebook/static/"
 	dh_install -pipython-notebook-common -XCOPYING -XLICENSE -XLICENSE.txt
 	dh_install -pipython-qtconsole
 	dh_install -pipython3 \
@@ -121,6 +122,7 @@ ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	dh_installdocs -pipython-qtconsole --link-doc=ipython
 	dh_installdocs -pipython3-qtconsole --link-doc=ipython3
 	dh_installdocs -pipython-notebook --link-doc=ipython
+	dh_installdocs -pipython3-notebook --link-doc=ipython
 	dh_installdocs -pipython-notebook-common --link-doc=ipython
 	dh_installdocs -pipython-doc --link-doc=ipython
 	find $(CURDIR)/debian/ipython -type d -empty -delete

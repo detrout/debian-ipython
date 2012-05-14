@@ -1,12 +1,13 @@
 ipython (0.12.1+dfsg-2) UNRELEASED; urgency=low
 
+  * move static notebook data to ipython-notebook-common
   * add ipython3 depend on python3-simplegeneric and remove the embedded copy
   * update use-system-mathjax-if-available.patch:
     prefer local mathjax installation over the system one
   * add parallel-2to3.patch:
     allow running 2to3 in parallel. Thanks to Jakub Wilk for the patch
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Mon, 14 May 2012 21:46:25 +0200
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Mon, 14 May 2012 22:12:09 +0200
 
 ipython (0.12.1+dfsg-1) unstable; urgency=low
 

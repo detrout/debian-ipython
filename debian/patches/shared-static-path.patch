@@ -1,0 +1,25 @@
+Description: use usr/share/ipython/notebook by default for the static data
+ provided by ipython-notebook-common
+Author: Julian Taylor <jtaylor.debian@googlemail.com>
+Forwarded: not-needed
+
+--- a/IPython/frontend/html/notebook/notebookapp.py
++++ b/IPython/frontend/html/notebook/notebookapp.py
+@@ -112,7 +112,7 @@
+ 
+         settings = dict(
+             template_path=os.path.join(os.path.dirname(__file__), "templates"),
+-            static_path=os.path.join(os.path.dirname(__file__), "static"),
++            static_path=os.path.join("/usr/share/ipython/notebook/static"),
+             cookie_secret=os.urandom(1024),
+             login_url="/login",
+         )
+@@ -285,7 +285,7 @@
+     def _mathjax_url_default(self):
+         if not self.enable_mathjax:
+             return u''
+-        static_path = self.webapp_settings.get("static_path", os.path.join(os.path.dirname(__file__), "static"))
++        static_path = self.webapp_settings.get("static_path", "/usr/share/ipython/notebook/static")
+         if os.path.exists(os.path.join(static_path, 'mathjax', "MathJax.js")):
+             self.log.info("Using local MathJax")
+             return u"static/mathjax/MathJax.js"

@@ -9,8 +9,9 @@ ipython (0.12.1+dfsg-2) UNRELEASED; urgency=low
     allow running 2to3 in parallel. Thanks to Jakub Wilk for the patch
   * add full-qt-imports.patch: (Closes: #671363)
     avoids choosing an incomplete qt version if a full one is available
+  * use dh-linktree to link jquery-ui themes
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Mon, 14 May 2012 22:17:17 +0200
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Thu, 17 May 2012 14:32:19 +0200
 
 ipython (0.12.1+dfsg-1) unstable; urgency=low
 

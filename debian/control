@@ -82,7 +82,8 @@ Description: enhanced interactive Python 3 shell
  and is embeddable in other Python programs.
  .
  This package contains the Python 3 variant of ipython terminal shell.
- For the qt console install ipython3-qtconsole.
+ For the qt console install ipython3-qtconsole and for the html notebook
+ install ipython3-notebook.
 
 Package: ipython-qtconsole
 Architecture: all
@@ -174,7 +175,7 @@ Depends: ipython-notebook-common (= ${binary:Version}),
          python3-tornado (>= 2.1.0),
          python3-zmq (>= 2.1.4),
          ${misc:Depends},
-         ${python:Depends}
+         ${python3:Depends}
 Description: interactive Python 3 html notebook
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific

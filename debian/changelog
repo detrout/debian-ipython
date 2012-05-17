@@ -1,4 +1,4 @@
-ipython (0.12.1+dfsg-2) UNRELEASED; urgency=low
+ipython (0.12.1+dfsg-2) unstable; urgency=low
 
   * add ipython3-notebook package
   * move static notebook data to ipython-notebook-common

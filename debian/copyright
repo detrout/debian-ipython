@@ -40,6 +40,22 @@ Files: ./IPython/external/pexpect/_pexpect.py
 Copyright: 2008, Noah Spurrier
 License: MIT-X11-BSD-like
 
+Files: ./IPython/external/decorator/_decorator.py
+Copyright: 2005, Michele Simionato
+License: BSD-2-clause
+
+Files: ./IPython/external/simplegeneric/_simplegeneric.py
+Copyright: 2010, Phillip J. Eby
+License: PSF
+
+Files: ./IPython/external/decorators/*
+Copyright: 2005-2009, NumPy Developers
+License: BSD-3-clause
+
+Files: ./IPython/external/mglob/_mglob.py
+Copyright: 2008, Ville Vainio
+License: MIT-X11-BSD-like
+
 Files: ./IPython/deathrow/oldfrontend/process/winprocess.py
  ./IPython/deathrow/oldfrontend/process/killableprocess.py
 Copyright: 2006, the Mozilla Foundation <http://www.mozilla.org>
@@ -81,10 +97,6 @@ License: BSD-2-clause
 
 Files: ./IPython/deathrow/ipy_profile_zope.py
 Copyright: InQuant GmbH
-License: BSD-2-clause
-
-Files: ./IPython/external/decorator/_decorator.py
-Copyright: 2005, Michele Simionato
 License: BSD-2-clause
 
 Files: IPython/frontend/html/notebook/static/prettify/*

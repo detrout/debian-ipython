@@ -10,8 +10,10 @@ ipython (0.12.1+dfsg-2) unstable; urgency=low
   * add full-qt-imports.patch: (Closes: #671363)
     avoids choosing an incomplete qt version if a full one is available
   * use dh-linktree to link jquery-ui themes
+  * debian/copyright: add missing copyright information for simplegeneric,
+    mglob and decorators
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Thu, 17 May 2012 14:32:19 +0200
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Thu, 17 May 2012 19:07:19 +0200
 
 ipython (0.12.1+dfsg-1) unstable; urgency=low
 

@@ -1,3 +1,9 @@
+ipython (0.12.1+dfsg-3) UNRELEASED; urgency=low
+
+  * add python-tornado to build depends for more tests
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 19 May 2012 17:17:55 +0200
+
 ipython (0.12.1+dfsg-2) unstable; urgency=low
 
   * add ipython3-notebook package

@@ -14,8 +14,9 @@ override_dh_auto_clean:
 
 override_dh_auto_build:
 	dh_auto_build -- --executable '/usr/bin/env python'
+	# utf-8 due to https://github.com/ipython/ipython/issues/2057
 	set -e && for pyvers in $(PY3VERS); do \
-	  $$pyvers setup.py build --executable '/usr/bin/env python3'; \
+	  LC_ALL=C.UTF-8 $$pyvers setup.py build --executable '/usr/bin/env python3'; \
 	done
 
 ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
@@ -36,7 +37,7 @@ endif
 override_dh_auto_install:
 	dh_auto_install
 	set -e && for pyvers in $(PY3VERS); do \
-	  $$pyvers setup.py install --install-layout=deb \
+	  LC_ALL=C.UTF-8 $$pyvers setup.py install --install-layout=deb \
 		--force --no-compile -O0 --root=$(CURDIR)/debian/tmp; \
 	done
 	# py3 uses entrypoints where --excutable in build has no effect

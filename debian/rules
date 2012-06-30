@@ -21,9 +21,7 @@ override_dh_auto_build:
 	set -e && for pyvers in $(PY3VERS); do \
 	  $$pyvers setup.py build --executable '/usr/bin/env python3'; \
 	done
-	# so dh_python2 symlinks the missing stuff
-	touch IPython/frontend/html/notebook/static/jquery/js/jquery-1.6.2.min.js
-	touch IPython/frontend/html/notebook/static/jquery/js/jquery-ui-1.8.14.custom.min.js
+
 ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	HOME=$(CURDIR)/build PYTHONPATH=$(CURDIR) $(MAKE) -C $(CURDIR)/docs html
 endif
@@ -59,6 +57,7 @@ override_dh_install:
 		--exclude="IPython/frontend/html/" \
 		--exclude="IPython/deathrow/" \
 		--exclude="IPython/quarantine/" \
+		--exclude="IPython/external/js/" \
 		--exclude=tests
 	dh_install -pipython-notebook --exclude="html/notebook/static/"
 	dh_install -pipython3-notebook --exclude="html/notebook/static/"
@@ -83,10 +82,6 @@ override_dh_install:
 	# remove embedded arparse
 	find $(CURDIR)/debian/ipython/usr/ -name _argparse.py -delete
 	find $(CURDIR)/debian/ipython3/usr/ -name _argparse.py -delete
-	
-	# remove embedded configobj
-	find $(CURDIR)/debian/ipython/usr/ -name _configobj.py -delete
-	find $(CURDIR)/debian/ipython/usr/ -name _validate.py -delete
 
 	# remove embedded simplegeneric
 	find $(CURDIR)/debian/ipython/usr/ -name _simplegeneric.py -delete
@@ -98,9 +93,6 @@ override_dh_install:
 
 	# remove embedded pexpect
 	find $(CURDIR)/debian/ipython/usr/ -name _pexpect.py -delete
-
-	# remove embedded pyparsing
-	find $(CURDIR)/debian/ipython/usr/ -name _pyparsing.py -delete
 
 	# add wrapper scripts for all python versions
 	set -e ;\

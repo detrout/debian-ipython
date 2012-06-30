@@ -11,8 +11,10 @@ ipython (0.13-1) unstable; urgency=low
   * build with LC_ALL=C.UTF-8 to avoid a unicode issue in setupbase.py
   * remove generated doc images in clean
   * update copyright with new and removed files
+  * remove unreachable Stephan Peijnik from uploaders
+    thank you for your work
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 30 Jun 2012 13:45:02 +0200
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 30 Jun 2012 15:05:32 +0200
 
 ipython (0.12.1+dfsg-2) unstable; urgency=low
 

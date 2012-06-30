@@ -6,8 +6,9 @@ ipython (0.13-1) unstable; urgency=low
   * refresh patches, drop upstream applied full-qt-imports 
   * drop libjs-jquery-ui dependency, use the embedded development branch
   * don't compress the examples
+  * remove executable permissions on embedded codemirror files
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 30 Jun 2012 11:12:32 +0200
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 30 Jun 2012 11:24:57 +0200
 
 ipython (0.12.1+dfsg-2) unstable; urgency=low
 

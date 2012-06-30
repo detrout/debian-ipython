@@ -106,6 +106,8 @@ override_dh_install:
 
 	# change permission on scripts
 	chmod a-x $(CURDIR)/debian/ipython/usr/share/doc/ipython/examples/*
+	find $(CURDIR)/debian/ipython-notebook-common/usr/share/ipython/notebook/static/codemirror/ \
+	  -type f | xargs chmod a-x
 	
 override_dh_installdocs:
 ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))

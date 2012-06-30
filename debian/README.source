@@ -1,10 +1,6 @@
-Files removed from upstream source:
-
-Minified javascript without source:
-IPython/frontend/html/notebook/static/jquery/js/jquery-1.6.2.min.js
-IPython/frontend/html/notebook/static/jquery/js/jquery-ui-1.8.14.custom.min.js
-
-replaced minified
-IPython/frontend/html/notebook/static/prettify/prettify.js
-with unminified
-ipython.git/IPython/frontend/html/notebook/static/unminified/prettify.js
+IPython/frontend/html/notebook/static/ contains minified javascript sources
+for jquery and prettify
+the unminified sources are available in IPython/external
+The package does not use the minified version or do any minifiaction during the build
+instead uses packaged versions where available and just overwrites the minified version
+with the unminified from external during the build.

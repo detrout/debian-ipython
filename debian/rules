@@ -11,6 +11,12 @@ override_dh_auto_clean:
 	if cd $(CURDIR)/docs; then $(MAKE) clean; fi
 	dh_auto_clean
 	rm -rf $(CURDIR)/build
+	# remove 0.13 generated files
+	rm -f $(CURDIR)/docs/source/_static/hist_simple.png
+	rm -f $(CURDIR)/docs/source/_static/hist_with_text.png
+	rm -f $(CURDIR)/docs/source/_static/plot_simple.png
+	rm -f $(CURDIR)/docs/source/_static/plot_simple_python.png
+
 
 override_dh_auto_build:
 	dh_auto_build -- --executable '/usr/bin/env python'

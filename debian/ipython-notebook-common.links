@@ -1,5 +1,12 @@
-/usr/share/javascript/jquery/jquery.js usr/share/ipython/notebook/static/jquery/js/jquery-1.6.2.min.js
-/usr/share/javascript/jquery-ui/jquery-ui.min.js usr/share/ipython/notebook/static/jquery/js/jquery-ui-1.8.14.custom.min.js
+/usr/share/ipython/notebook/js/jquery-ui.js /usr/share/ipython/notebook/static/jquery/js/jquery-ui.min.js
 
-/usr/share/javascript/jquery-ui/css/smoothness/jquery-ui.css usr/share/ipython/notebook/static/jquery/css/themes/smoothness/jquery-ui-1.8.14.custom.css
+/usr/share/ipython/notebook/js/jquery-ui.css /usr/share/ipython/notebook/static/jquery/css/themes/base/jquery-ui.min.css
+
+/usr/share/ipython/notebook/js/prettify.js /usr/share/ipython/notebook/static/prettify/prettify.js
+
+/usr/share/javascript/jquery/jquery.js usr/share/ipython/notebook/static/jquery/js/jquery-1.7.1.min.js
+# disabled as unpackaged dev branch is needed for 0.13
+#/usr/share/javascript/jquery-ui/jquery-ui.min.js usr/share/ipython/notebook/static/jquery/js/jquery-ui-1.8.14.custom.min.js
+
+#/usr/share/javascript/jquery-ui/css/smoothness/jquery-ui.css usr/share/ipython/notebook/static/jquery/css/themes/smoothness/jquery-ui-1.8.14.custom.css
 # images handled by dh_linktree

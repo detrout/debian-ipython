@@ -121,21 +121,24 @@ ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	dh_installdocs -pipython-doc --link-doc=ipython
 	find $(CURDIR)/debian/ipython -type d -empty -delete
 
-	rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_images/ms_visual_studio.png
-	dh_link -pipython-doc usr/share/doc/ipython/html/_static/ms_visual_studio.png \
-	  usr/share/doc/ipython/html/_images/ms_visual_studio.png
-	rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_images/qtconsole.png
-	dh_link -pipython-doc usr/share/doc/ipython/html/_static/qtconsole.png \
-	  usr/share/doc/ipython/html/_images/qtconsole.png
+	# remove all the duplicates to keep -doc small
+	set -e && \
+	for f in hist_simple.png hist_with_text.png ipy_013_dashboard_cluster.png ipy_013_dashboard.png \
+	ipy_013_notebook_cythonmagic.png ipy_013_notebook_long_out.png ipy_013_notebook_octavemagic.png \
+	ipy_013_notebook_rmagic.png ipy_013_notebook_script_cells.png ipy_013_notebook_spectrogram.png \
+	ipy_013_notebook_tooltip.png ipy_013_par_tb.png ipy_013_qtconsole_completer.png plot_simple.png \
+	plot_simple_python.png ms_visual_studio.png notebook_specgram.png \
+	qtconsole.png qtconsole_tabbed.png; \
+	do \
+	  rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_images/$$f; \
+	  dh_link -pipython-doc usr/share/doc/ipython/html/_static/$$f usr/share/doc/ipython/html/_images/$$f; \
+	done
+	rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_static/plot_simple.png
+	dh_link -pipython-doc usr/share/doc/ipython/html/_static/plot_simple_python.png \
+	  usr/share/doc/ipython/html/_static/plot_simple.png
 	rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_images/qtconsole1.png
 	dh_link -pipython-doc usr/share/doc/ipython/html/_static/qtconsole.png \
 	  usr/share/doc/ipython/html/_images/qtconsole1.png
-	rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_images/qtconsole_tabbed.png
-	dh_link -pipython-doc usr/share/doc/ipython/html/_static/qtconsole_tabbed.png \
-	  usr/share/doc/ipython/html/_images/qtconsole_tabbed.png
-	rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_images/notebook_specgram.png
-	dh_link -pipython-doc usr/share/doc/ipython/html/_static/notebook_specgram.png \
-	  usr/share/doc/ipython/html/_images/notebook_specgram.png
 endif
 
 override_dh_installman:

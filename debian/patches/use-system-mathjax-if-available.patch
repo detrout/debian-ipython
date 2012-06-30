@@ -8,9 +8,9 @@ Subject: use system mathjax if available
 
 --- a/IPython/frontend/html/notebook/notebookapp.py
 +++ b/IPython/frontend/html/notebook/notebookapp.py
-@@ -105,6 +105,11 @@
-             (r"/notebooks/%s" % _notebook_id_regex, NotebookHandler),
-             (r"/rstservice/render", RSTHandler)
+@@ -140,6 +140,11 @@
+             (r"/clusters/%s/%s" % (_profile_regex, _cluster_action_regex), ClusterActionHandler),
+             (r"/clusters/%s" % _profile_regex, ClusterProfileHandler),
          ]
 +
 +        if os.path.exists("/usr/share/javascript/mathjax/MathJax.js"):
@@ -20,13 +20,13 @@ Subject: use system mathjax if available
          settings = dict(
              template_path=os.path.join(os.path.dirname(__file__), "templates"),
              static_path=os.path.join(os.path.dirname(__file__), "static"),
-@@ -284,6 +289,9 @@
+@@ -367,6 +372,9 @@
          if os.path.exists(os.path.join(static_path, 'mathjax', "MathJax.js")):
              self.log.info("Using local MathJax")
-             return u"static/mathjax/MathJax.js"
+             return static_url_prefix+u"mathjax/MathJax.js"
 +        elif os.path.exists("/usr/share/javascript/mathjax/MathJax.js"):
 +            self.log.info("Using system MathJax")
-+            return u"mathjax/MathJax.js"
++            return u"/mathjax/MathJax.js"
          else:
-             self.log.info("Using MathJax from CDN")
-             return u"http://cdn.mathjax.org/mathjax/latest/MathJax.js"
+             if self.certfile:
+                 # HTTPS: load from Rackspace CDN, because SSL certificate requires it

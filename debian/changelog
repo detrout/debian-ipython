@@ -3,9 +3,10 @@ ipython (0.13-1) unstable; urgency=low
   * New upstream release
     No repackging necessary anymore, js sources available in external
     minified variants are not installed
+  * refresh patches, drop upstream applied full-qt-imports 
   * drop libjs-jquery-ui dependency, use the embedded development branch
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 30 Jun 2012 10:57:58 +0200
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 30 Jun 2012 11:03:21 +0200
 
 ipython (0.12.1+dfsg-2) unstable; urgency=low
 

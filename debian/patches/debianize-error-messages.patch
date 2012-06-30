@@ -26,7 +26,7 @@ Subject: debianize error messages
 +    raise
 --- a/IPython/zmq/__init__.py
 +++ b/IPython/zmq/__init__.py
-@@ -16,12 +16,12 @@
+@@ -50,12 +50,12 @@
      try:
          import zmq
      except ImportError:
@@ -40,4 +40,4 @@ Subject: debianize error messages
 +        raise ImportError("%s requires python-zmq >= %s, but you have %s"%(
                          module, minimum_version, pyzmq_version))
  
-     # fix missing DEALER/ROUTER aliases in pyzmq < 2.1.9
+     if V(zmq.zmq_version()) >= V('4.0.0'):

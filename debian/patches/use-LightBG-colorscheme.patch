@@ -13,7 +13,7 @@ Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/ipython/+bug/241535
 
 --- a/IPython/core/interactiveshell.py
 +++ b/IPython/core/interactiveshell.py
-@@ -125,7 +125,7 @@
+@@ -145,7 +145,7 @@
      elif os.name=='nt':
          return 'Linux'
      else:

@@ -4,7 +4,7 @@ Upstream-Contact: ipython-dev@scipy.org
 Source: http://ipython.org/
 
 Files: *
-Copyright: 2005,2008,2009,2010,2011 The IPython Development Team
+Copyright: 2005,2008,2009,2010,2011,2012 The IPython Development Team
  2001-2007, Fernando Perez <fperez@colorado.edu>
  2001, Janko Hauser <jhauser@zscout.de>
  2001, Nathaniel Gray <n8gray@caltech.edu>
@@ -23,18 +23,6 @@ Files: ./IPython/external/ssh/forward.py
 Copyright: 2003-2007, Robey Pointer <robeypointer@gmail.com>
  2010, The IPython Development Team
 License: LGPL-2.1+
-
-Files: ./IPython/external/Itpl/_Itpl.py
-Copyright: 2001, Ka-Ping Yee <ping@lfw.org>
-License: MIT-X11-BSD-like
-
-Files: ./IPython/external/guid/_guid.py
-Copyright: 2006, Conan C. Albrecht
-License: MIT-X11-BSD-like
-
-Files: ./IPython/external/pyparsing/_pyparsing.py
-Copyright: 2003-2009, Paul T. McGuire
-License: MIT-X11-BSD-like
 
 Files: ./IPython/external/pexpect/_pexpect.py
 Copyright: 2008, Noah Spurrier
@@ -118,14 +106,16 @@ Copyright:  2010, Jevin O. Sewaruth
  2011, Brian Granger
 License: MIT-X11-BSD-like
 
-Files: IPython/frontend/html/notebook/static/jquery/js/jquery-1.6.2.min.js
+Files: IPython/frontend/html/notebook/static/jquery/js/jquery-1.7.1.min.js
+ IPython/external/js/jquery-1.7.1.js
 Copyright: 2005-2008, John Resig
  2005-2008, Brandon Aaron
  2005-2008, Jörn Zaefferer
  2011, The Dojo Foundation
 License: GPL-2 or MIT-X11-BSD-like
 
-Files: IPython/frontend/html/notebook/static/jquery/js/jquery-ui-1.8.14.custom.min.js
+Files: IPython/frontend/html/notebook/static/jquery/js/jquery-ui.min.js
+ IPython/external/js/jquery-ui.js
  IPython/frontend/html/notebook/static/jquery/css/*
 Copyright: Paul Bakaus (ui.jquery.com)
  Brandon Aaron

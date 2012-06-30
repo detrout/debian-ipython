@@ -3,10 +3,6 @@
 PYVERS = $(shell pyversions -rv)
 PY3VERS = $(shell py3versions -r)
 
-override_dh_compress:
-	# make sure the documentation stays usable.
-	dh_compress -Xhtml/
-
 %:
 	dh $@ --with python2,python3,sphinxdoc
 
@@ -159,6 +155,9 @@ override_dh_sphinxdoc:
 ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	dh_sphinxdoc
 endif
+
+override_dh_compress:
+	dh_compress -Xhtml/ -X.ipynb -X.py
 
 VERSION=$(shell dpkg-parsechangelog | sed -rne 's,^Version: ([^-\+]+)+(\+dfsg)*.*,\1,p')
 COMMIT = $(shell dpkg-parsechangelog | grep Commit | sed -e "s/^\s*Commit //")

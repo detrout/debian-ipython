@@ -3,8 +3,10 @@ ipython (0.13.1~20120901-1) UNRELEASED; urgency=low
   * snapshot of 0.13.1 branch
   * refresh patches, drop applied except-shadows-builtin-fix.patch
   * depend on libjs-jquery >= 1.7 (Closes: #685986)
+  * drop build depends on dh-linktree and libjs-jquery-ui (Closes: #685985)
+    - needs to be added again when we can use the packaged jquery-ui
 
- -- Julian Taylor <jtaylor@ubuntu.com>  Sat, 01 Sep 2012 13:53:53 +0200
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 01 Sep 2012 13:56:37 +0200
 
 ipython (0.13-1) unstable; urgency=low
 

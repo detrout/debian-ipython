@@ -5,14 +5,14 @@ Forwarded: not-needed
 
 --- a/IPython/frontend/html/notebook/notebookapp.py
 +++ b/IPython/frontend/html/notebook/notebookapp.py
-@@ -147,7 +147,7 @@
- 
+@@ -157,7 +157,7 @@
+         
          settings = dict(
              template_path=os.path.join(os.path.dirname(__file__), "templates"),
 -            static_path=os.path.join(os.path.dirname(__file__), "static"),
 +            static_path=os.path.join("/usr/share/ipython/notebook/static"),
              cookie_secret=os.urandom(1024),
-             login_url="/login",
+             login_url="%s/login"%(base_project_url.rstrip('/')),
          )
 @@ -366,7 +366,7 @@
      def _mathjax_url_default(self):

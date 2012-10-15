@@ -1,6 +1,7 @@
 ipython (0.13.1~20120901-1) UNRELEASED; urgency=low
 
   * snapshot of 0.13.1 branch
+  * refresh patches, drop applied except-shadows-builtin-fix.patch
 
  -- Julian Taylor <jtaylor@ubuntu.com>  Sat, 01 Sep 2012 13:39:25 +0200
 

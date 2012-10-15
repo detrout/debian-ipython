@@ -8,19 +8,18 @@ Subject: use system mathjax if available
 
 --- a/IPython/frontend/html/notebook/notebookapp.py
 +++ b/IPython/frontend/html/notebook/notebookapp.py
-@@ -140,6 +140,11 @@
-             (r"/clusters/%s/%s" % (_profile_regex, _cluster_action_regex), ClusterActionHandler),
-             (r"/clusters/%s" % _profile_regex, ClusterProfileHandler),
-         ]
+@@ -150,6 +150,10 @@
+         # Note that the URLs these patterns check against are escaped,
+         # and thus guaranteed to be ASCII: 'héllo' is really 'h%C3%A9llo'.
+         base_project_url = py3compat.unicode_to_str(base_project_url, 'ascii')
 +
 +        if os.path.exists("/usr/share/javascript/mathjax/MathJax.js"):
 +          handlers.append((r"/mathjax/(.*)", web.StaticFileHandler,
 +                           {"path": "/usr/share/javascript/mathjax"}))
-+
+         
          settings = dict(
              template_path=os.path.join(os.path.dirname(__file__), "templates"),
-             static_path=os.path.join(os.path.dirname(__file__), "static"),
-@@ -367,6 +372,9 @@
+@@ -368,6 +372,9 @@
          if os.path.exists(os.path.join(static_path, 'mathjax', "MathJax.js")):
              self.log.info("Using local MathJax")
              return static_url_prefix+u"mathjax/MathJax.js"

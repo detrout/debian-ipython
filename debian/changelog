@@ -5,6 +5,7 @@ ipython (0.13.1~20120901-1) UNRELEASED; urgency=low
   * depend on libjs-jquery >= 1.7 (Closes: #685986)
   * drop build depends on dh-linktree and libjs-jquery-ui (Closes: #685985)
     - needs to be added again when we can use the packaged jquery-ui
+  * drop LC_ALL=C.UTF-8 from build and install, not required anymore
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 01 Sep 2012 13:56:37 +0200
 

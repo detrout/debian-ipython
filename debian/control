@@ -134,7 +134,7 @@ Description: enhanced interactive Python 3 shell - Qt console
 
 Package: ipython-notebook-common
 Architecture: all
-Depends: libjs-jquery, libjs-mathjax, ${misc:Depends}
+Depends: libjs-jquery (>= 1.7), libjs-mathjax, ${misc:Depends}
 Replaces: ipython-notebook (<< 0.12.1-2)
 Breaks: ipython-notebook (<< 0.12.1-2)
 Description: interactive Python html notebook data package

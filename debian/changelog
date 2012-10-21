@@ -1,6 +1,6 @@
-ipython (0.13.1~rc3-1) UNRELEASED; urgency=low
+ipython (0.13.1-1) unstable; urgency=low
 
-  * New upstream bugfix release candidate, commit 5f1e6abdf63
+  * New upstream bugfix release
   * refresh patches, drop applied except-shadows-builtin-fix.patch
   * depend on libjs-jquery >= 1.7 (Closes: #685986)
   * drop build depends on dh-linktree and libjs-jquery-ui (Closes: #685985)
@@ -9,7 +9,7 @@ ipython (0.13.1~rc3-1) UNRELEASED; urgency=low
   * override dh_python[23] to work around #683108
   * build depend on libc-bin (>= 2.13-1~) for C.UTF-8 locale used in tests
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Tue, 16 Oct 2012 00:51:11 +0200
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Sun, 21 Oct 2012 10:37:05 +0200
 
 ipython (0.13-1) unstable; urgency=low
 

@@ -194,8 +194,8 @@ Package: ipython-doc
 Section: doc
 Architecture: all
 Depends: ${misc:Depends}, ${sphinxdoc:Depends}
-Replaces: ipython-notebook (<< 0.12.1-1)
-Breaks: ipython-notebook (<< 0.12.1-1)
+Replaces: ipython (<< 0.11-2), ipython-notebook (<< 0.12.1-1)
+Breaks: ipython (<< 0.11-2), ipython-notebook (<< 0.12.1-1)
 Description: enhanced interactive Python shell - Documentation
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific

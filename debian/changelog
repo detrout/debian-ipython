@@ -2,6 +2,7 @@ ipython (0.13.1-2) unstable; urgency=low
 
   * update watch file to use github directly
     thanks to Bart Martens for the file
+  * ipython-doc: break/replace ipython << 0.11-2 (Closes: #694280)
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Sun, 25 Nov 2012 11:55:50 +0000
 

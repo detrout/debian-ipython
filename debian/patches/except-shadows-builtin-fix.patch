@@ -1,0 +1,14 @@
+Description: fix except-shadows-builtin
+Author: Julian Taylor <jtaylor.debian@googlemail.com>
+Bug: https://github.com/ipython/ipython/issues/2056
+--- a/IPython/core/magics/osm.py
++++ b/IPython/core/magics/osm.py
+@@ -684,7 +684,7 @@
+ 
+         try :
+             cont = self.shell.find_user_code(parameter_s)
+-        except ValueError, IOError:
++        except (ValueError, IOError):
+             print "Error: no such file, variable, URL, history range or macro"
+             return
+ 

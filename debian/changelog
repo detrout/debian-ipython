@@ -1,3 +1,10 @@
+ipython (0.13.1-2) unstable; urgency=low
+
+  * update watch file to use github directly
+    thanks to Bart Martens for the file
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Sun, 25 Nov 2012 11:55:50 +0000
+
 ipython (0.13.1-1) unstable; urgency=low
 
   * New upstream bugfix release

@@ -34,7 +34,7 @@ ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 	set -e && for pyvers in $(PYVERS); do \
 	  LC_ALL=C.UTF-8 HOME=$(CURDIR)/build \
 	  PATH=$(CURDIR)/IPython/scripts/:$(PATH) PYTHONPATH=$(CURDIR) \
-	  xvfb-run -s "-screen 0 1280x1024x24 -noreset" \
+	  xvfb-run -a -s "-screen 0 1280x1024x24 -noreset" \
 	  python$$pyvers $(CURDIR)/IPython/scripts/iptest -v -e test_not_writable_ipdir; \
 	done
 endif

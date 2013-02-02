@@ -1,0 +1,2 @@
+# "ipython3" is provided by the binary package ipython3 on which this package depends
+ipython3-qtconsole binary: desktop-command-not-in-package usr/share/applications/ipython3-qtconsole.desktop ipython3

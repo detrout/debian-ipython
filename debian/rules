@@ -73,6 +73,13 @@ override_dh_install:
 		--exclude=tests
 	dh_install -pipython3-qtconsole
 
+	mkdir -p debian/ipython3/usr/share/applications/
+	sed -e "s/ipython/ipython3/" -e "s/IPython/IPython3/" \
+	    docs/examples/core/ipython.desktop > debian/ipython3/usr/share/applications/ipython3.desktop
+	mkdir -p debian/ipython3-qtconsole/usr/share/applications/
+	sed -e "s/ipython/ipython3/" -e "s/IPython/IPython3/" \
+	    docs/examples/core/ipython-qtconsole.desktop > debian/ipython3-qtconsole/usr/share/applications/ipython3-qtconsole.desktop
+
 	# jquery-ui-themes provides more in javascript/jquery-ui-themes (not available in 12.04)
 	# disabled as long as the ui dev branch is used
 	#dh_linktree -v -pipython-notebook-common replace usr/share/javascript/jquery-ui/themes \
@@ -81,6 +88,9 @@ override_dh_install:
 	mkdir -p $(CURDIR)/debian/ipython/usr/share/icons/hicolor/scalable/apps/
 	cp IPython/frontend/qt/console/resources/icon/IPythonConsole.svg \
 	  $(CURDIR)/debian/ipython/usr/share/icons/hicolor/scalable/apps/ipython.svg
+	mkdir -p $(CURDIR)/debian/ipython3/usr/share/icons/hicolor/scalable/apps/
+	cp IPython/frontend/qt/console/resources/icon/IPythonConsole.svg \
+	  $(CURDIR)/debian/ipython3/usr/share/icons/hicolor/scalable/apps/ipython3.svg
 
 	# remove embedded arparse
 	find $(CURDIR)/debian/ipython/usr/ -name _argparse.py -delete

@@ -1,6 +1,7 @@
 ipython (0.13.1-3) UNRELEASED; urgency=low
 
   * pass -a to xvfb-run
+  * drop DM-Upload-Allowed, not needed anymore
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Wed, 28 Nov 2012 19:49:59 +0100
 

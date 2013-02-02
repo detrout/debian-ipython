@@ -32,7 +32,6 @@ Homepage: http://ipython.org/
 Vcs-Svn: svn://svn.debian.org/python-modules/packages/ipython/trunk/
 Vcs-Browser: http://svn.debian.org/viewsvn/python-modules/packages/ipython/trunk/
 Standards-Version: 3.9.3
-DM-Upload-Allowed: yes
 
 Package: ipython
 Architecture: all

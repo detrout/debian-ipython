@@ -61,17 +61,17 @@ override_dh_install:
 		--exclude="IPython/quarantine/" \
 		--exclude="IPython/external/js/" \
 		--exclude=tests
-	dh_install -pipython-notebook --exclude="html/notebook/static/"
-	dh_install -pipython3-notebook --exclude="html/notebook/static/"
+	dh_install -pipython-notebook --exclude="html/notebook/static/" --exclude=tests
 	dh_install -pipython-notebook-common -XCOPYING -XLICENSE -XLICENSE.txt
-	dh_install -pipython-qtconsole
+	dh_install -pipython-qtconsole --exclude=tests
 	dh_install -pipython3 \
 		--exclude="IPython/frontend/qt/" \
 		--exclude="IPython/frontend/html/" \
 		--exclude="IPython/deathrow/" \
 		--exclude="IPython/quarantine/" \
 		--exclude=tests
-	dh_install -pipython3-qtconsole
+	dh_install -pipython3-notebook --exclude="html/notebook/static/" --exclude=tests
+	dh_install -pipython3-qtconsole --exclude=tests
 
 	mkdir -p debian/ipython3/usr/share/applications/
 	sed -e "s/ipython/ipython3/" -e "s/IPython/IPython3/" \

@@ -8,6 +8,7 @@ ipython (0.13.1-3) experimental; urgency=low
   * add ipython3 and ipython3-qtconsole desktop files (Closes: #693612)
   * ma-python-cython.patch
     fix detection of cython modules for multiarch python (Closes: #697704)
+  * don't install tests for notebook and qtconsole
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 02 Feb 2013 11:14:27 +0100
 

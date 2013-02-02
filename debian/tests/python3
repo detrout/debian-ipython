@@ -1,0 +1,38 @@
+#!/bin/sh
+set -efu
+
+pys=$(py3versions -r)
+TWOTOTHREE=2to3-$(py3versions -dv)
+
+dest=$ADTTMP
+for f in $(find IPython -name tests -type d); do
+  mkdir -p $dest/$(dirname $f)
+  cp -a $f $dest/$(dirname $f)
+  $TWOTOTHREE -w --no-diffs $dest/$f 2>&1
+done
+mkdir -p $dest/IPython/scripts/
+cp IPython/scripts/iptest $dest/IPython/scripts/
+$TWOTOTHREE -w --no-diffs $dest/IPython/scripts/iptest 2>&1
+cd $dest
+
+#disabled, just fills disk with junk even before its used by ipython
+#service mongodb start 2>&1 || true
+  for pkg in ipython3 ipython3-notebook ipython3-qtconsole; do
+    for f in $(dpkg -L $pkg | grep /usr/lib/python3/dist-packages); do
+      lf=$(echo $f | sed -e "s#/usr/lib/python3/dist-packages/##")
+      [ -d $f ] && mkdir -p $lf
+    done
+    for f in $(dpkg -L $pkg | grep /usr/lib/python3/dist-package); do
+      lf=$(echo $f | sed -e "s#/usr/lib/python3/dist-packages/##")
+      [ -f $f ] && [ ! -e $lf ] && ln -s $f $lf
+    done
+  done
+
+for py in $pys; do
+  LC_ALL=C.UTF-8 HOME=$PWD \
+  PATH=$PWD/IPython/scripts/:$PATH PYTHONPATH=$PWD \
+  xvfb-run -a -s "-screen 0 1280x1024x24 -noreset" \
+  $py $PWD/IPython/scripts/iptest -v -e test_not_writable_ipdir; \
+done
+
+#service mongodb stop 2>&1 || true

@@ -1,9 +1,12 @@
-ipython (0.13.1-3) UNRELEASED; urgency=low
+ipython (0.13.1-3) experimental; urgency=low
 
   * pass -a to xvfb-run
   * drop DM-Upload-Allowed, not needed anymore
+  * don't link documentation of ipython-doc so ipython3 does not depend on
+    ipython (Closes: #695554)
+    Requires ipython-doc.preinst to not lose copyright on upgrade
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Wed, 28 Nov 2012 19:49:59 +0100
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 02 Feb 2013 11:14:27 +0100
 
 ipython (0.13.1-2) unstable; urgency=low
 

@@ -124,7 +124,7 @@ ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	dh_installdocs -pipython-notebook --link-doc=ipython
 	dh_installdocs -pipython3-notebook --link-doc=ipython3
 	dh_installdocs -pipython-notebook-common
-	dh_installdocs -pipython-doc --link-doc=ipython
+	dh_installdocs -pipython-doc
 	find $(CURDIR)/debian/ipython -type d -empty -delete
 
 	# remove all the duplicates to keep -doc small
@@ -136,15 +136,15 @@ ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	plot_simple_python.png ms_visual_studio.png notebook_specgram.png \
 	qtconsole.png qtconsole_tabbed.png; \
 	do \
-	  rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_images/$$f; \
-	  dh_link -pipython-doc usr/share/doc/ipython/html/_static/$$f usr/share/doc/ipython/html/_images/$$f; \
+	  rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython-doc/html/_images/$$f; \
+	  dh_link -pipython-doc usr/share/doc/ipython-doc/html/_static/$$f usr/share/doc/ipython-doc/html/_images/$$f; \
 	done
-	rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_static/plot_simple.png
-	dh_link -pipython-doc usr/share/doc/ipython/html/_static/plot_simple_python.png \
-	  usr/share/doc/ipython/html/_static/plot_simple.png
-	rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython/html/_images/qtconsole1.png
-	dh_link -pipython-doc usr/share/doc/ipython/html/_static/qtconsole.png \
-	  usr/share/doc/ipython/html/_images/qtconsole1.png
+	rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython-doc/html/_static/plot_simple.png
+	dh_link -pipython-doc usr/share/doc/ipython-doc/html/_static/plot_simple_python.png \
+	  usr/share/doc/ipython-doc/html/_static/plot_simple.png
+	rm -f $(CURDIR)/debian/ipython-doc/usr/share/doc/ipython-doc/html/_images/qtconsole1.png
+	dh_link -pipython-doc usr/share/doc/ipython-doc/html/_static/qtconsole.png \
+	  usr/share/doc/ipython-doc/html/_images/qtconsole1.png
 endif
 
 # work around #683108

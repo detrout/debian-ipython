@@ -45,7 +45,7 @@ Subject: debianize error messages
 +        from IPython.utils import py3compat
          raise TryNext("Getting text from the clipboard on this platform "
 -                      "requires Tkinter.")
-+                      "requires the %s-tk package." % "python3" if py3compat.PY3 else "python")
++                      "requires the %s-tk package." % ("python3" if py3compat.PY3 else "python"))
      root = Tkinter.Tk()
      root.withdraw()
      text = root.clipboard_get()

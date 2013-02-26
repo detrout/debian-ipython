@@ -1,6 +1,8 @@
 Description: fix tracebacks without line numbers
  e.g. from lxml import etree; tree = etree.fromstring('<a></a>'); tree.find('/')
 Origin: 47260f547506dc3a871fa49b9302f6ab7f431b0c
+Bug: https://github.com/ipython/ipython/pull/2503
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=701597
 Author: Julian Taylor <jtaylor.debian@googlemail.com>
 
 --- a/IPython/core/ultratb.py

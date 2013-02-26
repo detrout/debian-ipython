@@ -13,7 +13,7 @@ Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/ipython/+bug/241535
 
 --- a/IPython/core/interactiveshell.py
 +++ b/IPython/core/interactiveshell.py
-@@ -129,7 +129,7 @@
+@@ -123,7 +123,7 @@ def get_default_colors():
      elif os.name=='nt':
          return 'Linux'
      else:

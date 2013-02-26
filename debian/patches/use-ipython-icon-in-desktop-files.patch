@@ -10,7 +10,7 @@ Subject: use ipython icon in desktop files
 
 --- a/docs/examples/core/ipython-qtconsole.desktop
 +++ b/docs/examples/core/ipython-qtconsole.desktop
-@@ -6,7 +6,7 @@
+@@ -6,7 +6,7 @@ Comment=Enhanced interactive Python qtco
  Exec=ipython qtconsole
  GenericName[en_US]=Python shell
  GenericName=Python shell
@@ -21,7 +21,7 @@ Subject: use ipython icon in desktop files
  Categories=Development;Utility;
 --- a/docs/examples/core/ipython-sh.desktop
 +++ b/docs/examples/core/ipython-sh.desktop
-@@ -6,7 +6,7 @@
+@@ -6,7 +6,7 @@ Comment=Perform shell-like tasks in inte
  Exec=ipython --profile=pysh
  GenericName[en_US]=IPython shell mode
  GenericName=IPython shell mode
@@ -32,7 +32,7 @@ Subject: use ipython icon in desktop files
  Categories=Development;Utility;
 --- a/docs/examples/core/ipython.desktop
 +++ b/docs/examples/core/ipython.desktop
-@@ -6,7 +6,7 @@
+@@ -6,7 +6,7 @@ Comment=Enhanced interactive Python shel
  Exec=ipython
  GenericName[en_US]=IPython
  GenericName=IPython

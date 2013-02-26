@@ -3,8 +3,6 @@ Description: fix cython module so extension for python3.3
 Origin: backported from a1daa0286a867cda86e728e177d72a645b72c634
 Author: Julian Taylor <jtaylor.debian@googlemail.com>
 
-diff --git a/IPython/extensions/cythonmagic.py b/IPython/extensions/cythonmagic.py
-index 94f5e9c..0f539d2 100644
 --- a/IPython/extensions/cythonmagic.py
 +++ b/IPython/extensions/cythonmagic.py
 @@ -146,7 +146,18 @@ class CythonMagics(Magics):

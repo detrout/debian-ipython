@@ -5,7 +5,7 @@ Forwarded: not-needed
 
 --- a/IPython/frontend/html/notebook/notebookapp.py
 +++ b/IPython/frontend/html/notebook/notebookapp.py
-@@ -157,7 +157,7 @@
+@@ -157,7 +157,7 @@ class NotebookWebApplication(web.Applica
          
          settings = dict(
              template_path=os.path.join(os.path.dirname(__file__), "templates"),
@@ -14,7 +14,7 @@ Forwarded: not-needed
              cookie_secret=os.urandom(1024),
              login_url="%s/login"%(base_project_url.rstrip('/')),
          )
-@@ -366,7 +366,7 @@
+@@ -366,7 +366,7 @@ class NotebookApp(BaseIPythonApplication
      def _mathjax_url_default(self):
          if not self.enable_mathjax:
              return u''

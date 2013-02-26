@@ -6,3 +6,4 @@ use-system-mathjax-if-available.patch
 parallel-2to3.patch
 shared-static-path.patch
 ma-python-cython.patch
+Added-missing-quotes.patch

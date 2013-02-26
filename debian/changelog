@@ -13,6 +13,7 @@ ipython (0.13.1-3) experimental; urgency=low
   * add autopkgtests
   * Added-missing-quotes.patch: fix missing quotes
   * linenoless-traceback.patch: fix crash on tracebacks without line numbers
+  * add tkinter package to debianize-error-messages.patch (Closes: #701707)
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 02 Feb 2013 11:14:27 +0100
 

@@ -2,11 +2,6 @@ From: Julian Taylor <jtaylor.debian@googlemail.com>
 Date: Thu, 7 Jul 2011 18:19:04 +0200
 Subject: debianize error messages
 
----
- IPython/scripts/ipython |    6 +++++-
- IPython/zmq/__init__.py |    4 ++--
- 2 files changed, 7 insertions(+), 3 deletions(-)
-
 --- a/IPython/scripts/ipython
 +++ b/IPython/scripts/ipython
 @@ -4,4 +4,13 @@
@@ -26,7 +21,7 @@ Subject: debianize error messages
 +    raise
 --- a/IPython/zmq/__init__.py
 +++ b/IPython/zmq/__init__.py
-@@ -50,12 +50,12 @@
+@@ -50,12 +50,12 @@ def check_for_zmq(minimum_version, modul
      try:
          import zmq
      except ImportError:
@@ -41,3 +36,16 @@ Subject: debianize error messages
                          module, minimum_version, pyzmq_version))
  
      if V(zmq.zmq_version()) >= V('4.0.0'):
+--- a/IPython/lib/clipboard.py
++++ b/IPython/lib/clipboard.py
+@@ -43,8 +43,9 @@ def tkinter_clipboard_get():
+     try:
+         import Tkinter
+     except ImportError:
++        from IPython.utils import py3compat
+         raise TryNext("Getting text from the clipboard on this platform "
+-                      "requires Tkinter.")
++                      "requires the %s-tk package." % "python3" if py3compat.PY3 else "python")
+     root = Tkinter.Tk()
+     root.withdraw()
+     text = root.clipboard_get()

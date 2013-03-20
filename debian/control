@@ -29,8 +29,8 @@ Build-Depends-Indep: graphviz,
 X-Python-Version: >= 2.6
 X-Python3-Version: >= 3.2
 Homepage: http://ipython.org/
-Vcs-Svn: svn://svn.debian.org/python-modules/packages/ipython/trunk/
-Vcs-Browser: http://svn.debian.org/viewsvn/python-modules/packages/ipython/trunk/
+Vcs-Svn: svn://anonscm.debian.org/python-modules/packages/ipython/trunk/
+Vcs-Browser: http://anonscm.debian.org/viewvc/python-modules/packages/ipython/trunk/
 Standards-Version: 3.9.4
 XS-Testsuite: autopkgtest
 

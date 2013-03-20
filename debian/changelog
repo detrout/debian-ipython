@@ -14,6 +14,7 @@ ipython (0.13.2~rc1-1) experimental; urgency=low
   * fix crash on tracebacks without line numbers (Closes: #701597)
   * add tkinter package to debianize-error-messages.patch (Closes: #701707)
   * add more autopkgtests testing profile creation and cython magics
+  * use canonical vcs fields in control
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 02 Feb 2013 11:14:27 +0100
 

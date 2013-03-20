@@ -1,0 +1,4 @@
+#!/bin/sh
+set -efu
+
+$PWD/debian/tests/tools ipython3

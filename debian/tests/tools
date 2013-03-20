@@ -2,4 +2,27 @@
 set -efu
 
 export HOME=$ADTTMP
-$1 profile create 2>&1
+
+if [ "$1" = "ipython" ]; then
+IPYTHON=ipython
+IRUNNER=irunner
+elif [ "$1" = "ipython3" ]; then
+IPYTHON=ipython3
+IRUNNER=irunner3
+fi
+
+$IPYTHON locate
+$IPYTHON profile create 2>&1
+
+$IPYTHON profile create foo_profile 2>&1
+$IPYTHON profile list | grep foo_profile 2>&1
+
+cat << EOF > test.py
+from lxml import etree;
+tree = etree.fromstring('<a></a>')
+tree.find('/')
+EOF
+
+$IRUNNER test.py
+$IRUNNER --ipython test.py
+

@@ -2,6 +2,7 @@
 set -efu
 
 export HOME=$ADTTMP
+cd $ADTTMP
 
 if [ "$1" = "ipython" ]; then
 IPYTHON=ipython

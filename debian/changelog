@@ -15,7 +15,6 @@ ipython (0.13.2~rc2-1) experimental; urgency=low
   * add tkinter package to debianize-error-messages.patch (Closes: #701707)
   * add more autopkgtests testing profile creation and cython magics
   * use canonical vcs fields in control
-  * update shared-static-path.patch so nbconvert works with the package
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 02 Feb 2013 11:14:27 +0100
 

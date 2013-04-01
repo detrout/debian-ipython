@@ -1,21 +1,10 @@
 Description: use usr/share/ipython/notebook by default for the static data
  provided by ipython-notebook-common
- also add DEFAULT_STATIC_FILES_PATH as in version 1.0 so nbconvert works
- with the packaged version (see ipython/nbconvert #97)
 Author: Julian Taylor <jtaylor.debian@googlemail.com>
 Forwarded: not-needed
 
 --- a/IPython/frontend/html/notebook/notebookapp.py
 +++ b/IPython/frontend/html/notebook/notebookapp.py
-@@ -89,6 +89,8 @@ ipython notebook --certfile=mycert.pem #
- ipython notebook --port=5555 --ip=*    # Listen on port 5555, all interfaces
- """
- 
-+DEFAULT_STATIC_FILES_PATH = "/usr/share/ipython/notebook/static"
-+
- #-----------------------------------------------------------------------------
- # Helper functions
- #-----------------------------------------------------------------------------
 @@ -157,7 +159,7 @@ class NotebookWebApplication(web.Applica
          
          settings = dict(

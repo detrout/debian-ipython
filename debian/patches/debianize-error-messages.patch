@@ -2,23 +2,6 @@ From: Julian Taylor <jtaylor.debian@googlemail.com>
 Date: Thu, 7 Jul 2011 18:19:04 +0200
 Subject: debianize error messages
 
---- a/IPython/scripts/ipython
-+++ b/IPython/scripts/ipython
-@@ -4,4 +4,13 @@
- 
- from IPython.frontend.terminal.ipapp import launch_new_instance
- 
--launch_new_instance()
-+try:
-+  launch_new_instance()
-+except ImportError as e:
-+  if "qt.console.qtconsoleapp" in e.message:
-+    print "Could not start qtconsole. Please install ipython-qtconsole"
-+  elif "html.notebook.notebookapp" in e.message:
-+    print "Could not start notebook. Please install ipython-notebook"
-+  else:
-+    # if there is no clue on the cause -- just re-raise
-+    raise
 --- a/IPython/zmq/__init__.py
 +++ b/IPython/zmq/__init__.py
 @@ -50,12 +50,12 @@ def check_for_zmq(minimum_version, modul
@@ -49,3 +32,29 @@ Subject: debianize error messages
      root = Tkinter.Tk()
      root.withdraw()
      text = root.clipboard_get()
+--- a/IPython/frontend/terminal/ipapp.py
++++ b/IPython/frontend/terminal/ipapp.py
+@@ -384,10 +384,19 @@ def load_default_config(ipython_dir=None
+ 
+ def launch_new_instance():
+     """Create and run a full blown IPython instance"""
+-    app = TerminalIPythonApp.instance()
+-    app.initialize()
+-    app.start()
+-
++    try:
++        app = TerminalIPythonApp.instance()
++        app.initialize()
++        app.start()
++    except ImportError as e:
++        from IPython.utils import py3compat
++        ipy = "ipython3" if py3compat.PY3 else "ipython"
++        if "IPython.frontend.qt" in str(e) or "qt.console.qtconsoleapp" in str(e):
++            print "Could not start qtconsole. Please install %s-qtconsole" % ipy
++        elif "IPython.frontend.html" in str(e)  or "html.notebook.notebookapp" in str(e):
++            print "Could not start notebook. Please install %s-notebook" % ipy
++        else:
++            raise
+ 
+ if __name__ == '__main__':
+     launch_new_instance()

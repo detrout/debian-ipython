@@ -1,0 +1,32 @@
+#!/bin/sh
+set -efu
+
+export HOME=$ADTTMP
+cd $ADTTMP
+
+# check that the incomplete install message works
+# skipped if installed to ensure test does not block
+
+if dpkg-query -Wf'${db:Status-abbrev}' ipython-notebook 2>/dev/null | grep -q '^i'; then
+  echo "Notebook installed. Skipping test."
+else
+  ipython notebook
+fi
+
+if dpkg-query -Wf'${db:Status-abbrev}' ipython-qtconsole 2>/dev/null | grep -q '^i'; then
+  echo "Qtconsole installed. Skipping test."
+else
+  ipython qtconsole
+fi
+
+if dpkg-query -Wf'${db:Status-abbrev}' ipython3-notebook 2>/dev/null | grep -q '^i'; then
+  echo "Notebook3 installed. Skipping test."
+else
+  ipython3 notebook
+fi
+
+if dpkg-query -Wf'${db:Status-abbrev}' ipython3-qtconsole 2>/dev/null | grep -q '^i'; then
+  echo "Qtconsole3 installed. Skipping test."
+else
+  ipython3 qtconsole
+fi

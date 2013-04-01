@@ -56,3 +56,6 @@ Depends: ipython
 
 Tests: tools3
 Depends: ipython3
+
+Tests: incomplete-install
+Depends: ipython ipython3

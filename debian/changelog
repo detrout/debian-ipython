@@ -1,6 +1,6 @@
-ipython (0.13.2~rc1-1) experimental; urgency=low
+ipython (0.13.2~rc2-1) experimental; urgency=low
 
-  * New upstream release candidate
+  * New upstream release candidate (LP: #1161818, #1162112)
   * pass -a to xvfb-run
   * drop DM-Upload-Allowed, not needed anymore
   * don't link documentation of ipython-doc so ipython3 does not depend on

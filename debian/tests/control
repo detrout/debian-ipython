@@ -52,10 +52,10 @@ Tests: cython-magic3
 Depends: ipython3, cython3, python3-dev, python-pexpect
 
 Tests: tools2
-Depends: ipython
+Depends: ipython, python-lxml
 
 Tests: tools3
-Depends: ipython3
+Depends: ipython3, python3-lxml
 
 Tests: incomplete-install
 Depends: ipython ipython3

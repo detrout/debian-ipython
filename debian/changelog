@@ -2,6 +2,7 @@ ipython (0.13.2-1) experimental; urgency=low
 
   * remove versions from test dependencies
     not supported by autopkgtest package
+  * add python-lxml to tools test dependencies
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 06 Apr 2013 10:30:19 +0200
 

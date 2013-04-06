@@ -18,6 +18,7 @@ $IPYTHON profile create 2>&1
 $IPYTHON profile create foo_profile 2>&1
 $IPYTHON profile list | grep foo_profile 2>&1
 
+# "test" 701597, it won't fail but it can be seen by inspecting the logs
 cat << EOF > test.py
 from lxml import etree;
 tree = etree.fromstring('<a></a>')

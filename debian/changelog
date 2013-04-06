@@ -1,5 +1,6 @@
 ipython (0.13.2-1) experimental; urgency=low
 
+  * New upstream bugfix release
   * remove versions from test dependencies
     not supported by autopkgtest package
   * add python-lxml to tools test dependencies

@@ -1,3 +1,10 @@
+ipython (0.13.2-1) experimental; urgency=low
+
+  * remove versions from test dependencies
+    not supported by autopkgtest package
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 06 Apr 2013 10:30:19 +0200
+
 ipython (0.13.2~rc2-1) experimental; urgency=low
 
   * New upstream release candidate (LP: #1161818, #1162112)

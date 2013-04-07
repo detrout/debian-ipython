@@ -38,4 +38,4 @@ Tests: tools3
 Depends: ipython3, python3-lxml
 
 Tests: incomplete-install
-Depends: ipython ipython3
+Depends: ipython, ipython3

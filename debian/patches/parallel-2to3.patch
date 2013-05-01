@@ -4,7 +4,7 @@ Forwarded: takowl@gmail.com
 
 --- a/setup.py
 +++ b/setup.py
-@@ -265,6 +265,17 @@ if 'setuptools' in sys.modules:
+@@ -262,6 +262,17 @@ if 'setuptools' in sys.modules:
                                    "ipython_win_post_install.py"}}
      
      if PY3:

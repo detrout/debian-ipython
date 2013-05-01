@@ -1,0 +1,28 @@
+Description: Fix inheritance_diagram Sphinx extension for Sphinx 1.2
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=706531
+Origin: f657f2b2a6e723c8633e55155fa54f9c3a3050f5
+Author: Thomas Kluyver <takowl@gmail.com>
+
+--- a/docs/sphinxext/inheritance_diagram.py
++++ b/docs/sphinxext/inheritance_diagram.py
+@@ -40,7 +40,9 @@ except ImportError:
+ 
+ from docutils.nodes import Body, Element
+ from docutils.parsers.rst import directives
+-from sphinx.roles import xfileref_role
++from sphinx.roles import XRefRole
++
++xfileref_role = XRefRole()
+ 
+ def my_import(name):
+     """Module importer - taken from the python documentation.
+--- a/docs/source/development/doc_guide.txt
++++ b/docs/source/development/doc_guide.txt
+@@ -160,6 +160,7 @@ they're automatically exposed as a websi
+ 
+ .. [reStructuredText] reStructuredText.  http://docutils.sourceforge.net/rst.html
+ .. [Sphinx] Sphinx. http://sphinx.pocoo.org/
++.. [Matplotlib] http://matplotlib.org/
+ .. [MatplotlibDocGuide] http://matplotlib.sourceforge.net/devel/documenting_mpl.html
+ .. [PEP257] PEP 257.  http://www.python.org/peps/pep-0257.html
+ .. [NumPyDocGuide] NumPy documentation guide. https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt

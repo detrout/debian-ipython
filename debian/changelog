@@ -2,8 +2,9 @@ ipython (0.13.2-2) unstable; urgency=low
 
   * add missing comma to Depends of incomplete-install test
   * drop unnecessary configobj dependency
+  * sphinx1.2-compat.patch: fix doc build with sphinx 1.2 (Closes: #706531)
 
- -- Julian Taylor <jtaylor.debian@googlemail.com>  Sun, 07 Apr 2013 11:25:56 +0200
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Wed, 01 May 2013 14:46:03 +0200
 
 ipython (0.13.2-1) experimental; urgency=low
 

@@ -8,7 +8,6 @@ Build-Depends-Indep: graphviz,
                      libc-bin (>= 2.13-1~),
                      python-all (>= 2.6.6-3~),
                      python-argparse,
-                     python-configobj,
                      python-decorator,
                      python-matplotlib,
                      python-nose,
@@ -35,8 +34,7 @@ XS-Testsuite: autopkgtest
 
 Package: ipython
 Architecture: all
-Depends: python-configobj,
-         python-decorator,
+Depends: python-decorator,
          python-pexpect,
          python-simplegeneric,
          ${misc:Depends},

@@ -1,6 +1,7 @@
-ipython (0.13.2-2) raring; urgency=low
+ipython (0.13.2-2) unstable; urgency=low
 
   * add missing comma to Depends of incomplete-install test
+  * drop unnecessary configobj dependency
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Sun, 07 Apr 2013 11:25:56 +0200
 

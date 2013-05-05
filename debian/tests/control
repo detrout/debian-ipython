@@ -1,7 +1,7 @@
 Tests: python2
 Depends: ipython, ipython-notebook, ipython-doc, ipython-qtconsole,
-	 python-nose,
-	 cython,
+         python-nose,
+         cython,
          python-all,
          python-all-dev,
          python-argparse,
@@ -15,8 +15,9 @@ Depends: ipython, ipython-notebook, ipython-doc, ipython-qtconsole,
 
 Tests: python3
 Depends: ipython3, ipython3-notebook, ipython-doc, ipython3-qtconsole,
-	 python3-nose,
-	 cython3,
+         python,
+         python3-nose,
+         cython3,
          python3-all,
          python3-all-dev,
          python3-matplotlib,

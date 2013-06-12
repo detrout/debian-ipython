@@ -1,6 +1,6 @@
 IPython/frontend/html/notebook/static/ contains minified javascript sources
 for jquery and prettify
 the unminified sources are available in IPython/external
-The package does not use the minified version or do any minifiaction during the build
+The package does not use the minified version or do any minification during the build
 instead uses packaged versions where available and just overwrites the minified version
 with the unminified from external during the build.

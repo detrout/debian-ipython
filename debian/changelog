@@ -1,3 +1,9 @@
+ipython (0.13.2-3) UNRELEASED; urgency=low
+
+  * Fix a typo in README.source.
+
+ -- Jakub Wilk <jwilk@debian.org>  Wed, 12 Jun 2013 13:22:13 +0200
+
 ipython (0.13.2-2) unstable; urgency=low
 
   * upload to unstable

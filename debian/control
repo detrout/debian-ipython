@@ -52,7 +52,7 @@ Suggests: ipython-doc,
           python-matplotlib,
           python-numpy,
           python-profiler,
-          python-zmq (>= 2.0.10.1)
+          python-zmq (>= 2.1.11)
 Description: enhanced interactive Python shell
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific
@@ -74,7 +74,7 @@ Depends: python3-decorator,
          python3-simplegeneric,
          ${misc:Depends},
          ${python3:Depends}
-Suggests: ipython3-notebook, ipython3-qtconsole, python3-zmq (>= 2.0.10.1)
+Suggests: ipython3-notebook, ipython3-qtconsole, python3-zmq (>= 2.1.11)
 Description: enhanced interactive Python 3 shell
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific
@@ -96,7 +96,7 @@ Depends: ipython (= ${binary:Version}),
          python-qt4 | python-pyside.qtcore,
          python-qt4 | python-pyside.qtgui,
          python-qt4 | python-pyside.qtsvg,
-         python-zmq (>= 2.0.10.1),
+         python-zmq (>= 2.1.11),
          ${misc:Depends},
          ${python:Depends}
 Description: enhanced interactive Python shell - Qt console
@@ -119,7 +119,7 @@ Depends: ipython3 (= ${binary:Version}),
          python3-pyqt4 | python3-pyside.qtcore,
          python3-pyqt4 | python3-pyside.qtgui,
          python3-pyqt4 | python3-pyside.qtsvg,
-         python3-zmq (>= 2.0.10.1),
+         python3-zmq (>= 2.1.11),
          ${misc:Depends},
          ${python3:Depends}
 Description: enhanced interactive Python 3 shell - Qt console
@@ -160,8 +160,9 @@ Package: ipython-notebook
 Architecture: all
 Depends: ipython (= ${binary:Version}),
          ipython-notebook-common (= ${binary:Version}),
+         python-jinja2,
          python-tornado (>= 2.1.0),
-         python-zmq (>= 2.1.4),
+         python-zmq (>= 2.1.11),
          ${misc:Depends},
          ${python:Depends}
 Description: interactive Python html notebook
@@ -181,8 +182,9 @@ Package: ipython3-notebook
 Architecture: all
 Depends: ipython-notebook-common (= ${binary:Version}),
          ipython3 (= ${binary:Version}),
+         python3-jinja2,
          python3-tornado (>= 2.1.0),
-         python3-zmq (>= 2.1.4),
+         python3-zmq (>= 2.1.11),
          ${misc:Depends},
          ${python3:Depends}
 Description: interactive Python 3 html notebook

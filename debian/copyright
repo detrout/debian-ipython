@@ -1,10 +1,10 @@
-Format: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?rev=174
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: IPython
 Upstream-Contact: ipython-dev@scipy.org
 Source: http://ipython.org/
 
 Files: *
-Copyright: 2005,2008,2009,2010,2011,2012 The IPython Development Team
+Copyright: 2005,2008,2009,2010,2011,2012,2013 The IPython Development Team
  2001-2007, Fernando Perez <fperez@colorado.edu>
  2001, Janko Hauser <jhauser@zscout.de>
  2001, Nathaniel Gray <n8gray@caltech.edu>
@@ -26,7 +26,7 @@ License: LGPL-2.1+
 
 Files: ./IPython/external/pexpect/_pexpect.py
 Copyright: 2008, Noah Spurrier
-License: MIT-X11-BSD-like
+License: Expat
 
 Files: ./IPython/external/decorator/_decorator.py
 Copyright: 2005, Michele Simionato
@@ -39,10 +39,6 @@ License: PSF
 Files: ./IPython/external/decorators/*
 Copyright: 2005-2009, NumPy Developers
 License: BSD-3-clause
-
-Files: ./IPython/external/mglob/_mglob.py
-Copyright: 2008, Ville Vainio
-License: MIT-X11-BSD-like
 
 Files: ./IPython/deathrow/oldfrontend/process/winprocess.py
  ./IPython/deathrow/oldfrontend/process/killableprocess.py
@@ -72,52 +68,24 @@ License:
 
 Files: ./IPython/utils/daemonize.py
 Copyright: Twisted Matrix Laboratories
-License: MIT-X11-BSD-like
+License: Expat
 
 Files: ./IPython/core/debugger.py
 Copyright: 2001, Python Software Foundation, www.python.org
  2005-2006, Fernando Perez. <fperez@colorado.edu>
 License: PSF
 
-Files: ./IPython/deathrow/gui/wx/ipython_view.py
-Copyright: 2007, IBM Corporation
-License: BSD-2-clause
-
-Files: ./IPython/deathrow/ipy_profile_zope.py
-Copyright: InQuant GmbH
-License: BSD-2-clause
-
-Files: IPython/frontend/html/notebook/static/prettify/*
-Copyright: 2006, Google Inc.
-License: Apache-2.0
-
-Files: IPython/frontend/html/notebook/static/codemirror/*
-Copyright: 2011, Marijn Haverbeke <marijnh@gmail.com>
-License: MIT-X11-BSD-like
-
-Files: IPython/frontend/html/notebook/static/pagedown/*
-Copyright: 2007, John Fraser
- 2009, Dana Robinson
- 2009-2011, Stack Exchange Inc.
-License: MIT-X11-BSD-like
-
-Files: IPython/frontend/html/notebook/static/jquery/js/jquery.autogrow.js
-Copyright:  2010, Jevin O. Sewaruth
- 2011, Brian Granger
-License: MIT-X11-BSD-like
-
-Files: IPython/frontend/html/notebook/static/jquery/js/jquery-1.7.1.min.js
- IPython/external/js/jquery-1.7.1.js
-Copyright: 2005-2008, John Resig
+Files: ./IPython/html/static/components/jquery/*
+Copyright: 2005, 2013 jQuery Foundation, Inc. and other contributors
+ 2005-2008, John Resig
  2005-2008, Brandon Aaron
  2005-2008, Jörn Zaefferer
  2011, The Dojo Foundation
-License: GPL-2 or MIT-X11-BSD-like
+License: Expat
 
-Files: IPython/frontend/html/notebook/static/jquery/js/jquery-ui.min.js
- IPython/external/js/jquery-ui.js
- IPython/frontend/html/notebook/static/jquery/css/*
-Copyright: Paul Bakaus (ui.jquery.com)
+Files: ./IPython/html/static/components/jquery-ui/*
+Copyright: 2013 jQuery Foundation and other contributors
+ Paul Bakaus (ui.jquery.com)
  Brandon Aaron
  David Bolter
  Rich Caloggero
@@ -141,9 +109,86 @@ Copyright: Paul Bakaus (ui.jquery.com)
  Maggie Costello Wachs
  Richard D. Worth (rdworth.org)
  Jörn Zaefferer (bassistance.de)
-License: GPL-2 or MIT-X11-BSD-like
+License: GPL-2 or Expat
 
-License: MIT-X11-BSD-like
+Files: ./IPython/html/static/components/marked/
+Copyright: 2011-2012, Christopher Jeffrey (https://github.com/chjj/)
+License: Expat
+
+Files: ./IPython/html/static/components/font-awesome/build/assets/font-awesome/font/
+Copyright: (c) 2012-2013, Dave Gandy <drgandy@alum.mit.edu>
+License: OFL-1.1
+Comment:
+ Upstream doesn't specify which version of OFL instead simply links to
+ OFL page. Hence latest version of OFL is considered.
+
+Files: ./IPython/html/static/components/font-awesome/build/assets/font-awesome/css/*
+ ./IPython/html/static/components/font-awesome/build/assets/font-awesome/less/*
+ ./IPython/html/static/components/font-awesome/build/assets/font-awesome/sass/*
+Copyright: (c) 2012-2013, Dave Gandy <drgandy@alum.mit.edu>
+License: Expat
+
+Files: ./IPython/html/static/components/less.js/*
+Copyright: 2006-2009, Chris Eppstein
+  2006-2009, Hampton Catlin
+  2006-2009, Nathan Weizenbaum
+  2009-2013, Alexis Sellier <self@cloudhead.net>
+  2009-2010, dantman Daniel Friesen
+  2009-2010, kriskowal Kris Kowal
+  2009-2010, tlrobinson Tom Robinson
+License: Apache-2.0
+
+Files: ./IPython/html/static/components/less.js/lib/less/functions.js
+Copyright: 2006-2009, Chris Eppstein
+  2006-2009, Hampton Catlin
+  2006-2009, Nathan Weizenbaum
+License: Expat
+
+Files: ./IPython/html/static/components/requirejs/*
+Copyright: 2010-2012, The Dojo Foundation
+License: BSD-3-clause
+
+Files: ./IPython/html/static/components/highlight.js/*
+Copyright: 2006, Ivan Sagalaev
+License: BSD-3-clause
+
+Files: ./IPython/html/static/components/bootstrap/*
+Copyright: Copyright 2012 Twitter, Inc
+License: Apache-2.0
+
+Files: ./IPython/html/static/components/codemirror/*
+Copyright: 2013 by Marijn Haverbeke <marijnh@gmail.com>
+License: Expat
+
+Files: ./IPython/html/static/components/codemirror/mode/livescript/*
+Copyright: 2013 Kenneth Bentley
+License: Expat
+
+Files: ./IPython/html/static/components/codemirror/mode/xquery/*
+Copyright: 2011 by MarkLogic Corporation
+License: Expat
+
+Files: ./IPython/html/static/components/codemirror/mode/r/*
+Copyright: 2011, Ubalo, Inc.
+License: Expat
+
+Files: ./IPython/html/static/components/codemirror/mode/pascal/*
+Copyright: 2011 souceLair <support@sourcelair.com>
+License: Expat
+
+Files: ./IPython/html/static/components/codemirror/mode/sieve/*
+Copyright: 2012 Thomas Schmid <schmid-thomas@gmx.net>
+License: Expat
+
+Files: ./IPython/html/static/components/codemirror/mode/coffeescript/*
+Copyright: 2011 Jeff Pickhardt
+License: Expat
+
+Files: ./IPython/html/static/components/codemirror/mode/perl/*
+Copyright: 2011 by Sabaca <mail@sabaca.com>
+License: Expat
+
+License: Expat
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction, including without limitation the rights
@@ -315,3 +360,88 @@ License: GPL-2
  On Debian systems, the full text of the GNU General Public
  License version 2 can be found in the file
  `/usr/share/common-licenses/GPL-2'.
+
+License: OFL-1.1
+ PREAMBLE
+  The goals of the Open Font License (OFL) are to stimulate worldwide
+ development of collaborative font projects, to support the font creation
+ efforts of academic and linguistic communities, and to provide a free and
+ open framework in which fonts may be shared and improved in partnership
+ with others.
+ .
+ The OFL allows the licensed fonts to be used, studied, modified and
+ redistributed freely as long as they are not sold by themselves. The
+ fonts, including any derivative works, can be bundled, embedded, 
+ redistributed and/or sold with any software provided that any reserved
+ names are not used by derivative works. The fonts and derivatives,
+ however, cannot be released under any other type of license. The
+ requirement for fonts to remain under this license does not apply
+ to any document created using the fonts or their derivatives.
+ .
+ DEFINITIONS
+ "Font Software" refers to the set of files released by the Copyright
+ Holder(s) under this license and clearly marked as such. This may
+ include source files, build scripts and documentation.
+ .
+ "Reserved Font Name" refers to any names specified as such after the
+ copyright statement(s).
+ .
+ "Original Version" refers to the collection of Font Software components as
+ distributed by the Copyright Holder(s).
+ .
+ "Modified Version" refers to any derivative made by adding to, deleting,
+ or substituting -- in part or in whole -- any of the components of the
+ Original Version, by changing formats or by porting the Font Software to a
+ new environment.
+ .
+ "Author" refers to any designer, engineer, programmer, technical
+ writer or other person who contributed to the Font Software.
+ .
+ PERMISSION & CONDITIONS
+  Permission is hereby granted, free of charge, to any person obtaining
+ a copy of the Font Software, to use, study, copy, merge, embed, modify,
+ redistribute, and sell modified and unmodified copies of the Font
+ Software, subject to the following conditions:
+ .
+ 1) Neither the Font Software nor any of its individual components,
+    in Original or Modified Versions, may be sold by itself.
+ .
+ 2) Original or Modified Versions of the Font Software may be bundled,
+    redistributed and/or sold with any software, provided that each copy
+    contains the above copyright notice and this license. These can be
+    included either as stand-alone text files, human-readable headers or
+    in the appropriate machine-readable metadata fields within text or
+    binary files as long as those fields can be easily viewed by the user.
+ .
+ 3) No Modified Version of the Font Software may use the Reserved Font
+    Name(s) unless explicit written permission is granted by the corresponding
+    Copyright Holder. This restriction only applies to the primary font
+    name as presented to the users.
+ .
+ 4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+    Software shall not be used to promote, endorse or advertise any
+    Modified Version, except to acknowledge the contribution(s) of the
+    Copyright Holder(s) and the Author(s) or with their explicit written
+    permission.
+ .
+ 5) The Font Software, modified or unmodified, in part or in whole,
+    must be distributed entirely under this license, and must not be
+    distributed under any other license. The requirement for fonts to
+    remain under this license does not apply to any document created
+    using the Font Software.
+ .
+ TERMINATION
+  This license becomes null and void if any of the above conditions are
+ not met.
+ .
+ DISCLAIMER
+  THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+ OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE
+ COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
+ DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
+ OTHER DEALINGS IN THE FONT SOFTWARE.
+ 

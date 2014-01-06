@@ -1,3 +1,3 @@
 version=3
-https://github.com/ipython/ipython/tags .*/rel-(.*).tar.gz
+http://archive.ipython.org/release/([\d\.]+)/ ipython-([\d\.]+)\.tar\.gz
 

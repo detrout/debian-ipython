@@ -59,7 +59,6 @@ override_dh_install:
 	dh_install -pipython \
 		--exclude="IPython/qt/" \
 		--exclude="IPython/html/" \
-		--exclude="IPython/quarantine/" \
 		--exclude=tests
 	dh_install -pipython-notebook --exclude="html/static/" --exclude=tests
 	dh_install -pipython-notebook-common -XCOPYING -XLICENSE -XLICENSE.txt
@@ -67,7 +66,6 @@ override_dh_install:
 	dh_install -pipython3 \
 		--exclude="IPython/qt/" \
 		--exclude="IPython/html/" \
-		--exclude="IPython/quarantine/" \
 		--exclude=tests
 	dh_install -pipython3-notebook --exclude="html/static/" --exclude=tests
 	dh_install -pipython3-qtconsole --exclude=tests

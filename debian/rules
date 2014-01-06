@@ -76,9 +76,9 @@ override_dh_install:
 
 	dh_linktree -pipython-notebook-common replace usr/share/fonts-font-awesome/ usr/share/ipython/notebook/static/components/font-awesome/build/assets/font-awesome/
 
-	rm -rf $(NB)/components/jquery-ui/
-	dh_linktree -pipython-notebook-common embed  usr/share/javascript/jquery-ui/ usr/share/ipython/notebook/static/components/jquery-ui/
+	dh_linktree -pipython-notebook-common replace usr/share/javascript/jquery-ui/ usr/share/ipython/notebook/static/components/jquery-ui/
 	install -D IPython/html/static/components/jquery-ui/ui/jquery-ui.js $(NB)/components/jquery-ui/ui/minified/jquery-ui.min.js
+	install -D IPython/html/static/components/jquery-ui/ui/i18n/jquery-ui-i18n.js $(NB)/components/jquery-ui/ui/minified/i18n/jquery-ui-i18n.min.js
 	install -D IPython/html/static/components/jquery-ui/themes/smoothness/jquery-ui.css $(NB)/components/jquery-ui/themes/smoothness/jquery-ui.min.css
 
 	rm -rf $(NB)/components/jquery/

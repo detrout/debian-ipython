@@ -8,6 +8,7 @@ Build-Depends-Indep: dh-linktree,
                      fonts-font-awesome,
                      graphviz,
                      libc-bin (>= 2.13-1~),
+                     libjs-jquery-ui,
                      libjs-marked,
                      node-less,
                      python-all (>= 2.6.6-3~),
@@ -136,6 +137,7 @@ Package: ipython-notebook-common
 Architecture: all
 Depends: fonts-font-awesome,
          libjs-jquery (>= 1.7),
+         libjs-jquery-ui,
          libjs-marked,
          libjs-mathjax,
          ${misc:Depends}

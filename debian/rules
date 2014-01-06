@@ -2,6 +2,7 @@
 #export DH_VERBOSE=1
 PYVERS = $(shell pyversions -rv)
 PY3VERS = $(shell py3versions -r)
+NB = debian/ipython-notebook-common/usr/share/ipython/notebook/static
 
 %:
 	dh $@ --with python2,python3,sphinxdoc
@@ -71,9 +72,15 @@ override_dh_install:
 	dh_install -pipython3-notebook --exclude="html/static/" --exclude=tests
 	dh_install -pipython3-qtconsole --exclude=tests
 
-	rm -rf debian/ipython-notebook-common/usr/share/ipython/notebook/static/components/marked/
+	rm -rf $(NB)/components/marked/
 
 	dh_linktree -pipython-notebook-common replace usr/share/fonts-font-awesome/ usr/share/ipython/notebook/static/components/font-awesome/build/assets/font-awesome/
+
+	rm -rf $(NB)/components/jquery-ui/
+	dh_linktree -pipython-notebook-common embed  usr/share/javascript/jquery-ui/ usr/share/ipython/notebook/static/components/jquery-ui/
+	install -D IPython/html/static/components/jquery-ui/ui/jquery-ui.js $(NB)/components/jquery-ui/ui/minified/jquery-ui.min.js
+	install -D IPython/html/static/components/jquery-ui/themes/smoothness/jquery-ui.css $(NB)/components/jquery-ui/themes/smoothness/jquery-ui.min.css
+
 
 	mkdir -p debian/ipython3/usr/share/applications/
 	sed -e "s/ipython/ipython3/" -e "s/IPython/IPython3/" \

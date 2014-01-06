@@ -84,6 +84,8 @@ override_dh_install:
 	rm -rf $(NB)/components/jquery/
 	install -D IPython/html/static/components/jquery/jquery.js $(NB)/components/jquery/jquery.min.js
 
+	rm -rf $(NB)/components/less.js/
+
 	mkdir -p debian/ipython3/usr/share/applications/
 	sed -e "s/ipython/ipython3/" -e "s/IPython/IPython3/" \
 	    examples/core/ipython.desktop > debian/ipython3/usr/share/applications/ipython3.desktop

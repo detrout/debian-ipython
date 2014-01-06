@@ -89,6 +89,9 @@ override_dh_install:
 	rm -rf $(NB)/components/highlight.js/
 	install -D IPython/html/static/components/highlight.js/src/highlight.js $(NB)/components/highlight.js/build/highlight.pack.js
 
+	rm -rf $(NB)/components/requirejs/
+	install -D IPython/html/static/components/requirejs/require.js $(NB)/components/requirejs/require.js
+
 	mkdir -p debian/ipython3/usr/share/applications/
 	sed -e "s/ipython/ipython3/" -e "s/IPython/IPython3/" \
 	    examples/core/ipython.desktop > debian/ipython3/usr/share/applications/ipython3.desktop

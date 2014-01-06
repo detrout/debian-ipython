@@ -1,3 +1,4 @@
+Description: use packaged lessc compiler
 --- a/IPython/html/fabfile.py
 +++ b/IPython/html/fabfile.py
 @@ -27,7 +27,7 @@ def _compile_less(source, target, minify

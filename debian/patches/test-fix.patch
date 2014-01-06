@@ -1,3 +1,4 @@
+Description: handle split of static files in tests
 --- a/IPython/core/tests/test_display.py
 +++ b/IPython/core/tests/test_display.py
 @@ -48,7 +48,9 @@ def test_image_filename_defaults():

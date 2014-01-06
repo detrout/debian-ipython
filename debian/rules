@@ -81,6 +81,8 @@ override_dh_install:
 	install -D IPython/html/static/components/jquery-ui/ui/jquery-ui.js $(NB)/components/jquery-ui/ui/minified/jquery-ui.min.js
 	install -D IPython/html/static/components/jquery-ui/themes/smoothness/jquery-ui.css $(NB)/components/jquery-ui/themes/smoothness/jquery-ui.min.css
 
+	rm -rf $(NB)/components/jquery/
+	install -D IPython/html/static/components/jquery/jquery.js $(NB)/components/jquery/jquery.min.js
 
 	mkdir -p debian/ipython3/usr/share/applications/
 	sed -e "s/ipython/ipython3/" -e "s/IPython/IPython3/" \

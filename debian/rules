@@ -23,6 +23,7 @@ override_dh_auto_build:
 	set -e && for pyvers in $(PY3VERS); do \
 	  $$pyvers setup.py build --executable '/usr/bin/env python3'; \
 	done
+	cd IPython/html && fab css
 
 ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	HOME=$(CURDIR)/build PYTHONPATH=$(CURDIR) $(MAKE) -C $(CURDIR)/docs html

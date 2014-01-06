@@ -3,29 +3,48 @@ Date: Sun, 18 Dec 2011 14:04:29 +0100
 Subject: use system mathjax if available
 
 ---
- IPython/frontend/html/notebook/notebookapp.py |   10 +++++++++-
- 1 files changed, 9 insertions(+), 1 deletions(-)
+ IPython/html/notebookapp.py | 25 +++++++++++++++++--------
+ 1 file changed, 17 insertions(+), 8 deletions(-)
 
---- a/IPython/frontend/html/notebook/notebookapp.py
-+++ b/IPython/frontend/html/notebook/notebookapp.py
-@@ -150,6 +150,10 @@ class NotebookWebApplication(web.Applica
-         # Note that the URLs these patterns check against are escaped,
-         # and thus guaranteed to be ASCII: 'héllo' is really 'h%C3%A9llo'.
-         base_project_url = py3compat.unicode_to_str(base_project_url, 'ascii')
+--- a/IPython/html/notebookapp.py
++++ b/IPython/html/notebookapp.py
+@@ -200,6 +200,11 @@ class NotebookWebApplication(web.Applica
+             pattern = url_path_join(settings['base_project_url'], handler[0])
+             new_handler = tuple([pattern] + list(handler[1:]))
+             new_handlers.append(new_handler)
 +
 +        if os.path.exists("/usr/share/javascript/mathjax/MathJax.js"):
-+          handlers.append((r"/mathjax/(.*)", web.StaticFileHandler,
-+                           {"path": "/usr/share/javascript/mathjax"}))
-         
-         settings = dict(
-             template_path=os.path.join(os.path.dirname(__file__), "templates"),
-@@ -368,6 +372,9 @@ class NotebookApp(BaseIPythonApplication
-         if os.path.exists(os.path.join(static_path, 'mathjax', "MathJax.js")):
-             self.log.info("Using local MathJax")
-             return static_url_prefix+u"mathjax/MathJax.js"
-+        elif os.path.exists("/usr/share/javascript/mathjax/MathJax.js"):
-+            self.log.info("Using system MathJax")
-+            return u"/mathjax/MathJax.js"
++            new_handlers.append((r"/mathjax/(.*)", web.StaticFileHandler,
++                                 {"path": "/usr/share/javascript/mathjax"}))
++
+         return new_handlers
+ 
+ 
+@@ -443,15 +448,19 @@ class NotebookApp(BaseIPythonApplication
+         try:
+             mathjax = filefind(os.path.join('mathjax', 'MathJax.js'), self.static_file_path)
+         except IOError:
+-            if self.certfile:
+-                # HTTPS: load from Rackspace CDN, because SSL certificate requires it
+-                base = u"https://c328740.ssl.cf1.rackcdn.com"
++            if os.path.exists("/usr/share/javascript/mathjax/MathJax.js"):
++                self.log.info("Using system MathJax")
++                return u"/mathjax/MathJax.js"
+             else:
+-                base = u"http://cdn.mathjax.org"
+-            
+-            url = base + u"/mathjax/latest/MathJax.js"
+-            self.log.info("Using MathJax from CDN: %s", url)
+-            return url
++                if self.certfile:
++                    # HTTPS: load from Rackspace CDN, because SSL certificate requires it
++                    base = u"https://c328740.ssl.cf1.rackcdn.com"
++                else:
++                    base = u"http://cdn.mathjax.org"
++                
++                url = base + u"/mathjax/latest/MathJax.js"
++                self.log.info("Using MathJax from CDN: %s", url)
++                return url
          else:
-             if self.certfile:
-                 # HTTPS: load from Rackspace CDN, because SSL certificate requires it
+             self.log.info("Using local MathJax from %s" % mathjax)
+             return url_path_join(static_url_prefix, u"mathjax/MathJax.js")

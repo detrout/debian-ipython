@@ -1,4 +1,4 @@
-debian/tmp/usr/share/doc/ipython/examples/core
-debian/tmp/usr/share/doc/ipython/examples/lib
-debian/tmp/usr/share/doc/ipython/examples/parallel
-debian/tmp/usr/share/doc/ipython/examples/notebooks
+examples/core
+examples/lib
+examples/parallel
+examples/notebooks

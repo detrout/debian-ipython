@@ -1,0 +1,19 @@
+--- a/IPython/html/notebookapp.py
++++ b/IPython/html/notebookapp.py
+@@ -652,15 +652,7 @@ class NotebookApp(BaseIPythonApplication
+         print self.notebook_info()
+     
+     def init_components(self):
+-        """Check the components submodule, and warn if it's unclean"""
+-        status = submodule.check_submodule_status()
+-        if status == 'missing':
+-            self.log.warn("components submodule missing, running `git submodule update`")
+-            submodule.update_submodules(submodule.ipython_parent())
+-        elif status == 'unclean':
+-            self.log.warn("components submodule unclean, you may see 404s on static/components")
+-            self.log.warn("run `setup.py submodule` or `git submodule update` to update")
+-            
++        pass
+     
+     @catch_config_error
+     def initialize(self, argv=None):

@@ -6,7 +6,6 @@
 /usr/bin/irunner
 /usr/bin/pycolor
 /usr/lib/python2.*
-/usr/share/doc/ipython/examples/vim
 /usr/share/doc/ipython/extensions
 docs/emacs/ipython.el		usr/share/emacs/site-lisp
-docs/examples/core/ipython.desktop usr/share/applications/
+examples/core/ipython.desktop usr/share/applications/

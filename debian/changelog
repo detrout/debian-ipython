@@ -1,8 +1,12 @@
-ipython (0.13.2-3) UNRELEASED; urgency=low
+ipython (1.1.0-1) unstable; urgency=low
 
+  [ Julian Taylor ]
+  * New upstream release
+
+  [ Jakub Wilk ]
   * Fix a typo in README.source.
 
- -- Jakub Wilk <jwilk@debian.org>  Wed, 12 Jun 2013 13:22:13 +0200
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Mon, 06 Jan 2014 16:45:14 +0100
 
 ipython (0.13.2-2) unstable; urgency=low
 

@@ -4,9 +4,9 @@ Forwarded: takowl@gmail.com
 
 --- a/setup.py
 +++ b/setup.py
-@@ -262,6 +262,17 @@ if 'setuptools' in sys.modules:
+@@ -319,6 +319,17 @@ if 'setuptools' in sys.modules:
                                    "ipython_win_post_install.py"}}
-     
+ 
      if PY3:
 +        num_processes = 1
 +        for option in os.environ.get('DEB_BUILD_OPTIONS', '').split():
@@ -20,5 +20,5 @@ Forwarded: takowl@gmail.com
 +                                                                                 doctests_only=doctests_only)
 +            lib2to3.refactor.RefactoringTool = RefactoringTool
          setuptools_extra_args['use_2to3'] = True
-         from setuptools.command.build_py import build_py
-         setup_args['cmdclass'] = {'build_py': record_commit_info('IPython', build_cmd=build_py)}
+         # we try to make a 2.6, 2.7, and 3.1 to 3.3 python compatible code
+         # so we explicitly disable some 2to3 fixes to be sure we aren't forgetting

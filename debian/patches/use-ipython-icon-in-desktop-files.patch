@@ -2,14 +2,9 @@ From: Julian Taylor <jtaylor.debian@googlemail.com>
 Date: Wed, 9 Nov 2011 18:07:12 +0100
 Subject: use ipython icon in desktop files
 
----
- docs/examples/core/ipython-qtconsole.desktop |    2 +-
- docs/examples/core/ipython-sh.desktop        |    2 +-
- docs/examples/core/ipython.desktop           |    2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
 
---- a/docs/examples/core/ipython-qtconsole.desktop
-+++ b/docs/examples/core/ipython-qtconsole.desktop
+--- a/examples/core/ipython-qtconsole.desktop
++++ b/examples/core/ipython-qtconsole.desktop
 @@ -6,7 +6,7 @@ Comment=Enhanced interactive Python qtco
  Exec=ipython qtconsole
  GenericName[en_US]=Python shell
@@ -19,19 +14,8 @@ Subject: use ipython icon in desktop files
  Name[en_US]=IPython Qt console
  Name=IPython Qt console
  Categories=Development;Utility;
---- a/docs/examples/core/ipython-sh.desktop
-+++ b/docs/examples/core/ipython-sh.desktop
-@@ -6,7 +6,7 @@ Comment=Perform shell-like tasks in inte
- Exec=ipython --profile=pysh
- GenericName[en_US]=IPython shell mode
- GenericName=IPython shell mode
--Icon=gnome-netstatus-idle
-+Icon=ipython
- Name[en_US]=ipython-sh
- Name=ipython-sh
- Categories=Development;Utility;
---- a/docs/examples/core/ipython.desktop
-+++ b/docs/examples/core/ipython.desktop
+--- a/examples/core/ipython.desktop
++++ b/examples/core/ipython.desktop
 @@ -6,7 +6,7 @@ Comment=Enhanced interactive Python shel
  Exec=ipython
  GenericName[en_US]=IPython

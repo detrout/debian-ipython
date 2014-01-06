@@ -71,6 +71,8 @@ override_dh_install:
 	dh_install -pipython3-notebook --exclude="html/static/" --exclude=tests
 	dh_install -pipython3-qtconsole --exclude=tests
 
+	dh_linktree -pipython-notebook-common replace usr/share/fonts-font-awesome/ usr/share/ipython/notebook/static/components/font-awesome/build/assets/font-awesome/
+
 	mkdir -p debian/ipython3/usr/share/applications/
 	sed -e "s/ipython/ipython3/" -e "s/IPython/IPython3/" \
 	    examples/core/ipython.desktop > debian/ipython3/usr/share/applications/ipython3.desktop

@@ -89,6 +89,8 @@ override_dh_install:
 	rm -rf $(NB)/components/requirejs/
 	install -D IPython/html/static/components/requirejs/require.js $(NB)/components/requirejs/require.js
 
+	rm -rf $(NB)/components/codemirror/bin/
+
 	mkdir -p debian/ipython3/usr/share/applications/
 	sed -e "s/ipython/ipython3/" -e "s/IPython/IPython3/" \
 	    examples/core/ipython.desktop > debian/ipython3/usr/share/applications/ipython3.desktop
@@ -134,9 +136,6 @@ override_dh_install:
 	# change permission on scripts
 	find $(CURDIR)/debian/ipython-notebook-common -type f | xargs chmod a-x
 
-	rm -rf $(CURDIR)/debian/ipython-notebook-common/usr/share/ipython/notebook/static/components/codemirror/bin/
-	rm -rf $(CURDIR)/debian/ipython-notebook-common/usr/share/ipython/notebook/static/components/marked/bin/
-	rm -rf $(CURDIR)/debian/ipython-notebook-common/usr/share/ipython/notebook/static/components/less.js/bin/
 	
 override_dh_installdocs:
 ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))

@@ -1,1 +1,3 @@
 usr/share/javascript/marked/marked.min.js usr/share/ipython/notebook/static/components/marked/lib/marked.js
+usr/share/javascript/highlight/highlight.js usr/share/ipython/notebook/static/components/highlight.js/build/highlight.pack.js
+

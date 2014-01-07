@@ -9,6 +9,7 @@ Build-Depends-Indep: dh-linktree,
                      fonts-font-awesome,
                      graphviz,
                      libc-bin (>= 2.13-1~),
+                     libjs-highlight,
                      libjs-jquery-ui,
                      libjs-marked,
                      node-less,
@@ -137,6 +138,7 @@ Description: enhanced interactive Python 3 shell - Qt console
 Package: ipython-notebook-common
 Architecture: all
 Depends: fonts-font-awesome,
+         libjs-highlight,
          libjs-jquery (>= 1.7),
          libjs-jquery-ui,
          libjs-marked,

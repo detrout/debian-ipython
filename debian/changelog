@@ -2,6 +2,11 @@ ipython (1.1.0-1) unstable; urgency=low
 
   [ Julian Taylor ]
   * New upstream release
+  * add build depends and patches required for the the notebook javascript
+    build: node-less, node-uglify, libjs-highlight, fabric, fonts-font-awesome,
+           dh-linktree
+  * bump standard to 3.9.5, no changes required
+  * skip autopkgtests on python3.4 as some tests have issues.
 
   [ Jakub Wilk ]
   * Fix a typo in README.source.

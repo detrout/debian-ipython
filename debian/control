@@ -6,7 +6,7 @@ Uploaders: Julian Taylor <jtaylor.debian@googlemail.com>
 Build-Depends: debhelper (>= 7.3.13)
 Build-Depends-Indep: dh-linktree,
                      fabric,
-                     fonts-font-awesome,
+                     fonts-font-awesome (>= 3.2.1),
                      graphviz,
                      libc-bin (>= 2.13-1~),
                      libjs-highlight,

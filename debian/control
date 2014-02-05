@@ -145,6 +145,7 @@ Depends: fonts-font-awesome,
          libjs-marked,
          libjs-mathjax,
          ${misc:Depends}
+Suggests: pandoc
 Replaces: ipython-notebook (<< 0.12.1-2)
 Breaks: ipython-notebook (<< 0.12.1-2)
 Description: interactive Python html notebook data package

@@ -7,6 +7,7 @@ ipython (1.2.0~rc1-1) unstable; urgency=low
   * update debianize-error-messages.patch:
      - fix %paste (Closes: #736175)
      - add pandoc package reference (Closes: #736566)
+  * suggest pandoc in notebook for nbconvert subcommand
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Wed, 05 Feb 2014 19:07:18 +0100
 

@@ -29,8 +29,6 @@ cd $dest
   done
 
 for py in $pys; do
-  # fails but functional, mostly issues in the tests themselves
-  [ "$py" = "python3.4" ] && continue
   LC_ALL=C.UTF-8 HOME=$PWD \
   PATH=$PWD/IPython/scripts/:$PATH PYTHONPATH=$PWD \
   xvfb-run -a -s "-screen 0 1280x1024x24 -noreset" \

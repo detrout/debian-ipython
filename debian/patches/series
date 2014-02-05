@@ -7,5 +7,4 @@ use-system-mathjax-if-available.patch
 parallel-2to3.patch
 shared-static-path.patch
 no-submodule-check.patch
-test-fix.patch
-python3.4-fixes.patch
+test-default-tk.patch

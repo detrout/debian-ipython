@@ -2,7 +2,7 @@ Description: skip git submodule check
  make no sense for a package
 --- a/IPython/html/notebookapp.py
 +++ b/IPython/html/notebookapp.py
-@@ -652,15 +652,7 @@ class NotebookApp(BaseIPythonApplication
+@@ -654,15 +654,7 @@ class NotebookApp(BaseIPythonApplication
          print self.notebook_info()
      
      def init_components(self):

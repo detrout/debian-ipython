@@ -23,6 +23,8 @@ Depends: ipython3, ipython3-notebook, ipython-doc, ipython3-qtconsole,
          python3-matplotlib,
          python3-pyqt4,
          python3-tk,
+         texlive-latex-base,
+         dvipng,
          xauth,
          xvfb
 

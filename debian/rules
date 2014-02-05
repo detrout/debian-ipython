@@ -32,12 +32,15 @@ endif
 
 override_dh_auto_test:
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
-	# IPython.frontend requires X
+    	# test_not_writable_ipdir, fails as root
+	# test_console_starts, leaks python process
+	# test_constructor, test_notebook_help, as-installed only (static-path change)
 	set -e && for pyvers in $(PYVERS); do \
 	  LC_ALL=C.UTF-8 HOME=$(CURDIR)/build \
 	  PATH=$(CURDIR)/IPython/scripts/:$(PATH) PYTHONPATH=$(CURDIR) \
 	  xvfb-run -a -s "-screen 0 1280x1024x24 -noreset" \
-	  python$$pyvers $(CURDIR)/IPython/scripts/iptest -v -e test_not_writable_ipdir -e test_console_starts; \
+	  python$$pyvers $(CURDIR)/IPython/scripts/iptest -v -e test_not_writable_ipdir -e test_console_starts \
+			-e test_constructor -e test_notebook_help;\
 	done
 endif
 

@@ -1,9 +1,12 @@
 ipython (1.2.0~rc1-1) unstable; urgency=low
 
   * New upstream release candidate
-    Closes: #737067, #736560
+    fixes nbconvert html convert (Closes: #737067, #736560)
   * drop applied patches: python3.4-fixes.patch, test-fix.patch
   * add test-default-tk.patch to run tests with Debian's matplotlib default
+  * update debianize-error-messages.patch:
+     - fix %paste (Closes: #736175)
+     - add pandoc package reference (Closes: #736566)
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Wed, 05 Feb 2014 19:07:18 +0100
 

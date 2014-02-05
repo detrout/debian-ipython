@@ -30,11 +30,9 @@ Subject: debianize error messages
  # utility functions, for convenience
 --- a/IPython/lib/clipboard.py
 +++ b/IPython/lib/clipboard.py
-@@ -43,8 +43,9 @@ def tkinter_clipboard_get():
-     try:
+@@ -44,7 +44,7 @@ def tkinter_clipboard_get():
          import Tkinter
      except ImportError:
-+        from IPython.utils import py3compat
          raise TryNext("Getting text from the clipboard on this platform "
 -                      "requires Tkinter.")
 +                      "requires the %s-tk package." % ("python3" if py3compat.PY3 else "python"))
@@ -59,3 +57,15 @@ Subject: debianize error messages
 +        raise ImportError("%s requires python-zmq >= %s, but you have %s"%(
                          required_by, minimum_version, pyzmq_version))
  
+--- a/IPython/nbconvert/utils/pandoc.py
++++ b/IPython/nbconvert/utils/pandoc.py
+@@ -61,8 +61,7 @@ def pandoc(source, fmt, to, extra_args=N
+     except OSError as e:
+         raise PandocMissing(
+             "The command '%s' returned an error: %s.\n" %(" ".join(command), e) +
+-            "Please check that pandoc is installed:\n" +
+-            "http://johnmacfarlane.net/pandoc/installing.html"
++            "Please check that pandoc package is installed."
+         )
+     out, _ = p.communicate(cast_bytes(source, encoding))
+     out = TextIOWrapper(BytesIO(out), encoding, 'replace').read()

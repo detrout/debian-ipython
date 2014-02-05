@@ -1,3 +1,10 @@
+ipython (1.2.0~rc1-1) unstable; urgency=low
+
+  * New upstream release candidate
+    Closes: #737067, #736560
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Wed, 05 Feb 2014 19:07:18 +0100
+
 ipython (1.1.0-1) unstable; urgency=low
 
   [ Julian Taylor ]

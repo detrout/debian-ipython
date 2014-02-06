@@ -1,3 +1,9 @@
+ipython (1.2.0~rc1-2) unstable; urgency=low
+
+  * suggest pgf for nbconvert --to latex --post pdf
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Thu, 06 Feb 2014 01:45:52 +0100
+
 ipython (1.2.0~rc1-1) unstable; urgency=low
 
   * New upstream release candidate

@@ -12,7 +12,7 @@ mkdir -p $dest/IPython/scripts/
 cp IPython/scripts/iptest $dest/IPython/scripts/
 cd $dest
 
-dpkg -l | tee ${ADT_ARTIFACTS:-.}/$0-packages.txt
+dpkg -l | tee ${ADT_ARTIFACTS:-.}/$(basename $0)-packages.txt
 
 #disabled, just fills disk with junk even before its used by ipython
 #service mongodb start 2>&1 || true

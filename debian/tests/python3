@@ -15,6 +15,8 @@ cp IPython/scripts/iptest $dest/IPython/scripts/
 $TWOTOTHREE -w --no-diffs $dest/IPython/scripts/iptest 2>&1
 cd $dest
 
+dpkg -l | tee ${ADT_ARTIFACTS:-.}/$0-packages.txt
+
 #disabled, just fills disk with junk even before its used by ipython
 #service mongodb start 2>&1 || true
   for pkg in ipython3 ipython3-notebook ipython3-qtconsole; do

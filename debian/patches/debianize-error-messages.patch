@@ -71,11 +71,9 @@ Subject: debianize error messages
      out = TextIOWrapper(BytesIO(out), encoding, 'replace').read()
 --- a/IPython/parallel/__init__.py
 +++ b/IPython/parallel/__init__.py
-@@ -17,8 +17,15 @@ Authors:
- 
+@@ -18,7 +18,12 @@ Authors:
  import os
  import warnings
-+import sys
  
 -import zmq
 +try:
@@ -83,8 +81,7 @@ Subject: debianize error messages
 +except ImportError:
 +    from IPython.utils import py3compat
 +    _py = "python3" if py3compat.PY3 else "python"
-+    print "Coult not import zmq module, please install %s-zmq" % _py
-+    sys.exit(1)
++    raise ImportError("Could not import zmq module, please install %s-zmq" % _py)
  
  from IPython.config.configurable import MultipleInstanceError
  from IPython.utils.zmqrelated import check_for_zmq

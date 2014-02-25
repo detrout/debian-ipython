@@ -7,9 +7,11 @@ cd $ADTTMP
 if [ "$1" = "ipython" ]; then
 IPYTHON=ipython
 IRUNNER=irunner
+IPCLUSTER=ipcluster
 elif [ "$1" = "ipython3" ]; then
 IPYTHON=ipython3
 IRUNNER=irunner3
+IPCLUSTER=ipcluster3
 fi
 
 $IPYTHON locate
@@ -28,3 +30,4 @@ EOF
 $IRUNNER test.py
 $IRUNNER --ipython test.py
 
+$IPCLUSTER --help

@@ -1,8 +1,8 @@
 Tests: python2
 Depends: ipython, ipython-notebook, ipython-doc, ipython-qtconsole,
+         build-essential,
          python-nose,
          cython,
-         gcc,
          python-all,
          python-all-dev,
          python-argparse,
@@ -16,10 +16,10 @@ Depends: ipython, ipython-notebook, ipython-doc, ipython-qtconsole,
 
 Tests: python3
 Depends: ipython3, ipython3-notebook, ipython-doc, ipython3-qtconsole,
+         build-essential,
          python,
          python3-nose,
          cython3,
-         gcc,
          python3-all,
          python3-all-dev,
          python3-matplotlib,

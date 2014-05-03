@@ -1,11 +1,5 @@
 /usr/bin/ipcluster
 /usr/bin/ipcontroller
 /usr/bin/ipengine
-/usr/bin/iplogger
 /usr/bin/ipython
-/usr/bin/irunner
-/usr/bin/pycolor
 /usr/lib/python2.*
-/usr/share/doc/ipython/extensions
-docs/emacs/ipython.el		usr/share/emacs/site-lisp
-examples/core/ipython.desktop usr/share/applications/

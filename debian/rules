@@ -50,13 +50,15 @@ override_dh_auto_install:
 	  $$pyvers setup.py install --install-layout=deb \
 		--force --no-compile -O0 --root=$(CURDIR)/debian/tmp; \
 	done
-	# py3 uses entrypoints where --excutable in build has no effect
+	# fix shebangs
+	sed -i '1c#!/usr/bin/env python' $(CURDIR)/debian/tmp/usr/bin/ipython
+	sed -i '1c#!/usr/bin/env python' $(CURDIR)/debian/tmp/usr/bin/ipcluster
+	sed -i '1c#!/usr/bin/env python' $(CURDIR)/debian/tmp/usr/bin/ipcontroller
+	sed -i '1c#!/usr/bin/env python' $(CURDIR)/debian/tmp/usr/bin/ipengine
 	sed -i '1c#!/usr/bin/env python3' $(CURDIR)/debian/tmp/usr/bin/ipython3
-	sed -i '1c#!/usr/bin/env python3' $(CURDIR)/debian/tmp/usr/bin/irunner3
 	sed -i '1c#!/usr/bin/env python3' $(CURDIR)/debian/tmp/usr/bin/ipcluster3
 	sed -i '1c#!/usr/bin/env python3' $(CURDIR)/debian/tmp/usr/bin/ipcontroller3
 	sed -i '1c#!/usr/bin/env python3' $(CURDIR)/debian/tmp/usr/bin/ipengine3
-	sed -i '1c#!/usr/bin/env python3' $(CURDIR)/debian/tmp/usr/bin/iplogger3
 
 override_dh_install:
 	dh_install -pipython \
@@ -72,6 +74,11 @@ override_dh_install:
 		--exclude=tests
 	dh_install -pipython3-notebook --exclude="html/static/" --exclude=tests
 	dh_install -pipython3-qtconsole --exclude=tests
+	# no space allowed in dh_install
+	install -D -m 644 "examples/IPython Kernel/ipython.desktop" debian/ipython/usr/share/applications/ipython.desktop
+	install -D -m 644 "examples/IPython Kernel/ipython-qtconsole.desktop" debian/ipython-qtconsole/usr/share/applications/ipython-qtconsole.desktop
+	# workaround for broken by space launchpad builds
+	sed -i -e "s/gnome-netstatus-idle/ipython/" debian/ipython*/usr/share/applications/*desktop
 
 	rm -rf $(NB)/components/marked/
 
@@ -84,8 +91,6 @@ override_dh_install:
 
 	rm -rf $(NB)/components/jquery/
 	install -D IPython/html/static/components/jquery/jquery.js $(NB)/components/jquery/jquery.min.js
-
-	rm -rf $(NB)/components/less.js/
 
 	rm -rf $(NB)/components/highlight.js/
 
@@ -105,10 +110,12 @@ override_dh_install:
 
 	mkdir -p debian/ipython3/usr/share/applications/
 	sed -e "s/ipython/ipython3/" -e "s/IPython/IPython3/" \
-	    examples/core/ipython.desktop > debian/ipython3/usr/share/applications/ipython3.desktop
+	    debian/ipython/usr/share/applications/ipython.desktop > \
+	    debian/ipython3/usr/share/applications/ipython3.desktop
 	mkdir -p debian/ipython3-qtconsole/usr/share/applications/
 	sed -e "s/ipython/ipython3/" -e "s/IPython/IPython3/" \
-	    examples/core/ipython-qtconsole.desktop > debian/ipython3-qtconsole/usr/share/applications/ipython3-qtconsole.desktop
+	    debian/ipython-qtconsole/usr/share/applications/ipython-qtconsole.desktop > \
+	    debian/ipython3-qtconsole/usr/share/applications/ipython3-qtconsole.desktop
 
 	mkdir -p $(CURDIR)/debian/ipython/usr/share/icons/hicolor/scalable/apps/
 	cp IPython/qt/console/resources/icon/IPythonConsole.svg \
@@ -116,10 +123,6 @@ override_dh_install:
 	mkdir -p $(CURDIR)/debian/ipython3/usr/share/icons/hicolor/scalable/apps/
 	cp IPython/qt/console/resources/icon/IPythonConsole.svg \
 	  $(CURDIR)/debian/ipython3/usr/share/icons/hicolor/scalable/apps/ipython3.svg
-
-	# remove embedded arparse
-	find $(CURDIR)/debian/ipython/usr/ -name _argparse.py -delete
-	find $(CURDIR)/debian/ipython3/usr/ -name _argparse.py -delete
 
 	# remove embedded simplegeneric
 	find $(CURDIR)/debian/ipython/usr/ -name _simplegeneric.py -delete
@@ -131,19 +134,6 @@ override_dh_install:
 
 	# remove embedded pexpect
 	find $(CURDIR)/debian/ipython/usr/ -name _pexpect.py -delete
-
-	# add wrapper scripts for all python versions
-	set -e ;\
-	firstpyver="" ;\
-	for pyvers in $(PYVERS); do \
-	    if [ "$${firstpyver}" = "" ]; then \
-	        install -m 755 debian/ipython.sh $(CURDIR)/debian/ipython/usr/bin/ipython$$pyvers ;\
-	        firstpyver="$$pyvers" ;\
-	    else \
-	        dh_link -pipython /usr/bin/ipython$${firstpyver} /usr/bin/ipython$$pyvers ;\
-	    fi ;\
-	    dh_link -pipython /usr/share/man/man1/ipython.1.gz /usr/share/man/man1/ipython$$pyvers.1.gz ;\
-	done
 
 	# change permission on scripts
 	find $(CURDIR)/debian/ipython-notebook-common -type f | xargs chmod a-x
@@ -169,24 +159,20 @@ override_dh_python2:
 	dh_python2 -pipython-notebook
 
 override_dh_python3:
-	dh_python3 -pipython3
-	dh_python3 -pipython3-qtconsole
-	dh_python3 -pipython3-notebook
+	dh_python3 -pipython3 --no-shebang-rewrite || dh_python3 -pipython3
+	dh_python3 -pipython3-qtconsole --no-shebang-rewrite || dh_python3 -pipython3-qtconsole
+	dh_python3 -pipython3-notebook --no-shebang-rewrite || dh_python3 -pipython3-notebook
 
 override_dh_installman:
 	dh_installman
 	mv debian/ipython3/usr/share/man/man1/ipython.1 \
 	  debian/ipython3/usr/share/man/man1/ipython3.1
-	mv debian/ipython3/usr/share/man/man1/irunner.1 \
-	  debian/ipython3/usr/share/man/man1/irunner3.1
 	mv debian/ipython3/usr/share/man/man1/ipcluster.1 \
 	  debian/ipython3/usr/share/man/man1/ipcluster3.1
 	mv debian/ipython3/usr/share/man/man1/ipcontroller.1 \
 	  debian/ipython3/usr/share/man/man1/ipcontroller3.1
 	mv debian/ipython3/usr/share/man/man1/ipengine.1 \
 	  debian/ipython3/usr/share/man/man1/ipengine3.1
-	mv debian/ipython3/usr/share/man/man1/iplogger.1 \
-	  debian/ipython3/usr/share/man/man1/iplogger3.1
 
 override_dh_sphinxdoc:
 ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))

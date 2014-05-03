@@ -164,6 +164,10 @@ Files: ./IPython/html/static/components/bootstrap-tour/*
 Copyright: 2012-2013 Ulrich Sossou
 License: Apache-2.0
 
+Files: ./IPython/html/static/components/google-caja/*
+Copyright: 2006 Google Inc.
+License: Apache-2.0
+
 Files: ./IPython/html/static/components/codemirror/*
 Copyright: 2013 by Marijn Haverbeke <marijnh@gmail.com>
 License: Expat

@@ -113,6 +113,10 @@ override_dh_install:
 	install -D IPython/html/static/components/bootstrap-tour/build/css/bootstrap-tour.min.css \
 	  $(NB)/components/bootstrap-tour/build/css/bootstrap-tour.min.css
 
+	rm -rf $(NB)/components/google-caja
+	install -D IPython/html/static/components/google-caja/html-css-sanitizer-bundle.js \
+	  $(NB)/components/google-caja/html-css-sanitizer-minified.js
+
 	mkdir -p debian/ipython3/usr/share/applications/
 	sed -e "s/ipython/ipython3/" -e "s/IPython/IPython3/" \
 	    debian/ipython/usr/share/applications/ipython.desktop > \

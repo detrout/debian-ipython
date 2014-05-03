@@ -3,5 +3,5 @@ debianize-error-messages.patch
 use-system-mathjax-if-available.patch
 shared-static-path.patch
 no-submodule-check.patch
-test-default-tk.patch
+#test-default-tk.patch
 packaged-js.patch 

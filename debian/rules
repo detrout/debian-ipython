@@ -107,6 +107,12 @@ override_dh_install:
 	lessc  IPython/html/static/components/bootstrap/less/bootstrap.less > $(NB)/components/bootstrap/bootstrap/css/bootstrap.min.css
 	cp -r IPython/html/static/components/bootstrap/bootstrap/ $(NB)/components/bootstrap/
 
+	rm -rf $(NB)/components/bootstrap-tour/
+	install -D IPython/html/static/components/bootstrap-tour/build/js/bootstrap-tour.js \
+	  $(NB)/components/bootstrap-tour/build/js/bootstrap-tour.min.js
+	install -D IPython/html/static/components/bootstrap-tour/build/css/bootstrap-tour.min.css \
+	  $(NB)/components/bootstrap-tour/build/css/bootstrap-tour.min.css
+
 	mkdir -p debian/ipython3/usr/share/applications/
 	sed -e "s/ipython/ipython3/" -e "s/IPython/IPython3/" \
 	    debian/ipython/usr/share/applications/ipython.desktop > \

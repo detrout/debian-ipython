@@ -1,3 +1,4 @@
+Description: package does not need to check for git submodules
 --- a/IPython/html/notebookapp.py
 +++ b/IPython/html/notebookapp.py
 @@ -738,14 +738,7 @@ class NotebookApp(BaseIPythonApplication

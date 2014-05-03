@@ -5,7 +5,7 @@ Subject: debianize error messages
 
 --- a/IPython/config/application.py
 +++ b/IPython/config/application.py
-@@ -540,9 +540,19 @@ class Application(SingletonConfigurable)
+@@ -558,9 +558,19 @@ class Application(SingletonConfigurable)
          
          If a global instance already exists, this reinitializes and starts it
          """
@@ -20,9 +20,9 @@ Subject: debianize error messages
 +            from IPython.utils import py3compat
 +            ipy = "ipython3" if py3compat.PY3 else "ipython"
 +            if "IPython.qt" in str(e) or "qt.console.qtconsoleapp" in str(e):
-+                print "Could not start qtconsole. Please install %s-qtconsole" % ipy
++                print("Could not start qtconsole. Please install %s-qtconsole" % ipy)
 +            elif "IPython.html" in str(e) or "html.notebookapp" in str(e):
-+                print "Could not start notebook. Please install %s-notebook" % ipy
++                print("Could not start notebook. Please install %s-notebook" % ipy)
 +            else:
 +                raise
  
@@ -30,15 +30,15 @@ Subject: debianize error messages
  # utility functions, for convenience
 --- a/IPython/lib/clipboard.py
 +++ b/IPython/lib/clipboard.py
-@@ -44,7 +44,7 @@ def tkinter_clipboard_get():
-         import Tkinter
-     except ImportError:
-         raise TryNext("Getting text from the clipboard on this platform "
--                      "requires Tkinter.")
-+                      "requires the %s-tk package." % ("python3" if py3compat.PY3 else "python"))
-     root = Tkinter.Tk()
+@@ -57,7 +57,7 @@ def tkinter_clipboard_get():
+             from Tkinter import Tk, TclError  # Py 2
+         except ImportError:
+             raise TryNext("Getting text from the clipboard on this platform "
+-                          "requires Tkinter.")
++                          "requires the %s-tk package." % ("python3" if py3compat.PY3 else "python"))
+     root = Tk()
      root.withdraw()
-     text = root.clipboard_get()
+     try:
 --- a/IPython/utils/zmqrelated.py
 +++ b/IPython/utils/zmqrelated.py
 @@ -34,13 +34,13 @@ def check_for_zmq(minimum_version, requi
@@ -57,31 +57,3 @@ Subject: debianize error messages
 +        raise ImportError("%s requires python-zmq >= %s, but you have %s"%(
                          required_by, minimum_version, pyzmq_version))
  
---- a/IPython/nbconvert/utils/pandoc.py
-+++ b/IPython/nbconvert/utils/pandoc.py
-@@ -61,8 +61,7 @@ def pandoc(source, fmt, to, extra_args=N
-     except OSError as e:
-         raise PandocMissing(
-             "The command '%s' returned an error: %s.\n" %(" ".join(command), e) +
--            "Please check that pandoc is installed:\n" +
--            "http://johnmacfarlane.net/pandoc/installing.html"
-+            "Please check that pandoc package is installed."
-         )
-     out, _ = p.communicate(cast_bytes(source, encoding))
-     out = TextIOWrapper(BytesIO(out), encoding, 'replace').read()
---- a/IPython/parallel/__init__.py
-+++ b/IPython/parallel/__init__.py
-@@ -18,7 +18,12 @@ Authors:
- import os
- import warnings
- 
--import zmq
-+try:
-+    import zmq
-+except ImportError:
-+    from IPython.utils import py3compat
-+    _py = "python3" if py3compat.PY3 else "python"
-+    raise ImportError("Could not import zmq module, please install %s-zmq" % _py)
- 
- from IPython.config.configurable import MultipleInstanceError
- from IPython.utils.zmqrelated import check_for_zmq

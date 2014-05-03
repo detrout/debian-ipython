@@ -2,7 +2,7 @@ Description: default debian backend is tk
 Forwarded: not-needed
 --- a/IPython/core/tests/test_pylabtools.py
 +++ b/IPython/core/tests/test_pylabtools.py
-@@ -95,24 +95,24 @@ class TestPylabSwitch(object):
+@@ -196,24 +196,24 @@ class TestPylabSwitch(object):
      def test_qt(self):
          s = self.Shell()
          gui, backend = s.enable_matplotlib(None)

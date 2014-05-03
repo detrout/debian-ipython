@@ -5,7 +5,7 @@ Forwarded: not-needed
 
 --- a/IPython/html/__init__.py
 +++ b/IPython/html/__init__.py
-@@ -2,6 +2,6 @@
+@@ -2,7 +2,7 @@
  
  import os
  # Packagers: modify this line if you store the notebook static files elsewhere
@@ -13,3 +13,4 @@ Forwarded: not-needed
 +DEFAULT_STATIC_FILES_PATH = "/usr/share/ipython/notebook/static"
  
  del os
+ 

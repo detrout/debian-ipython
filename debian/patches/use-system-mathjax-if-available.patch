@@ -2,49 +2,28 @@ From: Julian Taylor <jtaylor.debian@googlemail.com>
 Date: Sun, 18 Dec 2011 14:04:29 +0100
 Subject: use system mathjax if available
 
----
- IPython/html/notebookapp.py | 25 +++++++++++++++++--------
- 1 file changed, 17 insertions(+), 8 deletions(-)
-
 --- a/IPython/html/notebookapp.py
 +++ b/IPython/html/notebookapp.py
-@@ -200,6 +200,11 @@ class NotebookWebApplication(web.Applica
-             pattern = url_path_join(settings['base_project_url'], handler[0])
+@@ -218,6 +218,11 @@ class NotebookWebApplication(web.Applica
+             pattern = url_path_join(settings['base_url'], handler[0])
              new_handler = tuple([pattern] + list(handler[1:]))
              new_handlers.append(new_handler)
 +
 +        if os.path.exists("/usr/share/javascript/mathjax/MathJax.js"):
 +            new_handlers.append((r"/mathjax/(.*)", web.StaticFileHandler,
-+                                 {"path": "/usr/share/javascript/mathjax"}))
++                                {"path": "/usr/share/javascript/mathjax"}))
 +
+         # add 404 on the end, which will catch everything that falls through
+         new_handlers.append((r'(.*)', Template404))
          return new_handlers
- 
- 
-@@ -443,15 +448,19 @@ class NotebookApp(BaseIPythonApplication
-         try:
-             mathjax = filefind(os.path.join('mathjax', 'MathJax.js'), self.static_file_path)
-         except IOError:
--            if self.certfile:
--                # HTTPS: load from Rackspace CDN, because SSL certificate requires it
--                base = u"https://c328740.ssl.cf1.rackcdn.com"
-+            if os.path.exists("/usr/share/javascript/mathjax/MathJax.js"):
-+                self.log.info("Using system MathJax")
-+                return u"/mathjax/MathJax.js"
-             else:
--                base = u"http://cdn.mathjax.org"
--            
--            url = base + u"/mathjax/latest/MathJax.js"
--            self.log.info("Using MathJax from CDN: %s", url)
--            return url
-+                if self.certfile:
-+                    # HTTPS: load from Rackspace CDN, because SSL certificate requires it
-+                    base = u"https://c328740.ssl.cf1.rackcdn.com"
-+                else:
-+                    base = u"http://cdn.mathjax.org"
-+                
-+                url = base + u"/mathjax/latest/MathJax.js"
-+                self.log.info("Using MathJax from CDN: %s", url)
-+                return url
-         else:
-             self.log.info("Using local MathJax from %s" % mathjax)
-             return url_path_join(static_url_prefix, u"mathjax/MathJax.js")
+@@ -490,6 +495,10 @@ class NotebookApp(BaseIPythonApplication
+                 url = url_path_join(url_prefix, u"mathjax/MathJax.js")
+                 self.log.info("Serving local MathJax from %s at %s", mathjax, url)
+                 return url
++
++        if os.path.exists("/usr/share/javascript/mathjax/MathJax.js"):
++            self.log.info("Using system MathJax")
++            return u"/mathjax/MathJax.js"
+         
+         # no local mathjax, serve from CDN
+         if self.certfile:

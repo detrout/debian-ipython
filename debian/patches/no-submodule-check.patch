@@ -1,9 +1,7 @@
-Description: skip git submodule check
- make no sense for a package
 --- a/IPython/html/notebookapp.py
 +++ b/IPython/html/notebookapp.py
-@@ -654,15 +654,7 @@ class NotebookApp(BaseIPythonApplication
-         print self.notebook_info()
+@@ -738,14 +738,7 @@ class NotebookApp(BaseIPythonApplication
+         print(self.notebook_info())
      
      def init_components(self):
 -        """Check the components submodule, and warn if it's unclean"""
@@ -14,7 +12,6 @@ Description: skip git submodule check
 -        elif status == 'unclean':
 -            self.log.warn("components submodule unclean, you may see 404s on static/components")
 -            self.log.warn("run `setup.py submodule` or `git submodule update` to update")
--            
 +        pass
      
      @catch_config_error

@@ -1,3 +1,9 @@
+ipython (2.0.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 03 May 2014 14:24:25 +0200
+
 ipython (1.2.1-2) unstable; urgency=medium
 
   * debianize-error-messages.patch: fix no zmq message to raise an exception

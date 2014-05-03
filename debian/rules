@@ -26,6 +26,9 @@ override_dh_auto_build:
 	  $$pyvers setup.py build --executable '/usr/bin/env python3'; \
 	done
 	cd IPython/html && fab css
+	# remove empty files that make dh_sphinxdoc fail
+	rm -f ./docs/source/whatsnew/pr/antigravity-feature.rst
+	rm -f ./docs/source/whatsnew/pr/incompat-switching-to-perl.rst
 
 ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	HOME=$(CURDIR)/build PYTHONPATH=$(CURDIR) $(MAKE) -C $(CURDIR)/docs html

@@ -176,6 +176,10 @@ Files: ./IPython/html/static/components/codemirror/*
 Copyright: 2013 by Marijn Haverbeke <marijnh@gmail.com>
 License: Expat
 
+Files: ./IPython/html/static/components/codemirror/addon/merge/dep/diff_match_patch.js
+Copyright: Copyright 2006 Google Inc.
+License: Apache-2.0
+
 Files: ./IPython/html/static/components/codemirror/mode/livescript/*
 Copyright: 2013 Kenneth Bentley
 License: Expat

@@ -132,6 +132,10 @@ Files: ./IPython/html/static/components/underscore/*
 Copyright: 2009-2013, Jeremy Ashkenas <jeremy@documentcloud.org>
 License: Expat
 
+Files: ./IPython/html/static/components/backbone/
+Copyright: 2009-2014, Jeremy Ashkenas <jeremy@documentcloud.org>
+License: Expat
+
 Files: ./IPython/html/static/components/less.js/*
 Copyright: 2006-2009, Chris Eppstein
   2006-2009, Hampton Catlin

@@ -42,8 +42,10 @@ ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 	cd build && LC_ALL=C.UTF-8 HOME=$(CURDIR)/build \
 	PATH=$(CURDIR)/debian/tmp/usr/bin/:$(PATH) PYTHONPATH=$(CURDIR)/debian/tmp/usr/lib/python2.7/dist-packages \
 	xvfb-run -a -s "-screen 0 1280x1024x24 -noreset" \
-	iptest -- -e test_not_writable_ipdir -e test_console_starts \
+	iptest2 -- -e test_not_writable_ipdir -e test_console_starts \
 		-e test_constructor -e test_notebook_help;
+else
+	:
 endif
 
 override_dh_auto_install:

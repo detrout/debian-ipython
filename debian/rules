@@ -84,7 +84,14 @@ override_dh_install:
 
 	rm -rf $(NB)/components/marked/
 
-	dh_linktree -pipython-notebook-common replace usr/share/fonts-font-awesome/font usr/share/ipython/notebook/static/components/font-awesome/font
+	# font awesome changed location at some point
+	if test -e /usr/share/fonts-font-awesome/fonts; then \
+	  dh_linktree -pipython-notebook-common replace usr/share/fonts-font-awesome/fonts \
+	    usr/share/ipython/notebook/static/components/font-awesome/font; \
+	else \
+	  dh_linktree -pipython-notebook-common replace usr/share/fonts-font-awesome/font \
+	    usr/share/ipython/notebook/static/components/font-awesome/font; \
+	fi
 
 	dh_linktree -pipython-notebook-common replace usr/share/javascript/jquery-ui usr/share/ipython/notebook/static/components/jquery-ui
 	install -D IPython/html/static/components/jquery-ui/ui/jquery-ui.js $(NB)/components/jquery-ui/ui/minified/jquery-ui.min.js

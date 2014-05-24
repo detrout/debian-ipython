@@ -1,0 +1,2 @@
+# its not minified
+ipython-notebook-common: embedded-javascript-library usr/share/ipython/notebook/static/components/jquery/jquery.min.js

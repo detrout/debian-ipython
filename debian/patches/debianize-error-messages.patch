@@ -5,7 +5,7 @@ Subject: debianize error messages
 
 --- a/IPython/config/application.py
 +++ b/IPython/config/application.py
-@@ -558,9 +558,19 @@ class Application(SingletonConfigurable)
+@@ -559,9 +559,19 @@ class Application(SingletonConfigurable)
          
          If a global instance already exists, this reinitializes and starts it
          """

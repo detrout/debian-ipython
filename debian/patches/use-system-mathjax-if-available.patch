@@ -4,7 +4,7 @@ Subject: use system mathjax if available
 
 --- a/IPython/html/notebookapp.py
 +++ b/IPython/html/notebookapp.py
-@@ -218,6 +218,11 @@ class NotebookWebApplication(web.Applica
+@@ -217,6 +217,11 @@ class NotebookWebApplication(web.Applica
              pattern = url_path_join(settings['base_url'], handler[0])
              new_handler = tuple([pattern] + list(handler[1:]))
              new_handlers.append(new_handler)
@@ -16,7 +16,7 @@ Subject: use system mathjax if available
          # add 404 on the end, which will catch everything that falls through
          new_handlers.append((r'(.*)', Template404))
          return new_handlers
-@@ -490,6 +495,10 @@ class NotebookApp(BaseIPythonApplication
+@@ -487,6 +492,10 @@ class NotebookApp(BaseIPythonApplication
                  url = url_path_join(url_prefix, u"mathjax/MathJax.js")
                  self.log.info("Serving local MathJax from %s at %s", mathjax, url)
                  return url

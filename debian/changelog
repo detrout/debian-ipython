@@ -1,6 +1,15 @@
-ipython (2.1.0-1) unstable; urgency=medium
+ipython (2.1.0-1) unstable; urgency=low
 
   * New upstream release
+    - removes irunner, iplogger and pycolor binaries
+  * drop obsolete patches:
+    - 05_fix_seteditor_example.patch
+    - parallel-2to3.patch
+    - test-default-tk.patch
+  * renamed packaged-lessc.patch to packaged-js.patch
+  * added split-pkg.patch to handle split notebook package
+  * use-ipython-icon-in-desktop-files.patch now applied in debian/rules
+  * added lintian overrides for not used minified javascript files
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 03 May 2014 14:24:25 +0200
 

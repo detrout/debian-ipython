@@ -1,3 +1,4 @@
+# TODO fix tests when python-rpy2 is installed
 Tests: python2
 Depends: ipython, ipython-notebook, ipython-doc, ipython-qtconsole,
          build-essential,
@@ -8,7 +9,6 @@ Depends: ipython, ipython-notebook, ipython-doc, ipython-qtconsole,
          python-argparse,
          python-matplotlib,
          python-mock,
-         python-rpy2,
          python-qt4,
          python-tk,
          python-wxgtk2.8,

@@ -5,3 +5,4 @@ shared-static-path.patch
 no-submodule-check.patch
 #test-default-tk.patch
 packaged-js.patch 
+split-pkg.patch

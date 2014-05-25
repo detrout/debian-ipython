@@ -1,16 +1,23 @@
 Description: use usr/share/ipython/notebook by default for the static data
  provided by ipython-notebook-common
+ during build the folder does not exist so use the local tree path for tests
 Author: Julian Taylor <jtaylor.debian@googlemail.com>
 Forwarded: not-needed
 
 --- a/IPython/html/__init__.py
 +++ b/IPython/html/__init__.py
-@@ -2,7 +2,7 @@
+@@ -2,8 +2,11 @@
  
  import os
  # Packagers: modify this line if you store the notebook static files elsewhere
 -DEFAULT_STATIC_FILES_PATH = os.path.join(os.path.dirname(__file__), "static")
-+DEFAULT_STATIC_FILES_PATH = "/usr/share/ipython/notebook/static"
++if os.path.exists("/usr/share/ipython/notebook/static"):
++    DEFAULT_STATIC_FILES_PATH = "/usr/share/ipython/notebook/static"
++else:
++    DEFAULT_STATIC_FILES_PATH = os.path.join(os.path.dirname(__file__), "static")
  
  del os
  
+-from .nbextensions import install_nbextension
+\ No newline at end of file
++from .nbextensions import install_nbextension

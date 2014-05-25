@@ -2,21 +2,15 @@
 set -efu
 
 pys=$(py3versions -r)
-TWOTOTHREE=2to3-$(py3versions -dv)
 
 dest=$ADTTMP
 for f in $(find IPython -name tests -type d); do
   mkdir -p $dest/$(dirname $f)
   cp -a $f $dest/$(dirname $f)
-  $TWOTOTHREE -w --no-diffs $dest/$f 2>&1
 done
-mkdir -p $dest/IPython/scripts/
-cp IPython/scripts/iptest $dest/IPython/scripts/
-$TWOTOTHREE -w --no-diffs $dest/IPython/scripts/iptest 2>&1
 cd $dest
 
 export TMPDIR=$ADTTMP
-dpkg -l | tee ${ADT_ARTIFACTS:-.}/$(basename $0)-packages.txt
 
 #disabled, just fills disk with junk even before its used by ipython
 #service mongodb start 2>&1 || true
@@ -32,10 +26,13 @@ dpkg -l | tee ${ADT_ARTIFACTS:-.}/$(basename $0)-packages.txt
   done
 
 for py in $pys; do
+  export PYTHONPATH=$PWD
+  mkdir -p test-$py
+  cd test-$py
   LC_ALL=C.UTF-8 HOME=$PWD \
-  PATH=$PWD/IPython/scripts/:$PATH PYTHONPATH=$PWD \
   xvfb-run -a -s "-screen 0 1280x1024x24 -noreset" \
-  $py $PWD/IPython/scripts/iptest -v -e test_not_writable_ipdir -e test_console_starts;
+  $py -c "from IPython.testing.iptestcontroller import main; main()" -- -v -e test_not_writable_ipdir -e test_console_starts -e test_exit_code_signal;
+  cd -
 done
 
 #service mongodb stop 2>&1 || true

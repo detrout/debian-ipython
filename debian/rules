@@ -38,12 +38,11 @@ install-test: install-stamp
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
     	# test_not_writable_ipdir, fails as root
 	# test_console_starts, leaks python process
-	# test_constructor, test_notebook_help, as-installed only (static-path change)
+	# test_exit_code_signal sometimes fails with git-buildpackage but not when run manually
 	cd build && LC_ALL=C.UTF-8 HOME=$(CURDIR)/build \
 	PATH=$(CURDIR)/debian/tmp/usr/bin/:$(PATH) PYTHONPATH=$(CURDIR)/debian/tmp/usr/lib/python2.7/dist-packages \
 	xvfb-run -a -s "-screen 0 1280x1024x24 -noreset" \
-	iptest2 -- -e test_not_writable_ipdir -e test_console_starts \
-		-e test_constructor -e test_notebook_help;
+	iptest2 -- -e test_not_writable_ipdir -e test_console_starts -e test_exit_code_signal;
 else
 	:
 endif

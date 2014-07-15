@@ -21,3 +21,14 @@ Forwarded: not-needed
 -from .nbextensions import install_nbextension
 \ No newline at end of file
 +from .nbextensions import install_nbextension
+--- a/IPython/nbconvert/filters/marked.js
++++ b/IPython/nbconvert/filters/marked.js
+@@ -3,7 +3,7 @@
+ // that we use in the live notebook.
+ 
+ // IPython static_path dir relative to here:
+-var static_path = __dirname + "/../../html/static/";
++var static_path = "/usr/share/ipython/notebook/static/";
+ 
+ var fs = require('fs');
+ var IPython;

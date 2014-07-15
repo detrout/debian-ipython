@@ -2,6 +2,11 @@ ipython (2.1.0-2) unstable; urgency=medium
 
   * debian/rules: allow building with uglifyjs 2
     Thanks to Leo Iannacone for the patch (Closes: #750715)
+  * shared-static-path.patch: change marked.js search path to path used by
+    ipython-notebook-common package, fixes nbconvert failures when using
+    nodejs instead of pandoc
+  * debian/control: add nodejs to suggests
+    it is an alternative to pandoc for nbconvert to html (Closes: #751008)
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Tue, 15 Jul 2014 22:33:25 +0200
 

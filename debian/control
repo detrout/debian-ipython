@@ -147,7 +147,7 @@ Depends: fonts-font-awesome,
          libjs-mathjax,
          libjs-underscore,
          ${misc:Depends}
-Suggests: pandoc, pgf
+Suggests: nodejs, pandoc, pgf
 Replaces: ipython-notebook (<< 0.12.1-2)
 Breaks: ipython-notebook (<< 0.12.1-2)
 Description: interactive Python html notebook data package
@@ -171,6 +171,7 @@ Depends: ipython (= ${binary:Version}),
          python-zmq (>= 2.1.11),
          ${misc:Depends},
          ${python:Depends}
+Suggests: python-pygments
 Description: interactive Python html notebook
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific
@@ -193,6 +194,7 @@ Depends: ipython-notebook-common (= ${binary:Version}),
          python3-zmq (>= 2.1.11),
          ${misc:Depends},
          ${python3:Depends}
+Suggests: python3-pygments
 Description: interactive Python 3 html notebook
  IPython can be used as a replacement for the standard Python shell,
  or it can be used as a complete working environment for scientific

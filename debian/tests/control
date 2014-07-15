@@ -46,3 +46,15 @@ Depends: ipython3, python3-lxml, python3-zmq
 
 Tests: incomplete-install
 Depends: ipython, ipython3
+
+Tests: nbconvert2-node
+Depends: ipython-notebook, nodejs, python-pygments
+
+Tests: nbconvert2-pandoc
+Depends: ipython-notebook, pandoc, python-pygments
+
+Tests: nbconvert3-node
+Depends: ipython3-notebook, nodejs, python3-pygments
+
+Tests: nbconvert3-pandoc
+Depends: ipython3-notebook, pandoc, python3-pygments

@@ -1,0 +1,40 @@
+#!/bin/sh
+set -efu
+
+export HOME=$ADTTMP
+cd $ADTTMP
+
+if [ "$1" = "ipython" ]; then
+IPYTHON=ipython
+elif [ "$1" = "ipython3" ]; then
+IPYTHON=ipython3
+fi
+
+cat << EOF > test.ipynb
+{
+ "metadata": {
+  "name": ""
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": [
+      "*heystring*"
+     ]
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}
+EOF
+
+# test some basic conversions work
+# html/print-preview, nodejs javascript files found etc.
+$IPYTHON nbconvert --to html test.ipynb 2>&1
+grep heystring test.html

@@ -1,7 +1,7 @@
 Description: package does not need to check for git submodules
 --- a/IPython/html/notebookapp.py
 +++ b/IPython/html/notebookapp.py
-@@ -735,14 +735,7 @@ class NotebookApp(BaseIPythonApplication
+@@ -761,14 +761,7 @@ class NotebookApp(BaseIPythonApplication
          print(self.notebook_info())
      
      def init_components(self):

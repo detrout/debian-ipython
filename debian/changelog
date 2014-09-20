@@ -1,6 +1,7 @@
 ipython (2.2.0-2) unstable; urgency=medium
 
   * update wx build dependency for documentation to 3.0 (Closes: #725343)
+  * bump standard to 3.9.6, no changes required
 
  -- Julian Taylor <jtaylor.debian@googlemail.com>  Sat, 20 Sep 2014 13:54:57 +0200
 

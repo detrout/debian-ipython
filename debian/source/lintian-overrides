@@ -1,12 +1,12 @@
 # source is available next to the files, prebuilt files not used
 ipython source: source-contains-prebuilt-javascript-object IPython/html/static/components/backbone/backbone-min.js
-ipython source: source-contains-prebuilt-javascript-object IPython/html/static/components/google-caja/html-css-sanitizer-minified.js means line length is about 16184 characters
-ipython source: source-contains-prebuilt-javascript-object IPython/html/static/components/google-caja/html-sanitizer-minified.js means line length is about 16184 characters
+ipython source: source-contains-prebuilt-javascript-object IPython/html/static/components/google-caja/html-css-sanitizer-minified.js mean line length is about 16184 characters
+ipython source: source-contains-prebuilt-javascript-object IPython/html/static/components/google-caja/html-sanitizer-minified.js mean line length is about 16184 characters
 ipython source: source-contains-prebuilt-javascript-object IPython/html/static/components/jquery/jquery-migrate.min.js
 ipython source: source-contains-prebuilt-javascript-object IPython/html/static/components/underscore/underscore-min.js
 ipython source: source-contains-prebuilt-javascript-object IPython/html/static/components/bootstrap-tour/build/js/bootstrap-tour.min.js
 ipython source: source-contains-prebuilt-javascript-object IPython/html/static/components/bootstrap/bootstrap/js/bootstrap.min.js
-ipython source: source-contains-prebuilt-javascript-object IPython/html/static/components/codemirror/addon/merge/dep/diff_match_patch.js means line length is about 392.317073170732 characters
+ipython source: source-contains-prebuilt-javascript-object IPython/html/static/components/codemirror/addon/merge/dep/diff_match_patch.js mean line length is about 392 characters
 
 # not used
 ipython source: source-is-missing IPython/html/static/components/jquery-ui/ui/minified/i18n/jquery-ui-i18n.min.js

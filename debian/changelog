@@ -1,6 +1,6 @@
 ipython (2.2.0-2) unstable; urgency=medium
 
-  * update wx build dependency for documentation to 3.0 (Closes: #760691)
+  * drop wx build dependency, not needed for tests anymore (Closes: #760691)
   * bump standard to 3.9.6, no changes required
   * refresh paths in debian/copyright and adapt to some removed files
 

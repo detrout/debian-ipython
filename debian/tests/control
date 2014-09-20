@@ -11,7 +11,6 @@ Depends: ipython, ipython-notebook, ipython-doc, ipython-qtconsole,
          python-mock,
          python-qt4,
          python-tk,
-         python-wxgtk2.8,
          xauth,
          xvfb
 

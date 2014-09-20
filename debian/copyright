@@ -15,10 +15,6 @@ Copyright: 2005,2008,2009,2010,2011,2012,2013 The IPython Development Team
  2005, Jörgen Stenarson <jorgen.stenarson@bostream.nu>
 License: BSD-3-clause
 
-Files: ./IPython/external/argparse/_argparse.py
-Copyright: 2006-2009, Steven J. Bethard <steven.bethard@gmail.com>
-License: Apache-2.0
-
 Files: ./IPython/external/ssh/forward.py
 Copyright: 2003-2007, Robey Pointer <robeypointer@gmail.com>
  2010, The IPython Development Team
@@ -39,32 +35,6 @@ License: PSF
 Files: ./IPython/external/decorators/*
 Copyright: 2005-2009, NumPy Developers
 License: BSD-3-clause
-
-Files: ./IPython/deathrow/oldfrontend/process/winprocess.py
- ./IPython/deathrow/oldfrontend/process/killableprocess.py
-Copyright: 2006, the Mozilla Foundation <http://www.mozilla.org>
- 2003-2004, Peter Astrand <astrand@lysator.liu.se>
-License:
- By obtaining, using, and/or copying this software and/or its
- associated documentation, you agree that you have read, understood,
- and will comply with the following terms and conditions:
- .
- Permission to use, copy, modify, and distribute this software and
- its associated documentation for any purpose and without fee is
- hereby granted, provided that the above copyright notice appears in
- all copies, and that both that copyright notice and this permission
- notice appear in supporting documentation, and that the name of the
- author not be used in advertising or publicity pertaining to
- distribution of the software without specific, written prior
- permission.
- .
- THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
- INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS.
- IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, INDIRECT OR
- CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
- OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
- NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
- WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 Files: ./IPython/utils/daemonize.py
 Copyright: Twisted Matrix Laboratories
@@ -111,20 +81,20 @@ Copyright: 2013 jQuery Foundation and other contributors
  Jörn Zaefferer (bassistance.de)
 License: GPL-2 or Expat
 
-Files: ./IPython/html/static/components/marked/
+Files: ./IPython/html/static/components/marked/*
 Copyright: 2011-2012, Christopher Jeffrey (https://github.com/chjj/)
 License: Expat
 
-Files: ./IPython/html/static/components/font-awesome/build/assets/font-awesome/font/
+Files: ./IPython/html/static/components/font-awesome/font/*
 Copyright: (c) 2012-2013, Dave Gandy <drgandy@alum.mit.edu>
 License: OFL-1.1
 Comment:
  Upstream doesn't specify which version of OFL instead simply links to
  OFL page. Hence latest version of OFL is considered.
 
-Files: ./IPython/html/static/components/font-awesome/build/assets/font-awesome/css/*
- ./IPython/html/static/components/font-awesome/build/assets/font-awesome/less/*
- ./IPython/html/static/components/font-awesome/build/assets/font-awesome/sass/*
+Files: ./IPython/html/static/components/font-awesome/css/*
+ ./IPython/html/static/components/font-awesome/less/*
+ ./IPython/html/static/components/font-awesome/scss/*
 Copyright: (c) 2012-2013, Dave Gandy <drgandy@alum.mit.edu>
 License: Expat
 
@@ -132,24 +102,8 @@ Files: ./IPython/html/static/components/underscore/*
 Copyright: 2009-2013, Jeremy Ashkenas <jeremy@documentcloud.org>
 License: Expat
 
-Files: ./IPython/html/static/components/backbone/
+Files: ./IPython/html/static/components/backbone/*
 Copyright: 2009-2014, Jeremy Ashkenas <jeremy@documentcloud.org>
-License: Expat
-
-Files: ./IPython/html/static/components/less.js/*
-Copyright: 2006-2009, Chris Eppstein
-  2006-2009, Hampton Catlin
-  2006-2009, Nathan Weizenbaum
-  2009-2013, Alexis Sellier <self@cloudhead.net>
-  2009-2010, dantman Daniel Friesen
-  2009-2010, kriskowal Kris Kowal
-  2009-2010, tlrobinson Tom Robinson
-License: Apache-2.0
-
-Files: ./IPython/html/static/components/less.js/lib/less/functions.js
-Copyright: 2006-2009, Chris Eppstein
-  2006-2009, Hampton Catlin
-  2006-2009, Nathan Weizenbaum
 License: Expat
 
 Files: ./IPython/html/static/components/requirejs/*

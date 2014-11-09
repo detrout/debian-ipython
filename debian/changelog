@@ -1,3 +1,11 @@
+ipython (2.3.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Add pygments2.0_compatibility.patch (taken from Carlos Cordoba's pull
+    request. Closes: #768705)
+
+ -- Piotr Ożarowski <piotr@debian.org>  Sun, 09 Nov 2014 23:33:24 +0100
+
 ipython (2.3.0-1) unstable; urgency=medium
 
   * New upstream bugfix release

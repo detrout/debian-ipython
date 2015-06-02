@@ -1,6 +1,7 @@
 ipython (3.1.0-0) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Upstream no longer uses fabric, so remove that dependency.
 
  -- Diane Trout <diane@ghic.org>  Tue, 02 Jun 2015 11:27:38 -0700
 

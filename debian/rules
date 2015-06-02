@@ -25,7 +25,6 @@ override_dh_auto_build:
 	set -e && for pyvers in $(PY3VERS); do \
 	  $$pyvers setup.py build --executable '/usr/bin/env python3'; \
 	done
-	cd IPython/html && fab css
 	# remove empty files that make dh_sphinxdoc fail
 	rm -f ./docs/source/whatsnew/pr/antigravity-feature.rst
 	rm -f ./docs/source/whatsnew/pr/incompat-switching-to-perl.rst

@@ -3,6 +3,5 @@ debianize-error-messages.patch
 use-system-mathjax-if-available.patch
 shared-static-path.patch
 no-submodule-check.patch
-packaged-js.patch 
 split-pkg.patch
 pygments2.0_compatibility.patch

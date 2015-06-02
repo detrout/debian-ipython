@@ -1,7 +1,7 @@
 Description: package does not need to check for git submodules
 --- a/IPython/html/notebookapp.py
 +++ b/IPython/html/notebookapp.py
-@@ -761,14 +761,7 @@ class NotebookApp(BaseIPythonApplication
+@@ -979,14 +979,7 @@
          print(self.notebook_info())
      
      def init_components(self):
@@ -14,6 +14,6 @@ Description: package does not need to check for git submodules
 -            self.log.warn("components submodule unclean, you may see 404s on static/components")
 -            self.log.warn("run `setup.py submodule` or `git submodule update` to update")
 +        pass
-     
-     @catch_config_error
-     def initialize(self, argv=None):
+ 
+     def init_server_extensions(self):
+         """Load any extensions specified by config.

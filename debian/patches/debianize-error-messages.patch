@@ -5,7 +5,7 @@ Subject: debianize error messages
 
 --- a/IPython/config/application.py
 +++ b/IPython/config/application.py
-@@ -559,9 +559,19 @@ class Application(SingletonConfigurable)
+@@ -569,9 +569,19 @@
          
          If a global instance already exists, this reinitializes and starts it
          """
@@ -30,7 +30,7 @@ Subject: debianize error messages
  # utility functions, for convenience
 --- a/IPython/lib/clipboard.py
 +++ b/IPython/lib/clipboard.py
-@@ -57,7 +57,7 @@ def tkinter_clipboard_get():
+@@ -57,7 +57,7 @@
              from Tkinter import Tk, TclError  # Py 2
          except ImportError:
              raise TryNext("Getting text from the clipboard on this platform "
@@ -41,14 +41,12 @@ Subject: debianize error messages
      try:
 --- a/IPython/utils/zmqrelated.py
 +++ b/IPython/utils/zmqrelated.py
-@@ -34,13 +34,13 @@ def check_for_zmq(minimum_version, requi
+@@ -9,11 +9,11 @@
      try:
          import zmq
      except ImportError:
 -        raise ImportError("%s requires pyzmq >= %s"%(required_by, minimum_version))
 +        raise ImportError("%s requires python-zmq >= %s"%(required_by, minimum_version))
-     
-     patch_pyzmq()
      
      pyzmq_version = zmq.__version__
      

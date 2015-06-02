@@ -2,7 +2,7 @@ Description: don't fail startup if ipython-notebook is not installed
  e.g. ipython locate triggers this code but doesn't need the notebook css files
 --- a/IPython/core/profiledir.py
 +++ b/IPython/core/profiledir.py
-@@ -173,15 +173,18 @@ class ProfileDir(LoggingConfigurable):
+@@ -141,15 +141,18 @@
          self._mkdir(self.static_dir)
          custom = os.path.join(self.static_dir, 'custom')
          self._mkdir(custom)

@@ -87,10 +87,10 @@ override_dh_install:
 	# font awesome changed location at some point
 	if test -e /usr/share/fonts-font-awesome/fonts; then \
 	  dh_linktree -pipython-notebook-common replace usr/share/fonts-font-awesome/fonts \
-	    usr/share/ipython/notebook/static/components/font-awesome/font; \
+	    usr/share/ipython/notebook/static/components/font-awesome/fonts; \
 	else \
 	  dh_linktree -pipython-notebook-common replace usr/share/fonts-font-awesome/font \
-	    usr/share/ipython/notebook/static/components/font-awesome/font; \
+	    usr/share/ipython/notebook/static/components/font-awesome/fonts; \
 	fi
 
 	dh_linktree -pipython-notebook-common replace usr/share/javascript/jquery-ui usr/share/ipython/notebook/static/components/jquery-ui

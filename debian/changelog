@@ -13,6 +13,7 @@ ipython (3.1.0-0) UNRELEASED; urgency=medium
     options was sufficient to use 2.4.
   * Update python-tornado dependency to 4.0
   * Add python-mistune dependency.
+  * Rename local font-awesome font directory to fonts
 
  -- Diane Trout <diane@ghic.org>  Tue, 02 Jun 2015 11:27:38 -0700
 

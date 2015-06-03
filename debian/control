@@ -7,6 +7,7 @@ Build-Depends: debhelper (>= 7.3.13)
 Build-Depends-Indep: dh-linktree,
                      fonts-font-awesome (>= 3.2.1),
                      graphviz,
+                     jsdoc-toolkit,
                      libc-bin (>= 2.13-1~),
                      libjs-highlight,
                      libjs-jquery-ui,

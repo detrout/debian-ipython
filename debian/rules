@@ -109,13 +109,6 @@ override_dh_install:
 	rm -rf $(NB)/components/codemirror/bin/
 
 	rm -rf $(NB)/components/bootstrap/
-	make -C IPython/html/static/components/bootstrap/ clean
-	make -C IPython/html/static/components/bootstrap/ bootstrap-img
-	make -C IPython/html/static/components/bootstrap/ bootstrap-js
-	# no bootstrap-css, recess used by makefile is broken #734505
-	mkdir -p $(NB)/components/bootstrap/bootstrap/css/
-	lessc  IPython/html/static/components/bootstrap/less/bootstrap.less > $(NB)/components/bootstrap/bootstrap/css/bootstrap.min.css
-	cp -r IPython/html/static/components/bootstrap/bootstrap/ $(NB)/components/bootstrap/
 
 	rm -rf $(NB)/components/bootstrap-tour/
 	install -D IPython/html/static/components/bootstrap-tour/build/js/bootstrap-tour.js \

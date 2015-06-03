@@ -13,6 +13,8 @@ ipython (3.1.0-0) UNRELEASED; urgency=medium
   * Update python-tornado dependency to 4.0
   * Add python-mistune dependency.
   * Rename local font-awesome font directory to fonts
+  * Add libjs-bootstrap to use Debian bootstrap, remove building upstreams
+    version from debian/rules.
 
  -- Diane Trout <diane@ghic.org>  Tue, 02 Jun 2015 11:27:38 -0700
 

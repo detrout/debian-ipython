@@ -1,4 +1,4 @@
 usr/share/javascript/marked/marked.min.js usr/share/ipython/notebook/static/components/marked/lib/marked.js
 usr/share/javascript/highlight/highlight.js usr/share/ipython/notebook/static/components/highlight.js/build/highlight.pack.js
 usr/share/javascript/underscore/underscore.min.js usr/share/ipython/notebook/static/components/underscore/underscore-min.js
-
+usr/share/javascript/bootstrap/ usr/share/ipython/notebook/static/components/

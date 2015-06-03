@@ -4,8 +4,7 @@ ipython (3.1.0-0) UNRELEASED; urgency=medium
   * Upstream no longer uses fabric, so remove that dependency.
   * Refresh patches.
   * Remove pakaged-js.patch, upstream isn't using a makefile to make js.
-  * Change shared-static-path.patch to just insert Debian specific path,
-    now that IPython supports a list of resource directories.
+  * Update shared-static-path.patch
   * Remove pygments2.0_compatibility.patch, applied upstream.
   * add jsdoc-toolkit to Build-Depends.
   * Add adjust-jsapi-command.patch IPython assumes jsdoc-toolkit version >= 3.0

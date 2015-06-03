@@ -6,7 +6,7 @@ Forwarded: not-needed
 
 --- a/IPython/html/__init__.py
 +++ b/IPython/html/__init__.py
-@@ -2,8 +2,11 @@
+@@ -2,7 +2,10 @@
  
  import os
  # Packagers: modify this line if you store the notebook static files elsewhere
@@ -16,11 +16,8 @@ Forwarded: not-needed
 +else:
 +    DEFAULT_STATIC_FILES_PATH = os.path.join(os.path.dirname(__file__), "static")
  
- del os
- 
--from .nbextensions import install_nbextension
-\ No newline at end of file
-+from .nbextensions import install_nbextension
+ # Packagers: modify the next line if you store the notebook template files
+ # elsewhere
 --- a/IPython/nbconvert/filters/marked.js
 +++ b/IPython/nbconvert/filters/marked.js
 @@ -3,7 +3,7 @@
@@ -30,5 +27,5 @@ Forwarded: not-needed
 -var static_path = __dirname + "/../../html/static/";
 +var static_path = "/usr/share/ipython/notebook/static/";
  
- var fs = require('fs');
- var IPython;
+ // Excerpt from the example in require.js docs
+ // http://requirejs.org/docs/node.html

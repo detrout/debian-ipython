@@ -35,7 +35,7 @@ endif
 
 install-test: install-stamp
 ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
-    	# test_not_writable_ipdir, fails as root
+	# test_not_writable_ipdir, fails as root
 	# test_console_starts, leaks python process
 	# test_exit_code_signal sometimes fails with git-buildpackage but not when run manually
 	cd build && LC_ALL=C.UTF-8 HOME=$(CURDIR)/build \
@@ -164,7 +164,7 @@ override_dh_install:
 
 	touch install-stamp
 
-	
+
 override_dh_installdocs:
 ifeq (,$(filter nodocs,$(DEB_BUILD_OPTIONS)))
 	dh_installdocs -pipython

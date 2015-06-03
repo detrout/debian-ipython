@@ -11,6 +11,7 @@ ipython (3.1.0-0) UNRELEASED; urgency=medium
   * Add adjust-jsapi-command.patch IPython assumes jsdoc-toolkit version >= 3.0
     and Debian only has 2.4. Thankfully it seems adjusting the command line
     options was sufficient to use 2.4.
+  * Update python-tornado dependency to 4.0
 
  -- Diane Trout <diane@ghic.org>  Tue, 02 Jun 2015 11:27:38 -0700
 

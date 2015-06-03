@@ -1,0 +1,11 @@
+--- a/docs/Makefile
++++ b/docs/Makefile
+@@ -81,7 +81,7 @@
+ 	@echo "Created docs for config options"
+ 
+ jsapi:
+-	jsdoc -c jsdoc_config.json -d ./build/jsapi_html/
++	jsdoc -c=jsdoc_config.json -d=./build/jsapi_html/
+ 
+ api: source/api/generated/gen.txt
+ 

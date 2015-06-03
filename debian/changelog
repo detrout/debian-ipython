@@ -8,6 +8,9 @@ ipython (3.1.0-0) UNRELEASED; urgency=medium
     now that IPython supports a list of resource directories.
   * Remove pygments2.0_compatibility.patch, applied upstream.
   * add jsdoc-toolkit to Build-Depends.
+  * Add adjust-jsapi-command.patch IPython assumes jsdoc-toolkit version >= 3.0
+    and Debian only has 2.4. Thankfully it seems adjusting the command line
+    options was sufficient to use 2.4.
 
  -- Diane Trout <diane@ghic.org>  Tue, 02 Jun 2015 11:27:38 -0700
 

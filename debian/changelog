@@ -17,6 +17,8 @@ ipython (3.1.0-0) UNRELEASED; urgency=medium
     version from debian/rules.
   * Add python-jsonschema as build dependency and python/python3-jsonschema to
     ipython/ipython3-notebook binary packages.
+  * Add python-jinja2, python-numpy, python-requests
+    to build-deps so we can run testcases
 
  -- Diane Trout <diane@ghic.org>  Tue, 02 Jun 2015 11:27:38 -0700
 

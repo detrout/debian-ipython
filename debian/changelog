@@ -20,6 +20,7 @@ ipython (3.2.0-0) UNRELEASED; urgency=medium
   * Add python-jinja2, python-numpy, python-requests
     to build-deps so we can run testcases
   * Add myself to uploaders
+  * Use Debian jquery-ui. Delete upstream one and replace with a symlink.
 
  -- Diane Trout <diane@ghic.org>  Tue, 02 Jun 2015 11:27:38 -0700
 

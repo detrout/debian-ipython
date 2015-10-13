@@ -1,3 +1,4 @@
+use-pretty-boostrap.patch
 use-LightBG-colorscheme.patch
 debianize-error-messages.patch
 use-system-mathjax-if-available.patch

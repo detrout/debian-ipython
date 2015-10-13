@@ -1,0 +1,17 @@
+Author: Diane Trout <diane@ghic.org>
+Description: The debian libjs-bootstrap doesn't provide a minimzed version
+ so once we replace the IPython convience copy with the installed
+ version the notebook can't load bootstrap.min.js.
+ This is a simple solution by just loading the un-minimzed version
+ instead.
+--- a/IPython/html/templates/page.html
++++ b/IPython/html/templates/page.html
+@@ -28,7 +28,7 @@
+             underscore : 'components/underscore/underscore-min',
+             backbone : 'components/backbone/backbone-min',
+             jquery: 'components/jquery/jquery.min',
+-            bootstrap: 'components/bootstrap/js/bootstrap.min',
++            bootstrap: 'components/bootstrap/js/bootstrap',
+             bootstraptour: 'components/bootstrap-tour/build/js/bootstrap-tour.min',
+             jqueryui: 'components/jquery-ui/ui/minified/jquery-ui.min',
+             moment: 'components/moment/moment',

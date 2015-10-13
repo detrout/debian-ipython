@@ -22,6 +22,8 @@ ipython (3.2.0-0) UNRELEASED; urgency=medium
   * Add myself to uploaders
   * Use Debian jquery-ui. Delete upstream one and replace with a symlink.
   * Use Debian bootstrap, which doesn't ship a minified one.
+  * Add Dependency on libjs-jquery-ui-theme-smoothness, which is picked up
+    by the jquery-ui symlink.
 
  -- Diane Trout <diane@ghic.org>  Tue, 02 Jun 2015 11:27:38 -0700
 

@@ -2,7 +2,7 @@ Source: ipython
 Section: python
 Priority: optional
 Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
-Uploaders: Julian Taylor <jtaylor.debian@googlemail.com>
+Uploaders: Julian Taylor <jtaylor.debian@googlemail.com>, Diane Trout <diane@ghic.org>
 Build-Depends: debhelper (>= 7.3.13)
 Build-Depends-Indep: dh-linktree,
                      fonts-font-awesome (>= 3.2.1),

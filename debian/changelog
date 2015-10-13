@@ -19,6 +19,7 @@ ipython (3.1.0-0) UNRELEASED; urgency=medium
     ipython/ipython3-notebook binary packages.
   * Add python-jinja2, python-numpy, python-requests
     to build-deps so we can run testcases
+  * Add myself to uploaders
 
  -- Diane Trout <diane@ghic.org>  Tue, 02 Jun 2015 11:27:38 -0700
 

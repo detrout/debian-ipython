@@ -1,4 +1,4 @@
-ipython (3.1.0-0) UNRELEASED; urgency=medium
+ipython (3.2.0-0) UNRELEASED; urgency=medium
 
   * New upstream release.
   * Upstream no longer uses fabric, so remove that dependency.
